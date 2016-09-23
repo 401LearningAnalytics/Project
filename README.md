@@ -1,4 +1,4 @@
-Coursera Analytics System
+## Coursera Analytics System
 
 This is a webapp that analyzes and visualizes learner data from Massive Open Online Course (MOOC) Coursera, including their demographics, assessments, marks, course progress, and discussions.
 
