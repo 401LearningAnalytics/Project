@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
 
 	</head>
 	<body>
@@ -23,7 +24,24 @@
 				<div style="position:fixed;height:90px;width:100%;left:0;top:-15px;z-index:9999;tex-align:center">
 					<nav class="codrops-demos" style="text-align:center">
 						<p align=center><font style="font-size: 40pt; filter: shadow(color=black); width: 71.27%; color: #e4dc9b; line-height: 150%; font-family: 华文隶书; height: 60px"><b>Learning Analytics</b></font></p>
-						<div align=center> <img src="img/mooc.png"></img></div>
+						<div align=center> <img src="img/mooc.png" style="width:500px;height:300px;"></img></div>
+						
+						<div class="wrapper">
+						<form action="" method="post" >
+						<div class="loginBox">
+						<div class="loginBoxCenter">
+						<p><label for="username">Email:</label></p>
+						<p><input type="email" id="email" name="email" class="loginInput" autofocus="autofocus" required="required" autocomplete="off" placeholder="Email" value="" /></p>
+						<p><label for="password"> Password:</label>
+						<p><input type="password" id="password" name="password" class="loginInput" required="required" placeholder="Password" value="" /></p>
+						</div>
+						<div class="loginBoxButtons">
+						<button class="loginBtn">Login</button>
+						</div>
+					</div>
+				</form>
+				</div>
+						
 					</nav>
 				</div>
 			</div>
