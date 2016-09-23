@@ -4,4 +4,4 @@ This is a webapp that analyzes and visualizes learner data from Massive Open Onl
 
 It is implemented in HTML and javascript for the front end and use PHP mySQL for the back end.
 
-The serve is provided by Cybera.
+The server is provided by Cybera.
