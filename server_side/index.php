@@ -80,6 +80,16 @@ echo "Connected successfully\n";
 
 echo"<br></br>";
 
+$sql1 = "create database learner;";
+if ($conn->query($sql1) === TRUE) {
+    echo "Database created successfully\n";
+} else {
+    echo "Error creating database: " . $conn->error;
+}
+
+
+echo"<br></br>";
+
 
 
 $sql1 = "use learner;";
@@ -198,6 +208,287 @@ if ($conn->query($sql) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
+
+
+
+echo"<br></br>";
+$sql = "CREATE TABLE assessment_question_types (
+    assessment_question_type_id INT4
+    ,assessment_question_type_desc VARCHAR(50)
+    ,PRIMARY KEY (assessment_question_type_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+echo"<br></br>";
+
+
+
+
+$sql = "CREATE TABLE assessment_questions (
+    assessment_question_id VARCHAR(50)
+    ,assessment_question_base_id VARCHAR(50)
+    ,assessment_question_version INT4
+    ,assessment_question_type_id INT4
+    ,assessment_question_prompt VARCHAR(20000)
+    ,assessment_question_update_ts TIMESTAMP
+    ,PRIMARY KEY (assessment_question_id)
+    ,FOREIGN KEY (assessment_question_type_id) REFERENCES assessment_question_types(assessment_question_type_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE assessment_assessments_questions (
+    assessment_id VARCHAR(50)
+    ,assessment_question_id VARCHAR(50)
+    ,assessment_question_internal_id VARCHAR(50)
+    ,assessment_question_cuepoint INT4
+    ,assessment_question_order INT4
+    ,assessment_question_weight INT4
+    ,PRIMARY KEY (assessment_id, assessment_question_id, assessment_question_internal_id)
+    ,FOREIGN KEY (assessment_id) REFERENCES assessments(assessment_id)
+    ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+echo"<br></br>";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$sql = "CREATE TABLE assessment_checkbox_questions (
+    assessment_question_id VARCHAR(50)
+    ,assessment_question_shuffle_options BOOL
+    ,assessment_question_allow_partial_scoring BOOL
+    ,PRIMARY KEY (assessment_question_id)
+    ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+$sql = "CREATE TABLE assessment_checkbox_reflect_questions (
+    assessment_question_id VARCHAR(50)
+    ,assessment_question_shuffle_options BOOL
+    ,PRIMARY KEY (assessment_question_id)
+    ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+$sql = "CREATE TABLE assessment_math_expression_patterns (
+    assessment_question_id VARCHAR(50)
+    ,assessment_pattern_id VARCHAR(50)
+    ,assessment_pattern_display TEXT/*VARCHAR(20000)*/
+    ,assessment_pattern_feedback TEXT/*VARCHAR(20000)*/
+    ,assessment_pattern_correct BOOL
+    ,PRIMARY KEY (assessment_question_id, assessment_pattern_id)
+    ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+$sql = "CREATE TABLE assessment_math_expression_questions (
+    assessment_question_id VARCHAR(50)
+    ,default_incorrect_feedback VARCHAR(20000)
+    ,PRIMARY KEY (assessment_question_id)
+    ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE assessment_mcq_questions (
+    assessment_question_id VARCHAR(50)
+    ,assessment_question_shuffle_options BOOL
+    ,PRIMARY KEY (assessment_question_id)
+    ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE assessment_mcq_reflect_questions (
+    assessment_question_id VARCHAR(50)
+    ,assessment_question_shuffle_options BOOL
+    ,PRIMARY KEY (assessment_question_id)
+    ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE assessment_options (
+    assessment_question_id VARCHAR(50)
+    ,assessment_option_id VARCHAR(50)
+    ,assessment_option_display TEXT
+    ,assessment_option_feedback TEXT
+    ,assessment_option_correct BOOL
+    ,PRIMARY KEY (assessment_question_id, assessment_option_id)
+    ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE assessment_pattern_flag_types (
+    assessment_pattern_flag_type_id INT4
+    ,assessment_pattern_flag_type_desc VARCHAR(50)
+    ,PRIMARY KEY (assessment_pattern_flag_type_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE assessment_pattern_types (
+    assessment_pattern_type_id INT4
+    ,assessment_pattern_type_desc VARCHAR(50)
+    ,PRIMARY KEY (assessment_pattern_type_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 
 
 
