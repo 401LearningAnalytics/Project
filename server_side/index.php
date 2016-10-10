@@ -60,8 +60,8 @@ if ( isset($_POST["submit"]) ) {
 <br></br>
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "117130";
+$username = "Wei";
+$password = "123456";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);

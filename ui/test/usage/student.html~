@@ -9,13 +9,10 @@
   <div id="users">
     <input class="search" placeholder="Search" />
     <button class="sort" data-sort="name">
-      Sort by course
+      Sort by id
     <ul class="list">
       <li>
-        <a href="studentList.html"><h3 class="name"> CMPUT401</h3></a>
-      </li>
-      <li>
-        <a href="studentList.html"><h3 class="name">CMPUT301</h3></a>
+        <h3 class="name">CMPUT401</h3>
       </li>
     </ul>
   </div>
