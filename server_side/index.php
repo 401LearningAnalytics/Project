@@ -1389,6 +1389,427 @@ if ($conn->query($sql) === TRUE) {
 
 
 
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE discussion_forums (
+    discussion_forum_id VARCHAR(50)
+    ,course_id VARCHAR(50)
+    ,discussion_forum_title VARCHAR(10000)
+    ,discussion_forum_description VARCHAR(10000)
+    ,discussion_forum_order INT4
+    ,PRIMARY KEY (discussion_forum_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE discussion_question_flags (
+    ualberta_discussions_user_id VARCHAR(50) NOT NULL
+    ,course_id varchar(400)
+    ,discussion_question_id varchar(400)
+    ,discussion_question_flag_active bool
+    ,discussion_question_flag_ts timestamp
+    ,PRIMARY KEY (ualberta_discussions_user_id, discussion_question_id, discussion_question_flag_ts)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE discussion_question_followings (
+    ualberta_discussions_user_id VARCHAR(50) NOT NULL
+    ,course_id varchar(400)
+    ,discussion_question_id varchar(400)
+    ,discussion_question_following_active bool
+    ,discussion_question_following_ts timestamp
+    ,PRIMARY KEY (ualberta_discussions_user_id, discussion_question_id, discussion_question_following_ts)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE discussion_question_votes (
+    ualberta_discussions_user_id VARCHAR(50) NOT NULL
+    ,course_id varchar(400)
+    ,discussion_question_id varchar(400)
+    ,discussion_question_vote_value int4
+    ,discussion_question_vote_ts timestamp
+    ,PRIMARY KEY (ualberta_discussions_user_id, discussion_question_id, discussion_question_vote_ts)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE discussion_questions (
+    discussion_question_id VARCHAR(50)
+    ,ualberta_discussions_user_id VARCHAR(50) NOT NULL
+    ,discussion_question_title VARCHAR(10000)
+    ,discussion_question_details VARCHAR(10000)
+    ,discussion_question_context_type VARCHAR(50)
+    ,course_id VARCHAR(50)
+    ,course_module_id VARCHAR(50)
+    ,course_item_id VARCHAR(50)
+    ,discussion_forum_id VARCHAR(50)
+    ,country_cd VARCHAR(2)
+    ,group_id VARCHAR(50)
+    ,discussion_question_created_ts TIMESTAMP NUll DEFAULT NUll
+    ,discussion_question_updated_ts TIMESTAMP NUll DEFAULT NUll
+    ,PRIMARY KEY (discussion_question_id)
+    ,FOREIGN KEY (course_id) REFERENCES courses(course_id)
+    ,FOREIGN KEY (course_id, course_item_id) REFERENCES course_items(course_id, course_item_id)
+    ,FOREIGN KEY (course_id, course_module_id) REFERENCES course_modules(course_id, course_module_id)
+    ,FOREIGN KEY (discussion_forum_id) REFERENCES discussion_forums(discussion_forum_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE feedback_course_comments (
+    course_id varchar(300)
+    ,feedback_system varchar(300)
+    ,ualberta_feedback_user_id VARCHAR(50) NOT NULL
+    ,feedback_category varchar(300)
+    ,feedback_text varchar(400)
+    ,feedback_ts timestamp
+    ,PRIMARY KEY (course_id, feedback_system, ualberta_feedback_user_id, feedback_category, feedback_ts)
+    ,FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE feedback_course_ratings (
+    course_id varchar(400)
+    ,ualberta_feedback_user_id VARCHAR(50) NOT NULL
+    ,feedback_system varchar(400)
+    ,feedback_rating int4
+    ,feedback_max_rating int4
+    ,feedback_ts timestamp
+    ,PRIMARY KEY (course_id, feedback_system, ualberta_feedback_user_id, feedback_ts)
+    ,FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE feedback_item_comments (
+    course_id varchar(100)
+    ,course_item_id varchar(100)
+    ,feedback_unit_id varchar(100)
+    ,feedback_unit_type varchar(100)
+    ,feedback_system varchar(100)
+    ,detailed_context varchar(100)
+    ,ualberta_feedback_user_id VARCHAR(50) NOT NULL
+    ,feedback_category varchar(100)
+    ,feedback_text varchar(100)
+    ,feedback_ts timestamp
+    ,feedback_active bool
+    ,PRIMARY KEY (course_id, course_item_id, feedback_unit_id, feedback_unit_type, feedback_system, ualberta_feedback_user_id, feedback_category, feedback_ts)
+    ,FOREIGN KEY (course_id) REFERENCES courses(course_id)
+    ,FOREIGN KEY (course_id, course_item_id) REFERENCES course_items(course_id, course_item_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE feedback_item_ratings (
+    course_id varchar(100)
+    ,course_item_id varchar(100)
+    ,feedback_unit_id varchar(100)
+    ,feedback_unit_type varchar(100)
+    ,feedback_system varchar(100)
+    ,ualberta_feedback_user_id VARCHAR(50) NOT NULL
+    ,feedback_rating int4
+    ,feedback_max_rating int4
+    ,detailed_context varchar(100)
+    ,feedback_ts timestamp
+    ,PRIMARY KEY (course_id, course_item_id, feedback_unit_id, feedback_unit_type, feedback_system, ualberta_feedback_user_id, feedback_ts)
+    ,FOREIGN KEY (course_id) REFERENCES courses(course_id)
+    ,FOREIGN KEY (course_id, course_item_id) REFERENCES course_items(course_id, course_item_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE on_demand_session_memberships (
+    course_id varchar (300)
+    ,on_demand_session_id varchar (300)
+    ,ualberta_user_id VARCHAR(50) NOT NULL
+    ,on_demand_sessions_membership_start_ts timestamp Null DEFAULT Null
+    ,on_demand_sessions_membership_end_ts timestamp Null DEFAULT Null
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE on_demand_sessions (
+    course_id varchar(300)
+    ,on_demand_session_id varchar(300)
+    ,on_demand_sessions_start_ts timestamp Null DEFAULT Null
+    ,on_demand_sessions_end_ts timestamp Null DEFAULT Null
+    ,on_demand_sessions_enrollment_end_ts timestamp Null DEFAULT Null
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE peer_assignments (
+    peer_assignment_id VARCHAR(50)
+    ,peer_assignment_base_id VARCHAR(50)
+    ,peer_assignment_type VARCHAR(50)
+    ,peer_assignment_required_review_count INT4
+    ,peer_assignment_passing_fraction FLOAT8
+    ,peer_assignment_required_reviewer_count_for_score INT4
+    ,peer_assignment_required_wait_for_score_ms INT8
+    ,peer_assignment_maximum_score FLOAT8
+    ,peer_assignment_update_ts TIMESTAMP
+    ,PRIMARY KEY (peer_assignment_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE peer_assignment_review_schema_parts (
+    peer_assignment_id VARCHAR(50)
+    ,peer_assignment_review_schema_part_id VARCHAR(50)
+    ,peer_assignment_review_schema_part_type VARCHAR(50)
+    ,peer_assignment_review_schema_part_order INT4
+    ,peer_assignment_review_schema_part_prompt VARCHAR(1535)
+    ,peer_assignment_review_schema_part_maximum_score FLOAT8
+    ,PRIMARY KEY (peer_assignment_review_schema_part_id, peer_assignment_id)
+    ,FOREIGN KEY (peer_assignment_id) REFERENCES peer_assignments(peer_assignment_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE peer_assignment_review_schema_part_options (
+    peer_assignment_id VARCHAR(50)
+    ,peer_assignment_review_schema_part_id VARCHAR(50)
+    ,peer_assignment_review_schema_part_option_id VARCHAR(50)
+    ,peer_assignment_review_schema_part_option_text VARCHAR(1845)
+    ,peer_assignment_review_schema_part_option_score FLOAT8
+    ,PRIMARY KEY (peer_assignment_id, peer_assignment_review_schema_part_id, peer_assignment_review_schema_part_option_id)
+    ,FOREIGN KEY (peer_assignment_id, peer_assignment_review_schema_part_id) REFERENCES peer_assignment_review_schema_parts(peer_assignment_id, peer_assignment_review_schema_part_id)
+    ,FOREIGN KEY (peer_assignment_id) REFERENCES peer_assignments(peer_assignment_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+
+
+
+echo"<br></br>";
+
+
+
+
+
+$sql = "CREATE TABLE peer_assignment_submission_schema_parts (
+    peer_assignment_id VARCHAR(50)
+    ,peer_assignment_submission_schema_part_id VARCHAR(50)
+    ,peer_assignment_submission_schema_part_type VARCHAR(50)
+    ,peer_assignment_submission_schema_part_order INT4
+    ,peer_assignment_submission_schema_part_prompt VARCHAR(1535)
+    ,PRIMARY KEY (peer_assignment_id, peer_assignment_submission_schema_part_id)
+    ,FOREIGN KEY (peer_assignment_id) REFERENCES peer_assignments(peer_assignment_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+
+
+
+
 $conn->close();
 
 ?>
