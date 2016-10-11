@@ -1895,6 +1895,170 @@ if ($conn->query($sql) === TRUE) {
 
 
 
+
+echo "<br></br>";
+$sql = "CREATE TABLE course_branches (
+    course_branch_id VARCHAR(50)
+    ,course_id VARCHAR(50)
+    ,course_branch_changes_description VARCHAR(1535)
+    ,PRIMARY KEY (course_branch_id)
+    ,FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+echo "<br></br>";
+$sql = "CREATE TABLE course_branch_grades (
+    course_branch_id varchar(100)
+    ,ualberta_user_id VARCHAR(50) NOT NULL
+    ,course_branch_grade_ts timestamp
+    ,course_passing_state_id int4
+    ,course_branch_grade_overall_passed_items int4
+    ,course_branch_grade_overall float4
+    ,course_branch_grade_verified_passed_items int4
+    ,course_branch_grade_verified float4
+    ,PRIMARY KEY (course_branch_id, ualberta_user_id, course_branch_grade_ts)
+    ,FOREIGN KEY (course_branch_id) REFERENCES course_branches(course_branch_id)
+    ,FOREIGN KEY (ualberta_user_id) REFERENCES users(ualberta_user_id)
+    ,FOREIGN KEY (course_passing_state_id) REFERENCES course_passing_states(course_passing_state_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+
+echo "<br></br>";
+$sql = "CREATE TABLE course_branch_item_assessments (
+    course_branch_id varchar(100)
+    ,course_item_id varchar(100)
+    ,assessment_id varchar(100)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+echo "<br></br>";
+$sql = "CREATE TABLE course_branch_item_peer_assignments (
+    course_branch_id varchar(100)
+    ,course_item_id varchar(100)
+    ,peer_assignment_id varchar(100)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+echo "<br></br>";
+$sql = "CREATE TABLE course_branch_item_programming_assignments (
+    course_branch_id varchar(100)
+    ,course_item_id varchar(100)
+    ,programming_assignment_id varchar(100)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+echo "<br></br>";
+$sql = "CREATE TABLE course_branch_modules (
+    course_branch_id VARCHAR(50)
+    ,course_module_id VARCHAR(50)
+    ,course_branch_module_order INT4
+    ,course_branch_module_name VARCHAR(2000)
+    ,course_branch_module_desc VARCHAR(10000)
+    ,PRIMARY KEY (course_branch_id, course_module_id)
+    ,FOREIGN KEY (course_branch_id) REFERENCES course_branches(course_branch_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+echo "<br></br>";
+$sql = "CREATE TABLE course_branch_lessons (
+    course_branch_id VARCHAR(50)
+    ,course_lesson_id VARCHAR(50)
+    ,course_module_id VARCHAR(50)
+    ,course_branch_lesson_order INT4
+    ,course_branch_lesson_name VARCHAR(10000)
+    ,PRIMARY KEY (course_branch_id, course_lesson_id)
+    ,FOREIGN KEY (course_branch_id, course_module_id) REFERENCES course_branch_modules(course_branch_id, course_module_id)
+    ,FOREIGN KEY (course_branch_id) REFERENCES course_branches(course_branch_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
+
+
+echo "<br></br>";
+$sql = "CREATE TABLE course_branch_items (
+    course_branch_id VARCHAR(50)
+    ,course_item_id VARCHAR(50)
+    ,course_lesson_id VARCHAR(50)
+    ,course_branch_item_order INT4
+    ,course_item_type_id INT4
+    ,course_branch_item_name VARCHAR(10000)
+    ,course_branch_item_optional BOOL
+    ,PRIMARY KEY (course_branch_id, course_item_id)
+    ,FOREIGN KEY (course_branch_id, course_lesson_id) REFERENCES course_branch_lessons(course_branch_id, course_lesson_id)
+    ,FOREIGN KEY (course_branch_id) REFERENCES course_branches(course_branch_id)
+    ,FOREIGN KEY (course_item_type_id) REFERENCES course_item_types(course_item_type_id)
+);";
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
 /*
 
 echo "<br></br>";
