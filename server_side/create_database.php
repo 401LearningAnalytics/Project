@@ -244,8 +244,8 @@ echo"<br></br>";
 $sql = "CREATE TABLE assessment_math_expression_patterns (
     assessment_question_id VARCHAR(50)
     ,assessment_pattern_id VARCHAR(50)
-    ,assessment_pattern_display VARCHAR(10000)
-    ,assessment_pattern_feedback VARCHAR(10000)
+    ,assessment_pattern_display TEXT
+    ,assessment_pattern_feedback TEXT
     ,assessment_pattern_correct BOOL
     ,PRIMARY KEY (assessment_question_id, assessment_pattern_id)
     ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
@@ -324,8 +324,8 @@ echo"<br></br>";
 $sql = "CREATE TABLE assessment_options (
     assessment_question_id VARCHAR(50)
     ,assessment_option_id VARCHAR(50)
-    ,assessment_option_display VARCHAR(10000)
-    ,assessment_option_feedback VARCHAR(10000)
+    ,assessment_option_display TEXT
+    ,assessment_option_feedback TEXT
     ,assessment_option_correct BOOL
     ,PRIMARY KEY (assessment_question_id, assessment_option_id)
     ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
@@ -419,8 +419,8 @@ echo"<br></br>";
 $sql = "CREATE TABLE assessment_regex_patterns (
     assessment_question_id VARCHAR(50)
     ,assessment_pattern_id VARCHAR(50)
-    ,assessment_pattern_regex VARCHAR(10000)
-    ,assessment_pattern_feedback VARCHAR(10000)
+    ,assessment_pattern_regex TEXT
+    ,assessment_pattern_feedback TEXT
     ,assessment_pattern_correct BOOL
     ,PRIMARY KEY (assessment_question_id, assessment_pattern_id)
     ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
@@ -504,9 +504,9 @@ echo"<br></br>";
 $sql = "CREATE TABLE assessment_response_patterns (
     assessment_response_id VARCHAR(50)
     ,assessment_pattern_id VARCHAR(50)
-    ,assessment_response_answer VARCHAR(10000)
+    ,assessment_response_answer TEXT
     ,assessment_response_correct BOOL
-    ,assessment_response_feedback VARCHAR(10000)
+    ,assessment_response_feedback TEXT
     ,PRIMARY KEY (assessment_response_id)
     ,FOREIGN KEY (assessment_response_id) REFERENCES assessment_responses(assessment_response_id)
 );";
@@ -524,12 +524,12 @@ $sql = "CREATE TABLE assessment_single_numeric_patterns (
     assessment_question_id VARCHAR(50)
     ,assessment_pattern_id VARCHAR(50)
     ,assessment_pattern_type_id INT4
-    ,assessment_pattern_value VARCHAR(10000)
+    ,assessment_pattern_value TEXT
     ,assessment_pattern_max FLOAT8
     ,assessment_pattern_min FLOAT8
     ,assessment_pattern_include_min BOOL
     ,assessment_pattern_include_max BOOL
-    ,assessment_pattern_feedback VARCHAR(10000)
+    ,assessment_pattern_feedback TEXT
     ,assessment_pattern_correct BOOL
     ,PRIMARY KEY (assessment_question_id, assessment_pattern_id)
     ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
@@ -569,8 +569,8 @@ echo"<br></br>";
 $sql = "CREATE TABLE assessment_text_exact_match_patterns (
     assessment_question_id VARCHAR(50)
     ,assessment_pattern_id VARCHAR(50)
-    ,assessment_pattern_display VARCHAR(10000)
-    ,assessment_pattern_feedback VARCHAR(10000)
+    ,assessment_pattern_display TEXT
+    ,assessment_pattern_feedback TEXT
     ,assessment_pattern_correct BOOL
     ,PRIMARY KEY (assessment_question_id, assessment_pattern_id)
     ,FOREIGN KEY (assessment_question_id) REFERENCES assessment_questions(assessment_question_id)
@@ -886,7 +886,7 @@ if ($conn->query($sql) === TRUE) {
 echo"<br></br>";
 $sql = "CREATE TABLE course_progress_state_types (
     course_progress_state_type_id int4
-    ,course_progress_state_type_desc varchar(400)
+    ,course_progress_state_type_desc TEXT
     ,PRIMARY KEY (course_progress_state_type_id)
 );";
 if ($conn->query($sql) === TRUE) {
@@ -1092,8 +1092,8 @@ echo"<br></br>";
 $sql = "CREATE TABLE discussion_forums (
     discussion_forum_id VARCHAR(50)
     ,course_id VARCHAR(50)
-    ,discussion_forum_title VARCHAR(10000)
-    ,discussion_forum_description VARCHAR(10000)
+    ,discussion_forum_title TEXT
+    ,discussion_forum_description TEXT
     ,discussion_forum_order INT4
     ,PRIMARY KEY (discussion_forum_id)
 );";
@@ -1170,8 +1170,8 @@ echo"<br></br>";
 $sql = "CREATE TABLE discussion_questions (
     discussion_question_id VARCHAR(50)
     ,ualberta_discussions_user_id VARCHAR(50) NOT NULL
-    ,discussion_question_title VARCHAR(10000)
-    ,discussion_question_details VARCHAR(10000)
+    ,discussion_question_title TEXT
+    ,discussion_question_details TEXT
     ,discussion_question_context_type VARCHAR(50)
     ,course_id VARCHAR(50)
     ,course_module_id VARCHAR(50)
@@ -1366,7 +1366,7 @@ $sql = "CREATE TABLE peer_assignment_review_schema_parts (
     ,peer_assignment_review_schema_part_id VARCHAR(50)
     ,peer_assignment_review_schema_part_type VARCHAR(50)
     ,peer_assignment_review_schema_part_order INT4
-    ,peer_assignment_review_schema_part_prompt VARCHAR(1535)
+    ,peer_assignment_review_schema_part_prompt TEXT
     ,peer_assignment_review_schema_part_maximum_score FLOAT8
     ,PRIMARY KEY (peer_assignment_review_schema_part_id, peer_assignment_id)
     ,FOREIGN KEY (peer_assignment_id) REFERENCES peer_assignments(peer_assignment_id)
@@ -1412,7 +1412,7 @@ $sql = "CREATE TABLE peer_assignment_submission_schema_parts (
     ,peer_assignment_submission_schema_part_id VARCHAR(50)
     ,peer_assignment_submission_schema_part_type VARCHAR(50)
     ,peer_assignment_submission_schema_part_order INT4
-    ,peer_assignment_submission_schema_part_prompt VARCHAR(1535)
+    ,peer_assignment_submission_schema_part_prompt TEXT
     ,PRIMARY KEY (peer_assignment_id, peer_assignment_submission_schema_part_id)
     ,FOREIGN KEY (peer_assignment_id) REFERENCES peer_assignments(peer_assignment_id)
 );";
@@ -1433,7 +1433,7 @@ $sql = "CREATE TABLE peer_submissions (
     ,ualberta_peer_assignments_user_id VARCHAR(50) NOT NULL
     ,peer_submission_created_ts TIMESTAMP
     ,peer_submission_is_draft BOOL
-    ,peer_submission_title VARCHAR(1535)
+    ,peer_submission_title TEXT
     ,peer_submission_removed_from_public_ts TIMESTAMP Null DEFAULT Null
     ,peer_submission_score_available_ts TIMESTAMP Null DEFAULT Null
     ,peer_submission_score FLOAT8
@@ -1455,7 +1455,7 @@ $sql = "CREATE TABLE peer_comments (
     ,peer_submission_id VARCHAR(50)
     ,ualberta_peer_assignments_user_id VARCHAR(50) NOT NULL
     ,peer_comment_created_ts TIMESTAMP
-    ,peer_comment_text VARCHAR(1535)
+    ,peer_comment_text TEXT
     ,PRIMARY KEY (peer_comment_id)
     ,FOREIGN KEY (peer_submission_id) REFERENCES peer_submissions(peer_submission_id)
 );";
@@ -1519,7 +1519,7 @@ $sql = "CREATE TABLE peer_review_part_free_responses (
     peer_assignment_id VARCHAR(50)
     ,peer_assignment_review_schema_part_id VARCHAR(50)
     ,peer_review_id VARCHAR(50)
-    ,peer_review_part_free_response_text VARCHAR(1535)
+    ,peer_review_part_free_response_text TEXT
     ,PRIMARY KEY (peer_assignment_id, peer_assignment_review_schema_part_id, peer_review_id)
     ,FOREIGN KEY (peer_review_id) REFERENCES peer_reviews(peer_review_id)
     ,FOREIGN KEY (peer_assignment_id, peer_assignment_review_schema_part_id) REFERENCES peer_assignment_review_schema_parts(peer_assignment_id, peer_assignment_review_schema_part_id)
@@ -1541,7 +1541,7 @@ $sql = "CREATE TABLE peer_skips (
     ,ualberta_peer_assignments_user_id VARCHAR(50) NOT NULL
     ,peer_skip_created_ts TIMESTAMP
     ,peer_skip_type VARCHAR(50)
-    ,peer_skip_text VARCHAR(1535)
+    ,peer_skip_text TEXT
     ,PRIMARY KEY (peer_skip_id)
     ,FOREIGN KEY (peer_submission_id) REFERENCES peer_submissions(peer_submission_id)
 );";
@@ -1562,7 +1562,7 @@ $sql = "CREATE TABLE peer_submission_part_free_responses (
     peer_assignment_id VARCHAR(50)
     ,peer_assignment_submission_schema_part_id VARCHAR(50)
     ,peer_submission_id VARCHAR(50)
-    ,peer_submission_part_free_response_text VARCHAR(1535)
+    ,peer_submission_part_free_response_text TEXT
     ,PRIMARY KEY (peer_assignment_id, peer_assignment_submission_schema_part_id, peer_submission_id)
     ,FOREIGN KEY (peer_assignment_id, peer_submission_id) REFERENCES peer_submissions(peer_assignment_id, peer_submission_id)
     ,FOREIGN KEY (peer_assignment_id, peer_assignment_submission_schema_part_id) REFERENCES peer_assignment_submission_schema_parts(peer_assignment_id, peer_assignment_submission_schema_part_id)
@@ -1605,9 +1605,9 @@ $sql = "CREATE TABLE peer_submission_part_urls (
     peer_assignment_id VARCHAR(50)
     ,peer_assignment_submission_schema_part_id VARCHAR(50)
     ,peer_submission_id VARCHAR(50)
-    ,peer_submission_part_url_url VARCHAR(1535)
-    ,peer_submission_part_url_title VARCHAR(1535)
-    ,peer_submission_part_url_description VARCHAR(1535)
+    ,peer_submission_part_url_url TEXT
+    ,peer_submission_part_url_title TEXT
+    ,peer_submission_part_url_description TEXT
     ,PRIMARY KEY (peer_assignment_id, peer_assignment_submission_schema_part_id, peer_submission_id)
     ,FOREIGN KEY (peer_assignment_id, peer_submission_id) REFERENCES peer_submissions(peer_assignment_id, peer_submission_id)
     ,FOREIGN KEY (peer_assignment_id, peer_assignment_submission_schema_part_id) REFERENCES peer_assignment_submission_schema_parts(peer_assignment_id, peer_assignment_submission_schema_part_id)
@@ -1634,10 +1634,10 @@ $sql = "CREATE TABLE programming_assignments (
     ,programming_assignment_base_id VARCHAR(50)
     ,programming_assignment_type VARCHAR(50)
     ,programming_assignment_submission_type VARCHAR(50)
-    ,programming_assignment_instruction_text VARCHAR(1535)
+    ,programming_assignment_instruction_text TEXT
     ,programming_assignment_passing_fraction FLOAT8
     ,programming_assignment_submission_builder_schema_type VARCHAR(50)
-    ,programming_assignment_submission_builder_schema VARCHAR(1535)
+    ,programming_assignment_submission_builder_schema TEXT
     ,programming_assignment_update_ts TIMESTAMP
     ,PRIMARY KEY (programming_assignment_id)
 );";
@@ -1677,13 +1677,13 @@ echo "<br></br>";
 $sql = "CREATE TABLE programming_assignment_submission_schema_parts (
     programming_assignment_id VARCHAR(50)
     ,programming_assignment_submission_schema_part_id VARCHAR(50)
-    ,programming_assignment_submission_schema_part_title VARCHAR(1535)
+    ,programming_assignment_submission_schema_part_title TEXT
     ,programming_assignment_submission_schema_part_type VARCHAR(50)
     ,programming_assignment_submission_schema_part_order INT4
     ,programming_assignment_submission_schema_part_max_score INT4
     ,programming_assignment_submission_schema_part_is_optional BOOL
     ,programming_assignment_submission_schema_part_xacgt8 INT4
-    ,programming_assignment_submission_schema_default_g663i6 VARCHAR(1535)
+    ,programming_assignment_submission_schema_default_g663i6 TEXT
     ,PRIMARY KEY (programming_assignment_submission_schema_part_id, programming_assignment_id)
     ,FOREIGN KEY (programming_assignment_id) REFERENCES programming_assignments(programming_assignment_id)
 );";
@@ -1724,7 +1724,7 @@ $sql = "CREATE TABLE programming_submission_part_text_submissions (
     programming_assignment_id VARCHAR(50)
     ,programming_assignment_submission_schema_part_id VARCHAR(50)
     ,programming_submission_id VARCHAR(50)
-    ,programming_submission_part_text_submission_answer VARCHAR(1535)
+    ,programming_submission_part_text_submission_answer TEXT
     ,PRIMARY KEY (programming_assignment_id, programming_assignment_submission_schema_part_id, programming_submission_id)
     ,FOREIGN KEY (programming_assignment_id, programming_submission_id) REFERENCES programming_submissions(programming_assignment_id, programming_submission_id)
     ,FOREIGN KEY (programming_assignment_id) REFERENCES programming_assignments(programming_assignment_id)
@@ -1747,8 +1747,8 @@ $sql = "CREATE TABLE programming_submission_part_grid_submissions (
     programming_assignment_id VARCHAR(50)
     ,programming_assignment_submission_schema_part_id VARCHAR(50)
     ,programming_submission_id VARCHAR(50)
-    ,programming_submission_part_grid_submission_url VARCHAR(1535)
-    ,programming_submission_part_grid_submission_custom_cykkte VARCHAR(1535)
+    ,programming_submission_part_grid_submission_url TEXT
+    ,programming_submission_part_grid_submission_custom_cykkte TEXT
     ,PRIMARY KEY (programming_assignment_id, programming_assignment_submission_schema_part_id, programming_submission_id)
     ,FOREIGN KEY (programming_assignment_id, programming_submission_id) REFERENCES programming_submissions(programming_assignment_id, programming_submission_id)
     ,FOREIGN KEY (programming_assignment_id) REFERENCES programming_assignments(programming_assignment_id)
@@ -1797,7 +1797,7 @@ $sql = "CREATE TABLE programming_submission_part_evaluations (
     ,programming_submission_id VARCHAR(50)
     ,programming_submission_part_score INT4
     ,programming_submission_part_grading_ts TIMESTAMP
-    ,programming_submission_part_feedback VARCHAR(1535)
+    ,programming_submission_part_feedback TEXT
     ,PRIMARY KEY (programming_assignment_id, programming_assignment_submission_schema_part_id, programming_submission_id)
     ,FOREIGN KEY (programming_assignment_id, programming_submission_id) REFERENCES programming_submissions(programming_assignment_id, programming_submission_id)
     ,FOREIGN KEY (programming_assignment_id) REFERENCES programming_assignments(programming_assignment_id)
@@ -1836,7 +1836,7 @@ echo "<br></br>";
 $sql = "CREATE TABLE course_branches (
     course_branch_id VARCHAR(50)
     ,course_id VARCHAR(50)
-    ,course_branch_changes_description VARCHAR(1535)
+    ,course_branch_changes_description TEXT
     ,PRIMARY KEY (course_branch_id)
     ,FOREIGN KEY (course_id) REFERENCES courses(course_id)
 );";
