@@ -58,9 +58,13 @@ if ( isset($_POST["submit"]) ) {
 
             if ($i > 0){
                   while($j < $n){
-                    if (strcmp($line[$j], "") != 0){
+                    if (strcmp($line[$j], "") != 0 & strcmp($line[$j], "t") != 0 && strcmp($line[$j], "f") != 0){
                       $string = $string."\"".$line[$j]."\"";
-                  }
+                    }else if(strcmp($line[$j], "f") == 0){
+                      $string = $string."false";
+                    }else if(strcmp($line[$j], "t") == 0){
+                      $string = $string."true";
+                    }
 
                     if (strcmp($line[$j], "") == 0){$string = $string."NULL";}
 
