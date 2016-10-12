@@ -15,7 +15,7 @@
 		$connection = mysql_connect('localhost', 'Wei', '123456');
 		mysql_select_db('learner');
 
-		$query = "SELECT ualberta_user_id FROM course_memberships";
+		$query = "SELECT DISTINCT ualberta_user_id FROM course_memberships";
 		$result = mysql_query($query);
 
 		
