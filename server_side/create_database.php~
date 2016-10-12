@@ -873,7 +873,6 @@ $sql = "CREATE TABLE course_memberships (
     ,course_membership_ts TIMESTAMP
     ,PRIMARY KEY (ualberta_user_id, course_id, course_membership_ts)
     ,FOREIGN KEY (ualberta_user_id) REFERENCES users(ualberta_user_id)
-    ,FOREIGN_KEY (course_id) REFERENCES course_memberships(course_id)
 );";
 if ($conn->query($sql) === TRUE) {
     echo "Table created successfully";

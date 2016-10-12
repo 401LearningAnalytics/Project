@@ -14,7 +14,7 @@
 		$connection = mysql_connect('localhost', 'Wei', '123456');
 		mysql_select_db('learner');
 
-		$query = "SELECT course_name FROM courses"; 
+		$query = "SELECT course_name FROM courses"; //You don't need a ; like you do in SQL
 		$result = mysql_query($query);
 
 		
