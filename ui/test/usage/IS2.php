@@ -22,6 +22,7 @@
 		mysql_close(); //Make sure to close out the database connection
 
 	?>
+	</ul>
 </div>
 </body>
 </html>
