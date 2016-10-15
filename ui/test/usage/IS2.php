@@ -14,7 +14,7 @@
 		$result = mysql_query($query);
 	?>
 		
-		<table class="table table-striped mt33">
+		<table class="table table-striped mt33" border="1" cellpadding="0" cellspacing="" width="100%">
 		    <tbody>
 		    <?php
 			$i = 0; $trEnd = 0;
@@ -22,7 +22,8 @@
 			    if($i == 0){
 				echo '<tr>';
 			    }
-			    echo '&nbsp<td><h3>'.$row['course_name'].'</td></h3>';
+			    echo '<td><h3>'.$row['course_name'].'</td></h3>';
+		            require("courses.php");
 			    if($i == 2){
 				$i = 0; $trEnd = 1;
 			    }else{

@@ -1,28 +1,34 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<script type="text/javascript">
-		window.onload = function () {
-			var chart = new CanvasJS.Chart("chartContainer", {
-				data: [{
-					type: "column",
-					dataPoints: [
-						{ y: 45, label: "Poor\n(0-49)" },
-						{ y: 31, label: "Good(50-80)" },
-						{ y: 52, label: "Excellent(81-100)" },
-						
-					]
-				}]
-			});
-			chart.render();
-		}
-	</script>
-	<script src="canvasjs.min.js"></script>
-	<title>Courses</title>
-</head>
+<!DOCTYPE html>
+    <html>
+      <head>
+        <title>The d3 test</title>
+<style>
+.chart {
 
-<body>
-	<div id="chartContainer" style="height: 300px; width: 350px;"></div>
-</body>
+}
 
-</html>
+.main text {
+    font: 10px sans-serif;	
+}
+
+.axis line, .axis path {
+    shape-rendering: crispEdges;
+    stroke: black;
+    fill: none;
+}
+
+circle {
+    fill: steelblue;
+}
+
+</style>
+        <script type="text/javascript" src="http://mbostock.github.com/d3/d3.v2.js"></script>
+      </head>
+      <body>
+        <div class='content'>
+          <!-- /the chart goes here -->
+        </div>
+        <script type="text/javascript" src="scatterchart.js"></script>
+      </body>
+    </html>
+
