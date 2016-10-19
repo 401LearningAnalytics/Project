@@ -14,11 +14,9 @@ To create database and all the tables, open webpage /server_side/create_database
 To populate database, use /server_side/upload.php and submit the csv files you intend to upload. The order of uploading csv file is enforced 
 
 
-     
 
-      
        
-Reference:    
+###Reference:    
 How to upload and parse a CSV file in php   
 http://stackoverflow.com/questions/5593473/how-to-upload-and-parse-a-csv-file-in-php
 
