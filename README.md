@@ -7,6 +7,7 @@ It is implemented in HTML and javascript for the front end and use PHP mySQL for
 The server is provided by Cybera.
 
 
+###Usage:   
 For test usage, set up localhost, install mysql, and change the lines including Mysql connection in the files to you own username.
 
 To create database and all the tables, open webpage /server_side/create_database.php(opening more than once will cause error of that tables already exist)
