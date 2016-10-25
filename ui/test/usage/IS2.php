@@ -10,7 +10,7 @@
 		$connection = mysql_connect('localhost', 'Wei', '123456');
 		mysql_select_db('learner');
 
-		$query = "SELECT course_name FROM courses"; 
+		$query = "SELECT course_name FROM courses Order by course_launch_ts"; 
 		$result = mysql_query($query);
 	?>
 		
@@ -22,8 +22,11 @@
 			    if($i == 0){
 				echo '<tr>';
 			    }
-			    echo '<td><h3>'.$row['course_name'].'</td></h3>';
-		            require("courses.php");
+		            
+			    echo '<td><h3>'.$row['course_name'].'</h3>';
+		            include_once("courses.php");
+			    echo '</td>';
+			    
 			    if($i == 2){
 				$i = 0; $trEnd = 1;
 			    }else{
