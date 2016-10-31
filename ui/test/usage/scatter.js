@@ -1,3 +1,6 @@
+// d3.js
+
+// set up dimensions of the scatter plots
 var margin = { top: 50, right: 300, bottom: 50, left: 50 },
     outerWidth = 800,
     outerHeight = 350,
@@ -10,11 +13,14 @@ var x = d3.scale.linear()
 var y = d3.scale.linear()
     .range([height, 0]).nice();
 
+// setup variables of x axis and y axis
 var xCat = "Calories",
     yCat = "Potassium",
     rCat = "Protein (g)",
     colorCat = "Manufacturer";
 
+
+// read data from csv file and plot based on these data
 d3.csv("cereal.csv", function(data) {
   data.forEach(function(d) {
     d.Calories = +d.Calories;
@@ -31,6 +37,7 @@ d3.csv("cereal.csv", function(data) {
     d["Vitamins and Minerals"] = +d["Vitamins and Minerals"];
   });
 
+// setup appropriate max and min value of x and y axis
   var xMax = d3.max(data, function(d) { return d[xCat]; }) * 1.05,
       xMin = d3.min(data, function(d) { return d[xCat]; }),
       xMin = xMin > 0 ? 0 : xMin,
@@ -51,6 +58,7 @@ d3.csv("cereal.csv", function(data) {
       .orient("left")
       .tickSize(-width);
 
+  // set up colors of plots
   var color = d3.scale.category10();
 
   var tip = d3.tip()
@@ -122,6 +130,7 @@ d3.csv("cereal.csv", function(data) {
       .attr("x2", 0)
       .attr("y2", height);
 
+  // set attributes of dots
   objects.selectAll(".dot")
       .data(data)
     .enter().append("circle")
@@ -132,7 +141,8 @@ d3.csv("cereal.csv", function(data) {
       .on("mouseover", tip.show)
       .on("mouseout", tip.hide);
 
-  
+	
+    
   d3.select("input").on("click", change);
 
   function change() {
@@ -149,6 +159,7 @@ d3.csv("cereal.csv", function(data) {
     objects.selectAll(".dot").transition().duration(1000).attr("transform", transform);
   }
 
+  // set up zoom in and out
   function zoom() {
     svg.select(".x.axis").call(xAxis);
     svg.select(".y.axis").call(yAxis);
