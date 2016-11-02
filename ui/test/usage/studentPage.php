@@ -16,23 +16,22 @@
   <body>
 	<h1>Indivisual student Page</h1>
 	<table style="height: 455px;" width="795" align="center">
-	<tbody>
-	<tr>
+	<tbody style ="right: 800px;">
 	<!-- create a table which has two columns -->
 	<!-- personal information on the left columns -->
 	<!-- course information on the right columns -->
-	<td rowspan="2">
+
 
 	<!-- this should be changed since it is a mock one -->
-	<img src="http://articles.leetcode.com/wp-content/uploads/2015/03/touxiang.png" alt="" width="200" height="200" />
+	<img src="http://articles.leetcode.com/wp-content/uploads/2015/03/touxiang.png" alt="" width="200" height="200" td rowspan="2" right: -400px/>
+  <tr >
 	<p><strong>Ualberta_user_id: </strong></p>
 	<p>af858c7018f031692573be1de8fd62188e5d1bac</p>
 	<p><strong>Gender:</strong> male</p>
 	<p><strong>Join Time:</strong> 2012-02-22 11:32:05</p>
-	</td>
-
 
 	</tr>
+
 	</tbody>
 	</table>
 
@@ -60,6 +59,8 @@
   position: relative;
   bottom: 0;
   right: 0px;
+  margin-top: -450px;
+
 
 }
 
@@ -105,6 +106,7 @@
 
 </style>
 
+
 <!-- Resources -->
 <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="https://www.amcharts.com/lib/3/serial.js"></script>
@@ -112,42 +114,62 @@
 <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
 <script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
 
+
+<?php
+// connect to mysql database
+$connection = mysql_connect('localhost', 'root', '117130');
+mysql_select_db('learner');
+
+// select course names from database
+$query = "SELECT course_name FROM courses Order by course_launch_ts";
+$result = mysql_query($query);
+$name1 = "Introduction to Software Product Management";
+$name2 = "Software Processes and Agile Practices";
+$name3 = "Client Needs and Software Requirements";
+$name4 = "Agile Planning for Software Products";
+$name5 = "Reviews & Metrics for Software Improvements";
+$name6 = "Software Product Management Capstone";
+
+?>
 <!-- Chart code -->
 <script>
 
 
 
-$name1 = "Course 1"
-$name2 = "Course 2"
-$name3 = "Course 3"
-$name4 = "Course 4"
-$name5 = "Course 5"
-$name6 = "Course 6"
+<!--http://stackoverflow.com/questions/16328256/extra-space-at-bottom-of-page-->
+
+var $name1 = " <?php echo $name1 ?>"
+var $name2 = " <?php echo $name2 ?>"
+var $name3 = " <?php echo $name3 ?>"
+var $name4 = " <?php echo $name4 ?>"
+var $name5 = " <?php echo $name5 ?>"
+var $name6 = " <?php echo $name6 ?>"
+
 
 
 var chartData = [ {
-  "country": "USA",
-  "visits": 4025,
+  "component": "Quiz",
+  "mark": 4025,
   "color": "#FF0F00"
 }, {
-  "country": "China",
-  "visits": 1882,
+  "component": "Programming",
+  "mark": 1882,
   "color": "#FF6600"
 }, {
-  "country": "Japan",
-  "visits": 1809,
+  "component": "Peer",
+  "mark": 1809,
   "color": "#FF9E01"
 }, {
-  "country": "Germany",
-  "visits": 1322,
+  "component": "XXX",
+  "mark": 1322,
   "color": "#FCD202"
 }, {
-  "country": "France",
-  "visits": 1114,
+  "component": "XXX",
+  "mark": 1114,
   "color": "#B0DE09"
 }, {
-  "country": "India",
-  "visits": 984,
+  "component": "XXX",
+  "mark": 984,
   "color": "#04D215"
 }];
 
@@ -156,7 +178,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
   "theme": "none",
   "type": "serial",
   "dataProvider": chartData,
-  "categoryField": "country",
+  "categoryField": "component",
   "depth3D": 10,
   "angle": 30,
 
@@ -170,7 +192,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
   } ],
 
   "graphs": [ {
-    "valueField": "visits",
+    "valueField": "mark",
     "colorField": "color",
     "type": "column",
     "lineAlpha": 0.1,
@@ -192,20 +214,20 @@ var chart = AmCharts.makeChart( "chartdiv", {
 
 
 var chartData2 = [ {
-  "country": "USA",
-  "visits": 4025,
+  "component": "Quiz",
+  "mark": 4025,
   "color": "#FF0F00"
 }, {
-  "country": "China",
-  "visits": 1882,
+  "component": "Programming",
+  "mark": 1882,
   "color": "#FF6600"
 }, {
-  "country": "Japan",
-  "visits": 1809,
+  "component": "Peer",
+  "mark": 1809,
   "color": "#FF9E01"
 }, {
-  "country": "Germany",
-  "visits": 1322,
+  "component": "XXX",
+  "mark": 1322,
   "color": "#FCD202"
 }]
 
@@ -215,7 +237,7 @@ var chart = AmCharts.makeChart( "chartdiv2", {
   "theme": "none",
   "type": "serial",
   "dataProvider": chartData2,
-  "categoryField": "country",
+  "categoryField": "component",
   "depth3D": 10,
   "angle": 30,
 
@@ -229,7 +251,7 @@ var chart = AmCharts.makeChart( "chartdiv2", {
   } ],
 
   "graphs": [ {
-    "valueField": "visits",
+    "valueField": "mark",
     "colorField": "color",
     "type": "column",
     "lineAlpha": 0.1,
@@ -252,20 +274,20 @@ var chart = AmCharts.makeChart( "chartdiv2", {
 
 
 var chartData3 = [ {
-  "country": "USA",
-  "visits": 4025,
+  "component": "Quiz",
+  "mark": 4025,
   "color": "#FF0F00"
 }, {
-  "country": "China",
-  "visits": 1882,
+  "component": "Programming",
+  "mark": 1882,
   "color": "#FF6600"
 }, {
-  "country": "Japan",
-  "visits": 1809,
+  "component": "Peer",
+  "mark": 1809,
   "color": "#FF9E01"
 }, {
-  "country": "Germany",
-  "visits": 1322,
+  "component": "XXX",
+  "mark": 1322,
   "color": "#FCD202"
 }]
 
@@ -275,7 +297,7 @@ var chart3 = AmCharts.makeChart( "chartdiv3", {
   "theme": "none",
   "type": "serial",
   "dataProvider": chartData3,
-  "categoryField": "country",
+  "categoryField": "component",
   "depth3D": 10,
   "angle": 30,
 
@@ -289,7 +311,7 @@ var chart3 = AmCharts.makeChart( "chartdiv3", {
   } ],
 
   "graphs": [ {
-    "valueField": "visits",
+    "valueField": "mark",
     "colorField": "color",
     "type": "column",
     "lineAlpha": 0.1,
@@ -311,20 +333,20 @@ var chart3 = AmCharts.makeChart( "chartdiv3", {
 
 
 var chartData4 = [ {
-  "country": "USA",
-  "visits": 4025,
+  "component": "Quiz",
+  "mark": 4025,
   "color": "#FF0F00"
 }, {
-  "country": "China",
-  "visits": 1882,
+  "component": "Programming",
+  "mark": 1882,
   "color": "#FF6600"
 }, {
-  "country": "Japan",
-  "visits": 1809,
+  "component": "Peer",
+  "mark": 1809,
   "color": "#FF9E01"
 }, {
-  "country": "Germany",
-  "visits": 1322,
+  "component": "XXX",
+  "mark": 1322,
   "color": "#FCD202"
 }]
 
@@ -333,7 +355,7 @@ var chart = AmCharts.makeChart( "chartdiv4", {
   "theme": "none",
   "type": "serial",
   "dataProvider": chartData4,
-  "categoryField": "country",
+  "categoryField": "component",
   "depth3D": 10,
   "angle": 30,
 
@@ -348,7 +370,7 @@ var chart = AmCharts.makeChart( "chartdiv4", {
   } ],
 
   "graphs": [ {
-    "valueField": "visits",
+    "valueField": "mark",
     "colorField": "color",
     "type": "column",
     "lineAlpha": 0.1,
@@ -369,20 +391,20 @@ var chart = AmCharts.makeChart( "chartdiv4", {
 
 
 var chartData5 = [ {
-  "country": "USA",
-  "visits": 4025,
+  "component": "Quiz",
+  "mark": 4025,
   "color": "#FF0F00"
 }, {
-  "country": "China",
-  "visits": 1882,
+  "component": "Programming",
+  "mark": 1882,
   "color": "#FF6600"
 }, {
-  "country": "Japan",
-  "visits": 1809,
+  "component": "Peer",
+  "mark": 1809,
   "color": "#FF9E01"
 }, {
-  "country": "Germany",
-  "visits": 1322,
+  "component": "XXX",
+  "mark": 1322,
   "color": "#FCD202"
 }]
 
@@ -391,7 +413,7 @@ var chart = AmCharts.makeChart( "chartdiv5", {
   "theme": "none",
   "type": "serial",
   "dataProvider": chartData5,
-  "categoryField": "country",
+  "categoryField": "component",
   "depth3D": 10,
   "angle": 30,
 
@@ -406,7 +428,7 @@ var chart = AmCharts.makeChart( "chartdiv5", {
   } ],
 
   "graphs": [ {
-    "valueField": "visits",
+    "valueField": "mark",
     "colorField": "color",
     "type": "column",
     "lineAlpha": 0.1,
@@ -427,20 +449,20 @@ var chart = AmCharts.makeChart( "chartdiv5", {
 
 
 var chartData6 = [ {
-  "country": "USA",
-  "visits": 4025,
+  "component": "Quiz",
+  "mark": 4025,
   "color": "#FF0F00"
 }, {
-  "country": "China",
-  "visits": 1882,
+  "component": "Programming",
+  "mark": 1882,
   "color": "#FF6600"
 }, {
-  "country": "Japan",
-  "visits": 1809,
+  "component": "Peer",
+  "mark": 1809,
   "color": "#FF9E01"
 }, {
-  "country": "Germany",
-  "visits": 1322,
+  "component": "XXX",
+  "mark": 1322,
   "color": "#FCD202"
 }]
 
@@ -449,7 +471,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   "theme": "none",
   "type": "serial",
   "dataProvider": chartData6,
-  "categoryField": "country",
+  "categoryField": "component",
   "depth3D": 10,
   "angle": 30,
 
@@ -464,7 +486,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   } ],
 
   "graphs": [ {
-    "valueField": "visits",
+    "valueField": "mark",
     "colorField": "color",
     "type": "column",
     "lineAlpha": 0.1,
