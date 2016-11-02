@@ -41,6 +41,6 @@ http://stackoverflow.com/questions/16902943/how-add-data-in-json-array-from-php
   
 Individual student page chart  
 http://www.amcharts.com/javascript-charts/?gclid=CNj9pLnYidACFQgIaQod8ioGag  
-
-Pass variable from PHP to Javascript
-http://www.dyn-web.com/tutorials/php-js/scalar.php
+  
+Pass variable from PHP to Javascript  
+http://www.dyn-web.com/tutorials/php-js/scalar.php  
