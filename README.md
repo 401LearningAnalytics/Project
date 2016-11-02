@@ -27,4 +27,18 @@ http://php.net/manual/en/function.basename.php
 Parse a CSV string into an array   
 http://php.net/manual/en/function.str-getcsv.php
 http://stackoverflow.com/questions/9139202/how-to-parse-a-csv-file-using-php
-http://www.w3schools.com/php/func_filesystem_fgetcsv.asp
+http://www.w3schools.com/php/func_filesystem_fgetcsv.asp  
+   
+How to change element position in HTML  
+http://stackoverflow.com/questions/4564638/using-position-relative-absolute-within-a-td  
+
+HTML formatting/Extra Space at the end
+http://stackoverflow.com/questions/16328256/extra-space-at-bottom-of-page  
+  
+Appending data in Json array in PHP  
+http://stackoverflow.com/questions/25917027/append-data-to-json-array-using-php  
+http://stackoverflow.com/questions/16902943/how-add-data-in-json-array-from-php
+  
+Individual student page chart  
+http://www.amcharts.com/javascript-charts/?gclid=CNj9pLnYidACFQgIaQod8ioGag  
+
