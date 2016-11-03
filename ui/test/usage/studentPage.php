@@ -117,12 +117,35 @@
 
 <?php
 // connect to mysql database
-$connection = mysql_connect('localhost', 'root', '117130');
-mysql_select_db('learner');
+$link = mysqli_connect("localhost", "root", "117130", "learner");
 
-// select course names from database
-$query = "SELECT course_name FROM courses Order by course_launch_ts";
-$result = mysql_query($query);
+/* check connection */
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s<br>", mysqli_connect_error());
+    exit();
+}else{
+    printf("connection success <br>");
+}
+
+$sql = "SELECT course_item_grade_overall, course_item_id FROM course_item_grades where ualberta_user_id = \"2318c5c549b23f9c48ebec81d686f985314640ed\";";
+
+if ($result = mysqli_query($link, $sql)) {
+
+    echo "Fetching data success<br>";
+
+    /* fetch associative array */
+    while ($row = mysqli_fetch_row($result)) {
+        foreach($row as $grade){
+          echo $grade[0]."<br>";
+        }
+    }
+    /* free result set */
+    mysqli_free_result($result);
+}
+
+/* close connection */
+mysqli_close($link);
+
 $name1 = "Introduction to Software Product Management";
 $name2 = "Software Processes and Agile Practices";
 $name3 = "Client Needs and Software Requirements";
@@ -149,7 +172,7 @@ var $name6 = " <?php echo $name6 ?>"
 
 var chartData = [ {
   "component": "Quiz",
-  "mark": 4025,
+  "mark": 25,
   "color": "#FF0F00"
 }, {
   "component": "Programming",
@@ -219,16 +242,24 @@ var chartData2 = [ {
   "color": "#FF0F00"
 }, {
   "component": "Programming",
-  "mark": 1882,
+  "mark": 882,
   "color": "#FF6600"
 }, {
   "component": "Peer",
-  "mark": 1809,
+  "mark": 809,
   "color": "#FF9E01"
 }, {
   "component": "XXX",
-  "mark": 1322,
+  "mark": 132,
   "color": "#FCD202"
+}, {
+  "component": "XXX",
+  "mark": 214,
+  "color": "#B0DE09"
+}, {
+  "component": "XXX",
+  "mark": 184,
+  "color": "#04D215"
 }]
 
 
@@ -275,7 +306,7 @@ var chart = AmCharts.makeChart( "chartdiv2", {
 
 var chartData3 = [ {
   "component": "Quiz",
-  "mark": 4025,
+  "mark": 225,
   "color": "#FF0F00"
 }, {
   "component": "Programming",
@@ -289,6 +320,14 @@ var chartData3 = [ {
   "component": "XXX",
   "mark": 1322,
   "color": "#FCD202"
+}, {
+  "component": "XXX",
+  "mark": 0,
+  "color": "#B0DE09"
+}, {
+  "component": "XXX",
+  "mark": 984,
+  "color": "#04D215"
 }]
 
 
@@ -334,20 +373,28 @@ var chart3 = AmCharts.makeChart( "chartdiv3", {
 
 var chartData4 = [ {
   "component": "Quiz",
-  "mark": 4025,
+  "mark": 405,
   "color": "#FF0F00"
 }, {
   "component": "Programming",
-  "mark": 1882,
+  "mark": 182,
   "color": "#FF6600"
 }, {
   "component": "Peer",
-  "mark": 1809,
+  "mark": 189,
   "color": "#FF9E01"
 }, {
   "component": "XXX",
   "mark": 1322,
   "color": "#FCD202"
+}, {
+  "component": "XXX",
+  "mark": 1114,
+  "color": "#B0DE09"
+}, {
+  "component": "XXX",
+  "mark": 984,
+  "color": "#04D215"
 }]
 
 
@@ -392,20 +439,28 @@ var chart = AmCharts.makeChart( "chartdiv4", {
 
 var chartData5 = [ {
   "component": "Quiz",
-  "mark": 4025,
+  "mark": 0,
   "color": "#FF0F00"
 }, {
   "component": "Programming",
-  "mark": 1882,
+  "mark": 0,
   "color": "#FF6600"
 }, {
   "component": "Peer",
-  "mark": 1809,
+  "mark": 0,
   "color": "#FF9E01"
 }, {
   "component": "XXX",
-  "mark": 1322,
+  "mark": 0,
   "color": "#FCD202"
+}, {
+  "component": "XXX",
+  "mark": 0,
+  "color": "#B0DE09"
+}, {
+  "component": "XXX",
+  "mark": 0,
+  "color": "#04D215"
 }]
 
 
@@ -462,8 +517,16 @@ var chartData6 = [ {
   "color": "#FF9E01"
 }, {
   "component": "XXX",
-  "mark": 1322,
+  "mark": 122,
   "color": "#FCD202"
+}, {
+  "component": "XXX",
+  "mark": 14,
+  "color": "#B0DE09"
+}, {
+  "component": "XXX",
+  "mark": 0,
+  "color": "#04D215"
 }]
 
 

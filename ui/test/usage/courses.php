@@ -154,11 +154,11 @@
 	      .on("mouseout", tip.hide)
 	      ;
 
-	
-	    
-	  
 
-	  
+
+
+
+
 	  // set up zoom in and out
 	  function zoom() {
 	    svg.select(".x.axis").call(xAxis);
