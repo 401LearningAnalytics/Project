@@ -23,12 +23,10 @@
 
 
 	<!-- this should be changed since it is a mock one -->
-	<img src="http://articles.leetcode.com/wp-content/uploads/2015/03/touxiang.png" alt="" width="200" height="200" td rowspan="2" right: -400px/>
+	<img src="https://qph.ec.quoracdn.net/main-qimg-3b0b70b336bbae35853994ce0aa25013-c?convert_to_webp=true" alt="" width="200" height="200" td rowspan="2" right: -400px/>
   <tr >
 	<p><strong>Ualberta_user_id: </strong></p>
-	<p>af858c7018f031692573be1de8fd62188e5d1bac</p>
-	<p><strong>Gender:</strong> male</p>
-	<p><strong>Join Time:</strong> 2012-02-22 11:32:05</p>
+	<p>2318c5c549b23f9c48ebec81d686f985314640ed</p>
 
 	</tr>
 
@@ -37,9 +35,6 @@
 
   </body>
 </html>
-
-
-
 
 
 
@@ -121,24 +116,42 @@ $link = mysqli_connect("localhost", "root", "117130", "learner");
 
 /* check connection */
 if (mysqli_connect_errno()) {
-    printf("Connect failed: %s<br>", mysqli_connect_error());
     exit();
 }else{
-    printf("connection success <br>");
 }
 
-$sql = "SELECT course_item_grade_overall, course_item_id FROM course_item_grades where ualberta_user_id = \"2318c5c549b23f9c48ebec81d686f985314640ed\";";
+$sql = "SELECT course_id, course_item_grade_overall, course_item_id FROM course_item_grades where ualberta_user_id = \"2318c5c549b23f9c48ebec81d686f985314640ed\";";
 
 if ($result = mysqli_query($link, $sql)) {
 
     echo "Fetching data success<br>";
 
+    $i = 0;
+    $commands;
     /* fetch associative array */
     while ($row = mysqli_fetch_row($result)) {
-        foreach($row as $grade){
-          echo $grade[0]."<br>";
-        }
+      echo $row[0]." ".$row[1]." ".$row[2];
+      echo "<br>";
+
+      $sql2 = "SELECT course_item_name FROM course_items where course_item_id = \"".$row[2]."\";";
+      $commands[$i] = $sql2;
+      $i += 1;
+
+
+      /*
+      $result2 = mysqli_query($link, $sql2);
+      $row2 = mysqli_fetch_row($result);
+      */
     }
+
+
+    while($i >= 0){
+      echo $commands[$i]."<br>";
+      $i -= 1;
+    }
+
+
+
     /* free result set */
     mysqli_free_result($result);
 }
