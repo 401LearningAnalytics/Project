@@ -88,7 +88,7 @@ d3.csv("intro.csv", function(error, data) {
          .duration(200)
          .style("opacity", .9);
        div .html(
-         '<a href="studentPage.php">' + // The first <a> tag
+         '<a href="studentPage.php?student_id=' + d.id + '">' + // The first <a> tag
          formatTime(d.date) +
          "</a>" +                          // closing </a> tag
          "<br/>"  + d.grade)     

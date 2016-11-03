@@ -26,7 +26,7 @@
 	<img src="https://qph.ec.quoracdn.net/main-qimg-3b0b70b336bbae35853994ce0aa25013-c?convert_to_webp=true" alt="" width="200" height="200" td rowspan="2" right: -400px/>
   <tr >
 	<p><strong>Ualberta_user_id: </strong></p>
-	<p>2318c5c549b23f9c48ebec81d686f985314640ed</p>
+	<p><?php echo $_GET["student_id"]; ?></p>
 
 	</tr>
 

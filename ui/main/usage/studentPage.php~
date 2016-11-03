@@ -26,7 +26,7 @@
 	<img src="https://qph.ec.quoracdn.net/main-qimg-3b0b70b336bbae35853994ce0aa25013-c?convert_to_webp=true" alt="" width="200" height="200" td rowspan="2" right: -400px/>
   <tr >
 	<p><strong>Ualberta_user_id: </strong></p>
-	<p>2318c5c549b23f9c48ebec81d686f985314640ed</p>
+	<p><?php echo $_GET["student_id"]; ?></p>
 
 	</tr>
 
@@ -112,15 +112,15 @@
 
 <?php
 // connect to mysql database
-$link = mysqli_connect("localhost", "root", "117130", "learner");
+$link = mysqli_connect("localhost", "Wei", "123456", "learner");
 
 /* check connection */
 if (mysqli_connect_errno()) {
     exit();
 }else{
 }
-
-$sql = "SELECT course_id, course_item_grade_overall, course_item_id FROM course_item_grades where ualberta_user_id = \"2318c5c549b23f9c48ebec81d686f985314640ed\";";
+$id = $_GET["student_id"];
+$sql = "SELECT course_id, course_item_grade_overall, course_item_id FROM course_item_grades where ualberta_user_id = '$id'";";
 
 if ($result = mysqli_query($link, $sql)) {
 
