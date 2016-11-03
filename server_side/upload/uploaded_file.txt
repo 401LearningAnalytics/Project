@@ -1,9 +1,0 @@
-assessment_response_id,assessment_id,assessment_action_id,assessment_action_version,assessment_question_id,assessment_response_score,assessment_response_weighted_score
-"-LUzWbupEeWS_A6rDePrsQ","-p8xspLeEeWEKgoUMl3Agw@6","opencourse:6768817:-p8xspLeEeWEKgoUMl3Agw@6:1452877028479@4",4,"hamtAZLfEeWQ5A6r3bNCMQ@2",1,
-"6aVAhrsFEeWluQ5__SFiNw","-p8xspLeEeWEKgoUMl3Agw@6","opencourse:13956525:-p8xspLeEeWEKgoUMl3Agw@6:1452806772707@2",2,"-iAXIJLeEeWVLRI-M-dl3w@2",1,
-"O-D1Z7NCEeW9iA7pd3m2sw","-p8xspLeEeWEKgoUMl3Agw@6","opencourse:11806906:-p8xspLeEeWEKgoUMl3Agw@6:1451953002694@4",4,"hamtAZLfEeWQ5A6r3bNCMQ@2",1,
-"ssJsOLyAEeWjmAoYFnTFNw","-p8xspLeEeWEKgoUMl3Agw@6","opencourse:818250:-p8xspLeEeWEKgoUMl3Agw@6:1452969307706@2",2,"-iAXIJLeEeWVLRI-M-dl3w@2",0,
-"7JByarq-EeWd2Q56KYCkkw","-p8xspLeEeWEKgoUMl3Agw@6","opencourse:16214985:-p8xspLeEeWEKgoUMl3Agw@6:1452775912419@3",3,"hamtAZLfEeWQ5A6r3bNCMQ@2",1,
-"6qWY0LVqEeW3owrWZz_FwQ","-p8xspLeEeWEKgoUMl3Agw@6","opencourse:28596:-p8xspLeEeWEKgoUMl3Agw@6:1452190463598@3",3,"-iAXIJLeEeWVLRI-M-dl3w@2",0,
-"1RmUcrqIEeWgBAqKyVo_Kw","-p8xspLeEeWEKgoUMl3Agw@6","opencourse:1271021:-p8xspLeEeWEKgoUMl3Agw@6:1452753021265@2",2,"-iAXIJLeEeWVLRI-M-dl3w@2",0,
-"98FN-L_9EeWHlxJ04S6Cbw","-p8xspLeEeWEKgoUMl3Agw@6","opencourse:14932999:-p8xspLeEeWEKgoUMl3Agw@6:1453353209565@2",2,"-iAXIJLeEeWVLRI-M-dl3w@2",0,

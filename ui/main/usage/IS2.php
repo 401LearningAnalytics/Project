@@ -1,5 +1,9 @@
 <html>
+<head>
+<style>
 
+</style>
+</head>
 <body>
 <title>courses</title>
 <!-- Set fonts and appearence of the header -->
@@ -30,7 +34,11 @@
 			    // heading which is course name
 			    echo '<td><h3>'.$row['course_name'].'</h3>';
 			    // include scatter plots under each course name respectively
-		            include_once("courses.php");
+			    
+			    if ($row['course_name']=="Introduction to Software Product Management") include_once("intro.php");
+			    
+			    //if ($row['course_name']=="Client Needs and Software Requirements") include_once("client_needs.php");
+			    //if ($row['course_name']=="Agile Planning for Software Products") include_once("agile_plan.php");
 			    echo '</td>';
 
 			    if($i == 2){

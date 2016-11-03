@@ -33,7 +33,7 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
     height = 400 - margin.top - margin.bottom;
 
 // parse the date / time
-var parseTime = d3.timeParse("%d-%m-%y");
+var parseTime = d3.timeParse("%d-%b-%Y");
 var formatTime = d3.timeFormat("%e %B");
 
 // set the ranges
@@ -60,7 +60,7 @@ var svg = d3.select("body").append("svg")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
-d3.json("t.php", function(error, data) {
+d3.csv("client_needs.csv", function(error, data) {
   if (error) throw error;
 
   // format the data
@@ -88,7 +88,7 @@ d3.json("t.php", function(error, data) {
          .duration(200)
          .style("opacity", .9);
        div .html(
-         '<a href= "studentPage.php">' + // The first <a> tag
+         '<a href="studentPage.php">' + // The first <a> tag
          formatTime(d.date) +
          "</a>" +                          // closing </a> tag
          "<br/>"  + d.grade)     

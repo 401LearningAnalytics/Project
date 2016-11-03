@@ -8,7 +8,7 @@
     $connection = mysql_select_db($database, $server);
 
     $myquery = "
-SELECT ualberta_user_id, DATE_FORMAT(course_grade_ts,'%d-%m-%y'),course_grade_verified FROM course_grades";
+SELECT ualberta_user_id, DATE_FORMAT(course_grade_ts,'%d-%b-%y'),course_grade_verified FROM course_grades";
     $query = mysql_query($myquery);
     
     if ( ! $query ) {
