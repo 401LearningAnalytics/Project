@@ -50,34 +50,34 @@
 <style>
 #chartdiv {
   width: 30%;
-  height: 300px;
+  height: 400px;
   position: relative;
   bottom: 0;
   right: 0px;
-  margin-top: -450px;
+  margin-top: -400px;
 
 
 }
 
 #chartdiv2 {
   width: 30%;
-  height: 300px;
+  height: 400px;
   position: relative;
   right: -400px;
-  margin-top: -300px;
+  margin-top: -400px;
 }
 
 #chartdiv3 {
   width: 30%;
-  height: 300px;
+  height: 400px;
   position: relative;
   right: -800px;
-  margin-top: -300px;
+  margin-top: -400px;
 }
 
 #chartdiv4 {
   width: 30%;
-  height: 300px;
+  height: 400px;
   position: relative;
   right: 0px;
   margin-top: 0px;
@@ -85,18 +85,18 @@
 
 #chartdiv5 {
   width: 30%;
-  height: 300px;
+  height: 400px;
   position: relative;
   right: -400px;
-  margin-top: -300px;
+  margin-top: -400px;
 }
 
 #chartdiv6 {
   width: 30%;
-  height: 300px;
+  height: 400px;
   position: relative;
   right: -800px;
-  margin-top: -300px;
+  margin-top: -400px;
 }
 
 </style>
@@ -124,14 +124,18 @@ $sql = "SELECT course_id, course_item_grade_overall, course_item_id FROM course_
 
 if ($result = mysqli_query($link, $sql)) {
 
-    echo "Fetching data success<br>";
+    //echo "Fetching data success<br>";
 
     $i = 0;
     $commands;
+    $marks;
+    $courses;
     /* fetch associative array */
     while ($row = mysqli_fetch_row($result)) {
-      echo $row[0]." ".$row[1]." ".$row[2];
-      echo "<br>";
+      //echo $row[0]." ".$row[1]." ".$row[2]."<br>";
+
+      $courses[$i] = $row[0];
+      $marks[$i] = $row[1];
 
       $sql2 = "SELECT course_item_name FROM course_items where course_item_id = \"".$row[2]."\";";
       $commands[$i] = $sql2;
@@ -143,13 +147,21 @@ if ($result = mysqli_query($link, $sql)) {
       $row2 = mysqli_fetch_row($result);
       */
     }
+    mysqli_free_result($result);
 
+    $n = 0;
+    $row_names;
 
-    while($i >= 0){
-      echo $commands[$i]."<br>";
-      $i -= 1;
+    while($n <= $i){
+
+      if ($courses[$n] == "DYv7azSfEeWgIQ7IEhB31Q"){
+        $result = mysqli_query($link, $commands[$n]);
+        $row = mysqli_fetch_row($result);
+        $row_names[$n] = $row[0];
+      }
+    $n+=1;
+
     }
-
 
 
     /* free result set */
@@ -180,32 +192,45 @@ var $name3 = " <?php echo $name3 ?>"
 var $name4 = " <?php echo $name4 ?>"
 var $name5 = " <?php echo $name5 ?>"
 var $name6 = " <?php echo $name6 ?>"
+var $row_name1 = " <?php echo $row_names[0] ?>"
+var $row_name2 = " <?php echo $row_names[1] ?>"
+var $row_name3 = " <?php echo $row_names[2] ?>"
+var $row_name4 = " <?php echo $row_names[3] ?>"
+var $row_name5 = " <?php echo $row_names[4] ?>"
+var $row_name6 = " <?php echo $row_names[5] ?>"
+var $mark1 = " <?php echo $marks[0] ?>"
+var $mark2 = " <?php echo $marks[1] ?>"
+var $mark3 = " <?php echo $marks[2] ?>"
+var $mark4 = " <?php echo $marks[3] ?>"
+var $mark5 = " <?php echo $marks[4] ?>"
+var $mark6 = " <?php echo $marks[5] ?>"
+
 
 
 
 var chartData = [ {
-  "component": "Quiz",
-  "mark": 25,
+  "component": $row_name1,
+  "mark": $mark1,
   "color": "#FF0F00"
 }, {
-  "component": "Programming",
-  "mark": 1882,
+  "component": $row_name2,
+  "mark": $mark2,
   "color": "#FF6600"
 }, {
-  "component": "Peer",
-  "mark": 1809,
+  "component":$row_name3,
+  "mark": $mark3,
   "color": "#FF9E01"
 }, {
-  "component": "XXX",
-  "mark": 1322,
+  "component": $row_name4,
+  "mark": $mark4,
   "color": "#FCD202"
 }, {
-  "component": "XXX",
-  "mark": 1114,
+  "component": $row_name5,
+  "mark": $mark5,
   "color": "#B0DE09"
 }, {
-  "component": "XXX",
-  "mark": 984,
+  "component": $row_name6,
+  "mark": $mark6,
   "color": "#04D215"
 }];
 

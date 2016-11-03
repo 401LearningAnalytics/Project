@@ -17,10 +17,14 @@ if ($result = mysqli_query($link, $sql)) {
 
     $i = 0;
     $commands;
+    $courses;
+
     /* fetch associative array */
     while ($row = mysqli_fetch_row($result)) {
       echo $row[0]." ".$row[1]." ".$row[2];
       echo "<br>";
+
+      $courses[$i] = $row[0];
 
       $sql2 = "SELECT course_item_name FROM course_items where course_item_id = \"".$row[2]."\";";
       $commands[$i] = $sql2;
@@ -36,6 +40,13 @@ if ($result = mysqli_query($link, $sql)) {
 
     $n = 0;
     $row_names;
+    $sql3 = "select course_id from courses";
+    $result3 = mysqli_query($link, $sql3);
+    $row3 = mysqli_fetch_row($result3);
+
+    echo $course[0];
+
+    if ($row3[0] == "DYv7azSfEeWgIQ7IEhB31Q"){echo "MATCHING COURSE<br><br>";}
 
     while($n <= $i){
       $result = mysqli_query($link, $commands[$n]);
