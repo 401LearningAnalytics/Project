@@ -25,7 +25,7 @@
 						<p align=center><font style="font-size: 40pt; filter: shadow(color=black); width: 71.27%; color: #e4dc9b; line-height: 150%; font-family: 华文隶书; height: 60px"><b>Learning Analytics</b></font></p>
 						<div align=center> <img src="img/mooc.png" style="width:500px;height:300px;"></img></div>
 						
-						<h1><form action="main/usage/IS2.php"><input type="submit" value="Instructor"></h1></form>
+						<h1><form action="test/usage/IS2.php"><input type="submit" value="Instructor"></h1></form>
 						<h1><form action="../server_side/index.php"><input type="submit" value="Admin"></h1></form>
 					</nav>
 				</div>
