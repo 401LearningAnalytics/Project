@@ -152,6 +152,7 @@ if ($result = mysqli_query($link, $sql)) {
     $n = 0;
     $row_names;
 
+    // for each course, get the names for the row in each chart
     while($n <= $i){
 
       if ($courses[$n] == "DYv7azSfEeWgIQ7IEhB31Q"){
@@ -171,6 +172,7 @@ if ($result = mysqli_query($link, $sql)) {
 /* close connection */
 mysqli_close($link);
 
+// names for the charts
 $name1 = "Introduction to Software Product Management";
 $name2 = "Software Processes and Agile Practices";
 $name3 = "Client Needs and Software Requirements";
