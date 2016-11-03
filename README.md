@@ -14,6 +14,8 @@ To create database and all the tables, open webpage /server_side/create_database
 
 To populate database, use /server_side/upload.php and submit the csv files you intend to upload. The order of uploading csv file is enforced 
 
+need to set Max Upload Size and Max Post Size in php.init to allow large file uploading
+
 
 
        
@@ -44,3 +46,13 @@ http://www.amcharts.com/javascript-charts/?gclid=CNj9pLnYidACFQgIaQod8ioGag
   
 Pass variable from PHP to Javascript  
 http://www.dyn-web.com/tutorials/php-js/scalar.php  
+   
+How to use array in PHP  
+http://www.w3schools.com/php/php_arrays.asp  
+   
+Mysqli get results to an arry in PHP  
+http://php.net/manual/en/class.mysqli-result.php  
+http://php.net/manual/en/function.mysql-result.php  
+
+PHP array iteration  
+http://php.net/manual/en/control-structures.foreach.php  
