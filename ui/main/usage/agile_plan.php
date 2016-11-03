@@ -60,7 +60,7 @@ var svg = d3.select("body").append("svg")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
-d3.csv("agile_plan.csv", function(error, data) {
+d3.csv("csv_file/agile_plan.csv", function(error, data) {
   if (error) throw error;
 
   // format the data
@@ -87,8 +87,8 @@ d3.csv("agile_plan.csv", function(error, data) {
        div.transition()
          .duration(200)
          .style("opacity", .9);
-       div .html(
-         '<a href="studentPage.php">' + // The first <a> tag
+      div .html(
+         '<a href="studentPage.php?student_id=' + d.ualberta_user_id + '">' + // The first <a> tag
          formatTime(d.date) +
          "</a>" +                          // closing </a> tag
          "<br/>"  + d.grade)     

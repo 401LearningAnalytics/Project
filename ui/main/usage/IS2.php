@@ -36,9 +36,11 @@
 			    // include scatter plots under each course name respectively
 			    
 			    if ($row['course_name']=="Introduction to Software Product Management") include("intro.php");
-			    
 			    //if ($row['course_name']=="Client Needs and Software Requirements") include("client_needs.php");
 			    //if ($row['course_name']=="Agile Planning for Software Products") include_once("agile_plan.php");
+			    //if ($row['course_name']=="	Software Processes and Agile Practices") include("soft_process.php");	
+			    //if ($row['course_name']=="Reviews & Metrics for Software Improvements") include("review.php");
+			    //if ($row['course_name']=="Software Product Management Capstone") include("soft_mana.php");
 			    echo '</td>';
 
 			    if($i == 2){
