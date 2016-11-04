@@ -1,7 +1,17 @@
 <html>
 <head>
 <style>
-
+.btn-link{
+  border:none;
+  outline:none;
+  background:none;
+  cursor:pointer;
+  color:#0000EE;
+  padding:0;
+  text-decoration:underline;
+  font-family:inherit;
+  font-size:inherit;
+}
 </style>
 </head>
 <body>
@@ -32,15 +42,9 @@
 			    }
 
 			    // heading which is course name
-			    echo '<td><h3>'.$row['course_name'].'</h3>';
-			    // include scatter plots under each course name respectively
+			    echo ('<td><h3><a href="coursePage.php?id=' . $row['course_name'] . '">' . $row['course_name'] . '</a></h3>');
 			    
-			    if ($row['course_name']=="Introduction to Software Product Management") include("intro.php");
-			    //if ($row['course_name']=="Client Needs and Software Requirements") include("client_needs.php");
-			    //if ($row['course_name']=="Agile Planning for Software Products") include_once("agile_plan.php");
-			    //if ($row['course_name']=="	Software Processes and Agile Practices") include("soft_process.php");	
-			    //if ($row['course_name']=="Reviews & Metrics for Software Improvements") include("review.php");
-			    //if ($row['course_name']=="Software Product Management Capstone") include("soft_mana.php");
+			    // include scatter plots under each course name respectively
 			    echo '</td>';
 
 			    if($i == 2){
