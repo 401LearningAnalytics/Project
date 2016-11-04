@@ -9,6 +9,7 @@
 			include("intro.php"); 
 			$average = "SELECT AVG(course_grade_verified) FROM course_grades WHERE course_id='DYv7azSfEeWgIQ7IEhB31Q'";
 			$total = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='DYv7azSfEeWgIQ7IEhB31Q'";
+			$module = "SELECT course_module_name FROM course_modules WHERE course_id='DYv7azSfEeWgIQ7IEhB31Q'";
 		}
 		else if($_GET["id"]=="Software Processes and Agile Practices") {
 			include("soft_process.php"); 
@@ -49,9 +50,11 @@
 		
 		$ave = mysql_query($average);
 		$to = mysql_query($total);
+		$mod = mysql_query($module);
 	?>
 	
 	<p><b> Student Enrollments: </b><?php while($row = mysql_fetch_array($to)) {echo $row['COUNT(ualberta_user_id)'];} ?></p>
 	<p><b> Course Average:</b> <?php while($row = mysql_fetch_array($ave)) {echo $row['AVG(course_grade_verified)'];} ?></p>
+	<p><b> Course Modules:</b> <?php while($row = mysql_fetch_array($mod)) {echo '<br>'.$row['course_module_name'].'</br>';} ?></p>
   </body>
 </html>
