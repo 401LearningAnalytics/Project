@@ -5,7 +5,7 @@
 $student_id = $_GET["student_id"];
 
 // connect to mysql database
-$link = mysqli_connect("localhost", "Wei", "123456", "learner");
+$link = mysqli_connect("localhost", "root", "Wei", "123456");
 
 /* check connection */
 if (mysqli_connect_errno()) {
