@@ -56,3 +56,7 @@ http://php.net/manual/en/function.mysql-result.php
 
 PHP array iteration  
 http://php.net/manual/en/control-structures.foreach.php  
+  
+PHP include html  
+http://www.w3schools.com/php/php_includes.asp  
+  
