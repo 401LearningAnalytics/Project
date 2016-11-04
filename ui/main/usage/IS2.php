@@ -23,7 +23,7 @@
     <ul class="list">
       <?php
 		// connect to mysql database
-		$connection = mysql_connect('localhost', 'Wei', '123456');
+		$connection = mysql_connect('localhost', 'root', '117130');
 		mysql_select_db('learner');
 
 		// select course names from database
@@ -43,7 +43,7 @@
 
 			    // heading which is course name
 			    echo ('<td><h3><a href="coursePage.php?id=' . $row['course_name'] . '">' . $row['course_name'] . '</a></h3>');
-			    
+
 			    // include scatter plots under each course name respectively
 			    echo '</td>';
 

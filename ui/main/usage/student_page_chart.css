@@ -1,0 +1,50 @@
+#chartdiv {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  bottom: 0;
+  right: 0px;
+  margin-top: -400px;
+
+
+}
+
+#chartdiv2 {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  right: -400px;
+  margin-top: -400px;
+}
+
+#chartdiv3 {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  right: -800px;
+  margin-top: -400px;
+}
+
+#chartdiv4 {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  right: 0px;
+  margin-top: 0px;
+}
+
+#chartdiv5 {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  right: -400px;
+  margin-top: -400px;
+}
+
+#chartdiv6 {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  right: -800px;
+  margin-top: -400px;
+}

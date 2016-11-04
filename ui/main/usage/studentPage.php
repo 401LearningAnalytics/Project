@@ -1,105 +1,13 @@
 <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
 
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Indivisual Student Page</title>
-    <style>
-    // setup layout for the page
-    table {width:80%; background-color:#fff;}
-    thead td { width: width of the other columns; }
-    thead td:first-child { width: 30%; }
-    thead td:last-child {width: 60%; }
-  </style>
+<!-- include the student page Interface -->
+<?php include 'studentPageUI.php';?>
+<!-- php file for fetching student data for creating charts-->
+<?php include("studentPageData.php"); ?>
+<!-- css file for chart style-->
+<link rel="stylesheet" href="student_page_chart.css">
 
-  </head>
-  <body>
-	<h1>Indivisual student Page</h1>
-	<table style="height: 455px;" width="795" align="center">
-	<tbody style ="right: 800px;">
-	<!-- create a table which has two columns -->
-	<!-- personal information on the left columns -->
-	<!-- course information on the right columns -->
-
-
-	<!-- this should be changed since it is a mock one -->
-	<img src="https://qph.ec.quoracdn.net/main-qimg-3b0b70b336bbae35853994ce0aa25013-c?convert_to_webp=true" alt="" width="200" height="200" td rowspan="2" right: -400px/>
-  <tr >
-	<p><strong>Ualberta_user_id: </strong></p>
-	<p><?php echo $_GET["student_id"]; ?></p>
-
-	</tr>
-
-	</tbody>
-	</table>
-
-  </body>
-</html>
-
-
-
-
-<!-- https://www.amcharts.com/demos/exporting-chart-to-image/ -->
-
-
-
-
-
-
-<!-- Styles -->
-<style>
-#chartdiv {
-  width: 30%;
-  height: 400px;
-  position: relative;
-  bottom: 0;
-  right: 0px;
-  margin-top: -400px;
-
-
-}
-
-#chartdiv2 {
-  width: 30%;
-  height: 400px;
-  position: relative;
-  right: -400px;
-  margin-top: -400px;
-}
-
-#chartdiv3 {
-  width: 30%;
-  height: 400px;
-  position: relative;
-  right: -800px;
-  margin-top: -400px;
-}
-
-#chartdiv4 {
-  width: 30%;
-  height: 400px;
-  position: relative;
-  right: 0px;
-  margin-top: 0px;
-}
-
-#chartdiv5 {
-  width: 30%;
-  height: 400px;
-  position: relative;
-  right: -400px;
-  margin-top: -400px;
-}
-
-#chartdiv6 {
-  width: 30%;
-  height: 400px;
-  position: relative;
-  right: -800px;
-  margin-top: -400px;
-}
-
-</style>
+<!-- REFERENCE: https://www.amcharts.com/demos/exporting-chart-to-image/ -->
 
 
 <!-- Resources -->
@@ -109,107 +17,105 @@
 <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
 <script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
 
-
-<?php
-// connect to mysql database
-$link = mysqli_connect("localhost", "Wei", "123456", "learner");
-
-/* check connection */
-if (mysqli_connect_errno()) {
-    exit();
-}else{
-}
-
-$sql = "SELECT course_id, course_item_grade_overall, course_item_id FROM course_item_grades where ualberta_user_id = \"2318c5c549b23f9c48ebec81d686f985314640ed\";";
-
-if ($result = mysqli_query($link, $sql)) {
-
-    //echo "Fetching data success<br>";
-
-    $i = 0;
-    $commands;
-    $marks;
-    $courses;
-    /* fetch associative array */
-    while ($row = mysqli_fetch_row($result)) {
-      //echo $row[0]." ".$row[1]." ".$row[2]."<br>";
-
-      $courses[$i] = $row[0];
-      $marks[$i] = $row[1];
-
-      $sql2 = "SELECT course_item_name FROM course_items where course_item_id = \"".$row[2]."\";";
-      $commands[$i] = $sql2;
-      $i += 1;
-
-
-      /*
-      $result2 = mysqli_query($link, $sql2);
-      $row2 = mysqli_fetch_row($result);
-      */
-    }
-    mysqli_free_result($result);
-
-    $n = 0;
-    $row_names;
-
-    // for each course, get the names for the row in each chart
-    while($n <= $i){
-
-      if ($courses[$n] == "DYv7azSfEeWgIQ7IEhB31Q"){
-        $result = mysqli_query($link, $commands[$n]);
-        $row = mysqli_fetch_row($result);
-        $row_names[$n] = $row[0];
-      }
-    $n+=1;
-
-    }
-
-
-    /* free result set */
-    mysqli_free_result($result);
-}
-
-/* close connection */
-mysqli_close($link);
-
-// names for the charts
-$name1 = "Introduction to Software Product Management";
-$name2 = "Software Processes and Agile Practices";
-$name3 = "Client Needs and Software Requirements";
-$name4 = "Agile Planning for Software Products";
-$name5 = "Reviews & Metrics for Software Improvements";
-$name6 = "Software Product Management Capstone";
-
-?>
-<!-- Chart code -->
+<!-- Student Chart for each course -->
 <script>
-
-
-
 <!--http://stackoverflow.com/questions/16328256/extra-space-at-bottom-of-page-->
 
+// chart names
 var $name1 = " <?php echo $name1 ?>"
 var $name2 = " <?php echo $name2 ?>"
 var $name3 = " <?php echo $name3 ?>"
 var $name4 = " <?php echo $name4 ?>"
 var $name5 = " <?php echo $name5 ?>"
 var $name6 = " <?php echo $name6 ?>"
+
+
+// course 1 chart, row names and marks
 var $row_name1 = " <?php echo $row_names[0] ?>"
 var $row_name2 = " <?php echo $row_names[1] ?>"
 var $row_name3 = " <?php echo $row_names[2] ?>"
 var $row_name4 = " <?php echo $row_names[3] ?>"
 var $row_name5 = " <?php echo $row_names[4] ?>"
 var $row_name6 = " <?php echo $row_names[5] ?>"
-var $mark1 = " <?php echo $marks[0] ?>"
-var $mark2 = " <?php echo $marks[1] ?>"
-var $mark3 = " <?php echo $marks[2] ?>"
-var $mark4 = " <?php echo $marks[3] ?>"
-var $mark5 = " <?php echo $marks[4] ?>"
-var $mark6 = " <?php echo $marks[5] ?>"
+var $mark1 = " <?php echo $marks1[0] ?>"
+var $mark2 = " <?php echo $marks1[1] ?>"
+var $mark3 = " <?php echo $marks1[2] ?>"
+var $mark4 = " <?php echo $marks1[3] ?>"
+var $mark5 = " <?php echo $marks1[4] ?>"
+var $mark6 = " <?php echo $marks1[5] ?>"
+
+// course 2 chart, row names and marks
+var $row_name21 = " <?php echo $row_names2[0] ?>"
+var $row_name22 = " <?php echo $row_names2[1] ?>"
+var $row_name23 = " <?php echo $row_names2[2] ?>"
+var $row_name24 = " <?php echo $row_names2[3] ?>"
+var $row_name25 = " <?php echo $row_names2[4] ?>"
+var $row_name26 = " <?php echo $row_names2[5] ?>"
+var $mark21 = " <?php echo $marks2[0] ?>"
+var $mark22 = " <?php echo $marks2[1] ?>"
+var $mark23 = " <?php echo $marks2[2] ?>"
+var $mark24 = " <?php echo $marks2[3] ?>"
+var $mark25 = " <?php echo $marks2[4] ?>"
+var $mark26 = " <?php echo $marks2[5] ?>"
+
+// course 3 chart, row names and marks
+var $row_name31 = " <?php echo $row_names3[0] ?>"
+var $row_name32 = " <?php echo $row_names3[1] ?>"
+var $row_name33 = " <?php echo $row_names3[2] ?>"
+var $row_name34 = " <?php echo $row_names3[3] ?>"
+var $row_name35 = " <?php echo $row_names3[4] ?>"
+var $row_name36 = " <?php echo $row_names3[5] ?>"
+var $mark31 = " <?php echo $marks3[0] ?>"
+var $mark32 = " <?php echo $marks3[1] ?>"
+var $mark33 = " <?php echo $marks3[2] ?>"
+var $mark34 = " <?php echo $marks3[3] ?>"
+var $mark35 = " <?php echo $marks3[4] ?>"
+var $mark36 = " <?php echo $marks3[5] ?>"
+
+// course 4 chart, row names and marks
+var $row_name41 = " <?php echo $row_names4[0] ?>"
+var $row_name42 = " <?php echo $row_names4[1] ?>"
+var $row_name43 = " <?php echo $row_names4[2] ?>"
+var $row_name44 = " <?php echo $row_names4[3] ?>"
+var $row_name45 = " <?php echo $row_names4[4] ?>"
+var $row_name46 = " <?php echo $row_names4[5] ?>"
+var $mark41 = " <?php echo $marks4[0] ?>"
+var $mark42 = " <?php echo $marks4[1] ?>"
+var $mark43 = " <?php echo $marks4[2] ?>"
+var $mark44 = " <?php echo $marks4[3] ?>"
+var $mark45 = " <?php echo $marks4[4] ?>"
+var $mark46 = " <?php echo $marks4[5] ?>"
+
+// course 5 chart, row names and marks
+var $row_name51 = " <?php echo $row_names5[0] ?>"
+var $row_name52 = " <?php echo $row_names5[1] ?>"
+var $row_name53 = " <?php echo $row_names5[2] ?>"
+var $row_name54 = " <?php echo $row_names5[3] ?>"
+var $row_name55 = " <?php echo $row_names5[4] ?>"
+var $row_name56 = " <?php echo $row_names5[5] ?>"
+var $mark51 = " <?php echo $marks5[0] ?>"
+var $mark52 = " <?php echo $marks5[1] ?>"
+var $mark53 = " <?php echo $marks5[2] ?>"
+var $mark54 = " <?php echo $marks5[3] ?>"
+var $mark55 = " <?php echo $marks5[4] ?>"
+var $mark56 = " <?php echo $marks5[5] ?>"
+
+// course 6 chart, row names and marks
+var $row_name61 = " <?php echo $row_names6[0] ?>"
+var $row_name62 = " <?php echo $row_names6[1] ?>"
+var $row_name63 = " <?php echo $row_names6[2] ?>"
+var $row_name64 = " <?php echo $row_names6[3] ?>"
+var $row_name65 = " <?php echo $row_names6[4] ?>"
+var $row_name66 = " <?php echo $row_names6[5] ?>"
+var $mark61 = " <?php echo $marks6[0] ?>"
+var $mark62 = " <?php echo $marks6[1] ?>"
+var $mark63 = " <?php echo $marks6[2] ?>"
+var $mark64 = " <?php echo $marks6[3] ?>"
+var $mark65 = " <?php echo $marks6[4] ?>"
+var $mark66 = " <?php echo $marks6[5] ?>"
 
 
-
-
+// chart 1
 var chartData = [ {
   "component": $row_name1,
   "mark": $mark1,
@@ -275,30 +181,30 @@ var chart = AmCharts.makeChart( "chartdiv", {
 
 
 
-
+// chart 2
 var chartData2 = [ {
-  "component": "Quiz",
-  "mark": 4025,
+  "component": $row_name21,
+  "mark": $mark21,
   "color": "#FF0F00"
 }, {
-  "component": "Programming",
-  "mark": 882,
+  "component": $row_name22,
+  "mark": $mark22,
   "color": "#FF6600"
 }, {
-  "component": "Peer",
-  "mark": 809,
+  "component": $row_name23,
+  "mark": $mark23,
   "color": "#FF9E01"
 }, {
-  "component": "XXX",
-  "mark": 132,
+  "component": $row_name24,
+  "mark": $mark24,
   "color": "#FCD202"
 }, {
-  "component": "XXX",
-  "mark": 214,
+  "component": $row_name25,
+  "mark": $mark25,
   "color": "#B0DE09"
 }, {
-  "component": "XXX",
-  "mark": 184,
+  "component": $row_name26,
+  "mark": $mark26,
   "color": "#04D215"
 }]
 
@@ -342,31 +248,30 @@ var chart = AmCharts.makeChart( "chartdiv2", {
 
 
 
-
-
+// chart 3
 var chartData3 = [ {
-  "component": "Quiz",
-  "mark": 225,
+  "component": $row_name31,
+  "mark": $mark31,
   "color": "#FF0F00"
 }, {
-  "component": "Programming",
-  "mark": 1882,
+  "component": $row_name32,
+  "mark": $mark32,
   "color": "#FF6600"
 }, {
-  "component": "Peer",
-  "mark": 1809,
+  "component": $row_name33,
+  "mark": $mark33,
   "color": "#FF9E01"
 }, {
-  "component": "XXX",
-  "mark": 1322,
+  "component": $row_name34,
+  "mark": $mark34,
   "color": "#FCD202"
 }, {
-  "component": "XXX",
-  "mark": 0,
+  "component": $row_name35,
+  "mark": $mark35,
   "color": "#B0DE09"
 }, {
-  "component": "XXX",
-  "mark": 984,
+  "component": $row_name36,
+  "mark": $mark36,
   "color": "#04D215"
 }]
 
@@ -410,30 +315,30 @@ var chart3 = AmCharts.makeChart( "chartdiv3", {
 
 
 
-
+// chart 4
 var chartData4 = [ {
-  "component": "Quiz",
-  "mark": 405,
+  "component": $row_name41,
+  "mark": $mark41,
   "color": "#FF0F00"
 }, {
-  "component": "Programming",
-  "mark": 182,
+  "component": $row_name42,
+  "mark": $mark42,
   "color": "#FF6600"
 }, {
-  "component": "Peer",
-  "mark": 189,
+  "component": $row_name43,
+  "mark": $mark43,
   "color": "#FF9E01"
 }, {
-  "component": "XXX",
-  "mark": 1322,
+  "component": $row_name44,
+  "mark": $mark44,
   "color": "#FCD202"
 }, {
-  "component": "XXX",
-  "mark": 1114,
+  "component": $row_name45,
+  "mark": $mark45,
   "color": "#B0DE09"
 }, {
-  "component": "XXX",
-  "mark": 984,
+  "component": $row_name46,
+  "mark": $mark46,
   "color": "#04D215"
 }]
 
@@ -476,30 +381,30 @@ var chart = AmCharts.makeChart( "chartdiv4", {
 } );
 
 
-
+// chart 5
 var chartData5 = [ {
-  "component": "Quiz",
-  "mark": 0,
+  "component": $row_name51,
+  "mark": $mark51,
   "color": "#FF0F00"
 }, {
-  "component": "Programming",
-  "mark": 0,
+  "component": $row_name52,
+  "mark": $mark52,
   "color": "#FF6600"
 }, {
-  "component": "Peer",
-  "mark": 0,
+  "component": $row_name53,
+  "mark": $mark53,
   "color": "#FF9E01"
 }, {
-  "component": "XXX",
-  "mark": 0,
+  "component": $row_name54,
+  "mark": $mark54,
   "color": "#FCD202"
 }, {
-  "component": "XXX",
-  "mark": 0,
+  "component": $row_name55,
+  "mark": $mark55,
   "color": "#B0DE09"
 }, {
-  "component": "XXX",
-  "mark": 0,
+  "component": $row_name56,
+  "mark": $mark56,
   "color": "#04D215"
 }]
 
@@ -542,30 +447,30 @@ var chart = AmCharts.makeChart( "chartdiv5", {
 } );
 
 
-
+// chart 6
 var chartData6 = [ {
-  "component": "Quiz",
-  "mark": 4025,
+  "component": $row_name61,
+  "mark": $mark61,
   "color": "#FF0F00"
 }, {
-  "component": "Programming",
-  "mark": 1882,
+  "component": $row_name62,
+  "mark": $mark62,
   "color": "#FF6600"
 }, {
-  "component": "Peer",
-  "mark": 1809,
+  "component": $row_name63,
+  "mark": $mark63,
   "color": "#FF9E01"
 }, {
-  "component": "XXX",
-  "mark": 122,
+  "component": $row_name64,
+  "mark": $mark64,
   "color": "#FCD202"
 }, {
-  "component": "XXX",
-  "mark": 14,
+  "component": $row_name65,
+  "mark": $mark65,
   "color": "#B0DE09"
 }, {
-  "component": "XXX",
-  "mark": 0,
+  "component": $row_name66,
+  "mark": $mark66,
   "color": "#04D215"
 }]
 
@@ -606,8 +511,6 @@ var chart = AmCharts.makeChart( "chartdiv6", {
     "enabled": false
   }
 } );
-
-
 
 
 
