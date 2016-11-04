@@ -87,7 +87,7 @@ if ($result = mysqli_query($link, $sql)) {
       }
 
       // course 2
-      if ($courses[$n] == ""){
+      if ($courses[$n] == "6lQZLjVvEeWfzhKP8GtZlQ"){
         $result = mysqli_query($link, $commands[$n]);
         $row = mysqli_fetch_row($result);
         $marks2[$b] = $allmarks[$n];
@@ -96,7 +96,7 @@ if ($result = mysqli_query($link, $sql)) {
       }
 
       // course 3
-      if ($courses[$n] == ""){
+      if ($courses[$n] == "EdKScTVwEeWW9BKhJ4xW0Q"){
         $result = mysqli_query($link, $commands[$n]);
         $row = mysqli_fetch_row($result);
         $marks3[$c] = $allmarks[$n];
@@ -105,7 +105,7 @@ if ($result = mysqli_query($link, $sql)) {
       }
 
       // course 4
-      if ($courses[$n] == ""){
+      if ($courses[$n] == "NpTR4zVwEeWfzhKP8GtZlQ"){
         $result = mysqli_query($link, $commands[$n]);
         $row = mysqli_fetch_row($result);
         $marks4[$d] = $allmarks[$n];
@@ -114,7 +114,7 @@ if ($result = mysqli_query($link, $sql)) {
       }
 
       // course 5
-      if ($courses[$n] == ""){
+      if ($courses[$n] == "ywoUFzVxEeWWBQrVFXqd1w"){
         $result = mysqli_query($link, $commands[$n]);
         $row = mysqli_fetch_row($result);
         $marks5[$e] = $allmarks[$n];
@@ -123,7 +123,7 @@ if ($result = mysqli_query($link, $sql)) {
       }
 
       // course 6
-      if ($courses[$n] == ""){
+      if ($courses[$n] == "99SZyjVxEeW6RApRXdjJPw"){
         $result = mysqli_query($link, $commands[$n]);
         $row = mysqli_fetch_row($result);
         $marks6[$f] = $allmarks[$n];
