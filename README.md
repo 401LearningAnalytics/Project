@@ -8,6 +8,7 @@ The server is provided by Cybera.
 
 
 ###Usage:   
+####Set up
 For test usage, set up localhost, install mysql, and change the lines including Mysql connection in the files to you own username.
 
 To create database and all the tables, open webpage /server_side/create_database.php(opening more than once will cause error of that tables already exist)
@@ -16,7 +17,10 @@ To populate database, use /server_side/upload.php and submit the csv files you i
 
 need to set Max Upload Size and Max Post Size in php.init to allow large file uploading
 
+####UI Usage
+On clicking the dots on the chart in the main course pages, it redirects to the corresponding the individual student page, in which there're charts of all the courses the charts show each component and the grades in them that the students get for each of the courses
 
+for components that students didn't finish or courses the students didn't take, the chart will show values of 0
 
        
 ###Reference:    
