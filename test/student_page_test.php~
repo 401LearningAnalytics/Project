@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("localhost", "Wei", "123456", "learner");
+$link = mysqli_connect("localhost", "root", "117130", "learner");
 
 /* check connection */
 if (mysqli_connect_errno()) {
