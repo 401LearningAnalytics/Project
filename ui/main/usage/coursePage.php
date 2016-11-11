@@ -1,9 +1,15 @@
 <html>
   <head>
+  <style>
+	body  {
+    background-image: url("../../img/background2.jpg");
+    background-color: #ffffff;
+}
+  </style>
   </head>
   <body>
 	<div align="center">
-	<p><h3><?php echo $_GET["id"]; ?></h3></p>
+	<p><h1><?php echo $_GET["id"]; ?></h1></p>
 	<?php
 		if($_GET["id"]=="Introduction to Software Product Management") {
 			include("intro.php");

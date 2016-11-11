@@ -1,16 +1,23 @@
 <html>
 <head>
 <style>
-.btn-link{
-  border:none;
-  outline:none;
-  background:none;
-  cursor:pointer;
-  color:#0000EE;
-  padding:0;
-  text-decoration:underline;
-  font-family:inherit;
-  font-size:inherit;
+.button {
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 18px;
+    width:80%;
+}
+body  {
+    background-image: url("../../img/background.jpg");
+    background-color: #cccccc;
 }
 </style>
 </head>
@@ -42,9 +49,8 @@
 			    }
 
 			    // heading which is course name
-			    echo ('<td><h3><a href="coursePage.php?id=' . $row['course_name'] . '">' . $row['course_name'] . '</a></h3>');
+			    echo ('<td><button class="button"><a href="coursePage.php?id=' . $row['course_name'] . '">' . $row['course_name'] . '</a></button>');
 
-			    // include scatter plots under each course name respectively
 			    echo '</td>';
 
 			    if($i == 2){
