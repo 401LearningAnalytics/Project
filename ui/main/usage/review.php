@@ -23,7 +23,8 @@ div.tooltip {
 </style>
 <body>
 
-<!-- load the d3.js library -->    	
+<!-- load the d3.js library -->    
+<script src="https://d3js.org/d3.v3.min.js"></script>	
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -40,10 +41,7 @@ var formatTime = d3.timeFormat("%e %B");
 var x = d3.scaleTime().range([0, width]);
 var y = d3.scaleLinear().range([height, 0]);
 
-// define the line
-var valueline = d3.line()
-    .x(function(d) { return x(d.date); })
-    .y(function(d) { return y(d.grade); });
+
 
 var div = d3.select("body").append("div")
     .attr("class", "tooltip")
@@ -55,9 +53,12 @@ var div = d3.select("body").append("div")
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+    .call(d3.behavior.zoom().on("zoom", function () {
+        svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+      }))
+  .append("g");
+    //.attr("transform",
+    //      "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
 d3.csv("csv_file/review.csv", function(error, data) {
@@ -87,7 +88,7 @@ d3.csv("csv_file/review.csv", function(error, data) {
        div.transition()
          .duration(200)
          .style("opacity", .9);
-      div .html(
+       div .html(
          '<a href="studentPage.php?student_id=' + d.ualberta_user_id + '">' + // The first <a> tag
          formatTime(d.date) +
          "</a>" +                          // closing </a> tag

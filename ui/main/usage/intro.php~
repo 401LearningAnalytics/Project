@@ -23,7 +23,8 @@ div.tooltip {
 </style>
 <body>
 
-<!-- load the d3.js library -->    	
+<!-- load the d3.js library -->    
+<script src="https://d3js.org/d3.v3.min.js"></script>	
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -31,10 +32,6 @@ div.tooltip {
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 650 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
-
-var zoom = d3.behavior.zoom()
-    .scaleExtent([1,10])
-    .on("zoom",zoomed);
 
 // parse the date / time
 var parseTime = d3.timeParse("%d-%b-%Y");
@@ -44,10 +41,7 @@ var formatTime = d3.timeFormat("%e %B");
 var x = d3.scaleTime().range([0, width]);
 var y = d3.scaleLinear().range([height, 0]);
 
-// define the line
-var valueline = d3.line()
-    .x(function(d) { return x(d.date); })
-    .y(function(d) { return y(d.grade); });
+
 
 var div = d3.select("body").append("div")
     .attr("class", "tooltip")
@@ -59,10 +53,12 @@ var div = d3.select("body").append("div")
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")")
-    .call(zoom);
+    .call(d3.behavior.zoom().on("zoom", function () {
+        svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+      }))
+  .append("g");
+    //.attr("transform",
+    //      "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
 d3.csv("csv_file/intro.csv", function(error, data) {
@@ -109,10 +105,6 @@ d3.csv("csv_file/intro.csv", function(error, data) {
   // add the Y Axis
   svg.append("g")
       .call(d3.axisLeft(y));
-
-function zoomed() {
-  container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-}
 
 });
 
