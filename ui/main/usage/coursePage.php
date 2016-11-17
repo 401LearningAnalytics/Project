@@ -70,7 +70,7 @@
 
 	<?php
 		// connect to mysql database
-		$connection = mysql_connect('localhost', 'root', '117130');
+		$connection = mysql_connect('localhost', 'Wei', '123456');
 		mysql_select_db('learner');
 
 		// select course names from database
