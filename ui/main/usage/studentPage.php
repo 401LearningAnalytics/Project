@@ -532,7 +532,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   width: 30%;
   height: 400px;
   position: relative;
-  right: -450px;
+  right: -400px;
   margin-top: -400px;
 }
 
@@ -540,7 +540,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   width: 30%;
   height: 400px;
   position: relative;
-  right: -900px;
+  right: -800px;
   margin-top: -400px;
 }
 
@@ -556,7 +556,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   width: 30%;
   height: 400px;
   position: relative;
-  right: -450px;
+  right: -400px;
   margin-top: -400px;
 }
 
@@ -564,13 +564,15 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   width: 30%;
   height: 400px;
   position: relative;
-  right: -900px;
+  right: -800px;
   margin-top: -400px;
 }
 </style>
 
 
 <!-- HTML -->
+<html>
+<body background="https://www.google.ca/search?biw=1264&bih=662&tbm=isch&sa=1&q=html+background+image&oq=html+background+image&gs_l=img.3..0i67k1l2j0l3j0i67k1j0l4.2458.2458.0.2643.1.1.0.0.0.0.75.75.1.1.0....0...1.1.64.img..0.1.75.ogntPuYDsFM#imgdii=qDqsDyjRoCCNxM%3A%3BqDqsDyjRoCCNxM%3A%3Bsmg-S_wVoxnSLM%3A&imgrc=qDqsDyjRoCCNxM%3A">
 <td>
 <div id="chartdiv"></div>
 <div id="chartdiv2"></div>
@@ -580,3 +582,4 @@ var chart = AmCharts.makeChart( "chartdiv6", {
 <div id="chartdiv6"></div>
 
 </td>
+</html>
