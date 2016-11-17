@@ -516,6 +516,60 @@ var chart = AmCharts.makeChart( "chartdiv6", {
 
 </script>
 
+<style>
+#chartdiv {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  bottom: 0;
+  right: 0px;
+  margin-top: -400px;
+
+
+}
+
+#chartdiv2 {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  right: -450px;
+  margin-top: -400px;
+}
+
+#chartdiv3 {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  right: -900px;
+  margin-top: -400px;
+}
+
+#chartdiv4 {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  right: 0px;
+  margin-top: 0px;
+}
+
+#chartdiv5 {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  right: -450px;
+  margin-top: -400px;
+}
+
+#chartdiv6 {
+  width: 30%;
+  height: 400px;
+  position: relative;
+  right: -900px;
+  margin-top: -400px;
+}
+</style>
+
+
 <!-- HTML -->
 <td>
 <div id="chartdiv"></div>

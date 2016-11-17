@@ -30,7 +30,7 @@ body  {
     <ul class="list">
       <?php
 		// connect to mysql database
-		$connection = mysql_connect('localhost', 'Wei', '123456');
+		$connection = mysql_connect('localhost', 'root', '117130');
 		mysql_select_db('learner');
 
 		// select course names from database

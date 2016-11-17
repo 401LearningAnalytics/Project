@@ -5,7 +5,7 @@
 $student_id = $_GET["student_id"];
 
 // connect to mysql database
-$link = mysqli_connect("localhost", "Wei", "123456", "learner");
+$link = mysqli_connect("localhost", "root", "117130", "learner");
 
 /* check connection */
 if (mysqli_connect_errno()) {
@@ -82,7 +82,7 @@ if ($result = mysqli_query($link, $sql)) {
         $result = mysqli_query($link, $commands[$n]);
         $row = mysqli_fetch_row($result);
         $marks1[$a] = $allmarks[$n];
-        $row_names[$a] = $row[0];
+        $row_names[$a] = substr($row[0], 0, 30);
         $a += 1;
       }
 
@@ -91,7 +91,7 @@ if ($result = mysqli_query($link, $sql)) {
         $result = mysqli_query($link, $commands[$n]);
         $row = mysqli_fetch_row($result);
         $marks2[$b] = $allmarks[$n];
-        $row_names2[$b] = $row[0];
+        $row_names2[$b] = substr($row[0], 0, 30);
         $b += 1;
       }
 
@@ -100,7 +100,7 @@ if ($result = mysqli_query($link, $sql)) {
         $result = mysqli_query($link, $commands[$n]);
         $row = mysqli_fetch_row($result);
         $marks3[$c] = $allmarks[$n];
-        $row_names3[$c] = $row[0];
+        $row_names3[$c] = substr($row[0], 0, 30);
         $c += 1;
       }
 
@@ -109,7 +109,7 @@ if ($result = mysqli_query($link, $sql)) {
         $result = mysqli_query($link, $commands[$n]);
         $row = mysqli_fetch_row($result);
         $marks4[$d] = $allmarks[$n];
-        $row_names4[$d] = $row[0];
+        $row_names4[$d] = substr($row[0], 0, 30);
         $d += 1;
       }
 
@@ -118,7 +118,7 @@ if ($result = mysqli_query($link, $sql)) {
         $result = mysqli_query($link, $commands[$n]);
         $row = mysqli_fetch_row($result);
         $marks5[$e] = $allmarks[$n];
-        $row_names5[$e] = $row[0];
+        $row_names5[$e] = substr($row[0], 0, 30);
         $e += 1;
       }
 
@@ -127,7 +127,7 @@ if ($result = mysqli_query($link, $sql)) {
         $result = mysqli_query($link, $commands[$n]);
         $row = mysqli_fetch_row($result);
         $marks6[$f] = $allmarks[$n];
-        $row_names6[$f] = $row[0];
+        $row_names6[$f] = substr($row[0], 0, 30);
         $f += 1;
       }
 
