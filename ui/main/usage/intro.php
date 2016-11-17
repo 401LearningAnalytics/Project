@@ -75,7 +75,7 @@ d3.csv("csv_file/intro.csv", function(error, data) {
   x.domain(d3.extent(data, function(d) { return d.date; }));
   y.domain([0, d3.max(data, function(d) { return d.grade; })]);
 
- 
+  colors = d3.scale.category10();
 
   // add the dots with tooltips
   svg.selectAll("dot")
@@ -84,6 +84,7 @@ d3.csv("csv_file/intro.csv", function(error, data) {
      .attr("r", 5)
      .attr("cx", function(d) { return x(d.date); })
      .attr("cy", function(d) { return y(d.grade); })
+     .attr("fill",function(d,i){return colors(i)})
      .on("mouseover", function(d) {
        div.transition()
          .duration(200)
