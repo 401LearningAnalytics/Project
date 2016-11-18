@@ -532,7 +532,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   width: 30%;
   height: 400px;
   position: relative;
-  right: -400px;
+  right: -600px;
   margin-top: -400px;
 }
 
@@ -540,7 +540,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   width: 30%;
   height: 400px;
   position: relative;
-  right: -800px;
+  right: -1200px;
   margin-top: -400px;
 }
 
@@ -556,7 +556,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   width: 30%;
   height: 400px;
   position: relative;
-  right: -400px;
+  right: -600px;
   margin-top: -400px;
 }
 
@@ -564,7 +564,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   width: 30%;
   height: 400px;
   position: relative;
-  right: -800px;
+  right: -1200px;
   margin-top: -400px;
 }
 </style>

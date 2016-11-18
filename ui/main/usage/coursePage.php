@@ -15,8 +15,10 @@
 		?></h1></p>
 	</div>
 	<?php
+		$quiz_course_id = "0";
 		if($_GET["id"]=="Introduction to Software Product Management") {
 			include("intro.php");
+			$quiz_course_id = "DYv7azSfEeWgIQ7IEhB31Q";
 			$average = "SELECT AVG(course_grade_verified) FROM course_grades WHERE course_id='DYv7azSfEeWgIQ7IEhB31Q'";
 			$total = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='DYv7azSfEeWgIQ7IEhB31Q'";
 			$module = "SELECT course_module_name FROM course_modules WHERE course_id='DYv7azSfEeWgIQ7IEhB31Q' ORDER BY course_module_order";
@@ -25,6 +27,7 @@
 		}
 		else if($_GET["id"]=="Software Processes and Agile Practices") {
 			include("soft_process.php");
+			$quiz_course_id = "6lQZLjVvEeWfzhKP8GtZlQ";
 			$average = "SELECT AVG(course_grade_verified) FROM course_grades WHERE course_id='6lQZLjVvEeWfzhKP8GtZlQ'";
 			$total = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='6lQZLjVvEeWfzhKP8GtZlQ'";
 			$module = "SELECT course_module_name FROM course_modules WHERE course_id='6lQZLjVvEeWfzhKP8GtZlQ' ORDER BY course_module_order";
@@ -33,6 +36,7 @@
 		}
 		else if($_GET["id"]=="Client Needs and Software Requirements") {
 			include("client_needs.php");
+			$quiz_course_id = "EdKScTVwEeWW9BKhJ4xW0Q";
 			$average = "SELECT AVG(course_grade_verified) FROM course_grades WHERE course_id='EdKScTVwEeWW9BKhJ4xW0Q'";
 			$total = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='EdKScTVwEeWW9BKhJ4xW0Q'";
 			$module = "SELECT course_module_name FROM course_modules WHERE course_id='EdKScTVwEeWW9BKhJ4xW0Q' ORDER BY course_module_order";
@@ -41,6 +45,7 @@
 		}
 		else if($_GET["id"]=="Agile Planning for Software Products") {
 			include("agile_plan.php");
+			$quiz_course_id = "NpTR4zVwEeWfzhKP8GtZlQ";
 			$average = "SELECT AVG(course_grade_verified) FROM course_grades WHERE course_id='NpTR4zVwEeWfzhKP8GtZlQ'";
 			$total = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='NpTR4zVwEeWfzhKP8GtZlQ'";
 			$module = "SELECT course_module_name FROM course_modules WHERE course_id='NpTR4zVwEeWfzhKP8GtZlQ' ORDER BY course_module_order";
@@ -49,6 +54,7 @@
 		}
 		else if ($_GET["id"]=="Reviews ") {
 			include("review.php");
+			$quiz_course_id = "ywoUFzVxEeWWBQrVFXqd1w";
 			$average = "SELECT AVG(course_grade_verified) FROM course_grades WHERE course_id='ywoUFzVxEeWWBQrVFXqd1w'";
 			$total = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='ywoUFzVxEeWWBQrVFXqd1w'";
 			$module = "SELECT course_module_name FROM course_modules WHERE course_id='ywoUFzVxEeWWBQrVFXqd1w' ORDER BY course_module_order";
@@ -57,6 +63,7 @@
 		}
 		else if($_GET["id"]=="Software Product Management Capstone") {
 			include("soft_mana.php");
+			$quiz_course_id = "99SZyjVxEeW6RApRXdjJPw";
 			$average = "SELECT AVG(course_grade_verified) FROM course_grades WHERE course_id='99SZyjVxEeW6RApRXdjJPw'";
 			$total = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='99SZyjVxEeW6RApRXdjJPw'";
 			$module = "SELECT course_module_name FROM course_modules WHERE course_id='99SZyjVxEeW6RApRXdjJPw' ORDER BY course_module_order";
@@ -87,5 +94,29 @@
 	<p><b> Failed students:</b> <?php while($row = mysql_fetch_array($fails)) {echo $row['COUNT(ualberta_user_id)'];} ?></p>
 	<p><b> Course Modules:</b> <?php while($row = mysql_fetch_array($mod)) {echo '<br>'.$row['course_module_name'].'</br>';} ?></p>
 	</div>
+
+  <hr></hr>
+
+
+
+
+<h2>Quiz Summary</h2>
+
+
+<?php include"quizData.php";?>
+
+
+<?php include"quizUI.php"?>
+
+
+
+
+
+
+
+
+
+
+	
   </body>
 </html>

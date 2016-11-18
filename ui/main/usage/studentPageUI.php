@@ -1,8 +1,14 @@
 <html>
+
   <head>
     <meta charset="utf-8">
     <title>Indivisual Student Page</title>
     <style>
+    body{
+    	background-image: url("../../img/background2.jpg");
+    	background-color: #C9B1C4;
+    }
+
     // setup layout for the page
     table {width:80%; background-color:#fff;}
     thead td { width: width of the other columns; }
