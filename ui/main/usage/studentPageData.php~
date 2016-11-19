@@ -9,7 +9,7 @@
   * row names is for the name of each module in a courses
   *
   * @param int $student_id passed in from other page to find related quiz marks
-  * 	   array $row_names for storing the name of the module in each courses
+  *    
   *
   * @return void
   */

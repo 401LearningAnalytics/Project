@@ -1,4 +1,3 @@
-
       <!-- Styles -->
   <style>
   #chartdiv {
@@ -167,3 +166,127 @@
 <div id="chartdiv"></div>
 
 
+
+<?php include"quizAverage.php" ?>
+
+<br>
+
+<hr></hr>
+
+<br>
+<h2>Quiz Averages</h2>
+
+
+<!-- Styles -->
+<style>
+#chartdiv2 {
+	width	: 90%;
+	height	: 500px;
+}					
+</style>
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+<!-- Chart code -->
+<script>
+
+
+$average1 = " <?php echo $ave1 ?>"
+$average2 = " <?php echo $ave2 ?>"
+$average3 = " <?php echo $ave3 ?>"
+$average4 = " <?php echo $ave4 ?>"
+$average5 = " <?php echo $ave5 ?>"
+$average6 = " <?php echo $ave6 ?>"
+
+$standdev1 = " <?php echo $std1 ?>"
+$standdev2 = " <?php echo $std2 ?>"
+$standdev3 = " <?php echo $std3 ?>"
+$standdev4 = " <?php echo $std4 ?>"
+$standdev5 = " <?php echo $std5 ?>"
+$standdev6 = " <?php echo $std6 ?>"
+
+
+
+var chart = AmCharts.makeChart( "chartdiv2", {
+  "type": "serial",
+  "theme": "light",
+  "dataProvider": [ {
+    "year": $name1,
+    "value": $average1,
+    "error": $standdev1
+  }, {
+    "year": $name2,
+    "value": $average2,
+    "error": $standdev2
+  }, {
+    "year": $name3,
+    "value": $average3,
+    "error": $standdev3
+  }, {
+    "year": $name4,
+    "value": $average4,
+    "error": $standdev4
+  }, {
+    "year": $name5,
+    "value": $average5,
+    "error": $standdev5
+  }, {
+    "year": $name6,
+    "value": $average6,
+    "error": $standdev6
+  }, {
+    "year": "",
+    "value": 0,
+    "error": 0
+  }  ],
+  "balloon": {
+    "textAlign": "left"
+  },
+  "valueAxes": [ {
+    "id": "v1",
+    "axisAlpha": 0
+  } ],
+  "startDuration": 1,
+  "graphs": [ {
+    "balloonText": "Value:<b>[[value]]</b><br>Standard Deviation:<b>[[error]]</b>",
+    "bullet": "yError",
+    "bulletSize": 10,
+    "errorField": "error",
+    "lineThickness": 2,
+    "valueField": "value",
+    "bulletAxis": "v1",
+    "fillAlphas": 0
+  }, {
+    "bullet": "round",
+    "bulletBorderAlpha": 1,
+    "bulletBorderColor": "#FFFFFF",
+    "lineAlpha": 0,
+    "lineThickness": 2,
+    "showBalloon": false,
+    "valueField": "value"
+
+  } ],
+  "chartCursor": {
+    "cursorAlpha": 0,
+    "cursorPosition": "mouse",
+    "graphBulletSize": 1,
+    "zoomable": false
+  },
+  "categoryField": "year",
+  "categoryAxis": {
+    "gridPosition": "start",
+    "axisAlpha": 0
+  },
+  "export": {
+    "enabled": false
+  }
+} );
+</script>
+
+<!-- HTML -->
+<div id="chartdiv2"></div>							

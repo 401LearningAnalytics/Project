@@ -10,7 +10,12 @@
     $per_count5=array();
     $per_count6=array();
 
-
+    $ave1 = 0;
+    $ave2 = 0;
+    $ave3 = 0;
+    $ave4 = 0;
+    $ave5 = 0;
+    $ave6 = 0;
 
     $link = mysqli_connect("localhost", "Wei", "123456", "learner");
 
