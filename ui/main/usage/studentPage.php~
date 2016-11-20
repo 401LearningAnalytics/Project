@@ -1,3 +1,41 @@
+<?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
+/**
+  * This page includes the javascript and HTML code for generating the charts for each course of current student.
+  *
+  * with data passed from StudentDatapage, this page will
+  * use javascript to generate all six charts for each course
+  * in which there will be multiple columns cotaining the
+  * corresponding grade
+  *
+  * * Markdown style lists function too
+  * * Just try this out once
+  *
+  * The section after the description contains the tags; which provide
+  * structured meta-data concerning the given element.
+<<<<<<< HEAD
+  * @package ui
+=======
+  *
+>>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
+  * @author  Hong Chen <chen1@ualberta.ca> 2016
+  *
+  * @since 1.0
+  *
+  * @param str    $name     The name for the chart which is the name of the course.
+  * @param str    $row_name The name for the row of the chart which is the name of the component.
+  */
+<<<<<<< HEAD
+ ?>
+=======
+
+ ?>
+
+
+>>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
 <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
 
 <!-- include the student page Interface -->
@@ -595,6 +633,8 @@ var chart = AmCharts.makeChart( "chartdiv6", {
 
 
 <!-- HTML -->
+<html>
+<body background="https://www.google.ca/search?biw=1264&bih=662&tbm=isch&sa=1&q=html+background+image&oq=html+background+image&gs_l=img.3..0i67k1l2j0l3j0i67k1j0l4.2458.2458.0.2643.1.1.0.0.0.0.75.75.1.1.0....0...1.1.64.img..0.1.75.ogntPuYDsFM#imgdii=qDqsDyjRoCCNxM%3A%3BqDqsDyjRoCCNxM%3A%3Bsmg-S_wVoxnSLM%3A&imgrc=qDqsDyjRoCCNxM%3A">
 <td>
 <div id="chartdiv"></div>
 <div id="chartdiv2"></div>
@@ -604,3 +644,4 @@ var chart = AmCharts.makeChart( "chartdiv6", {
 <div id="chartdiv6"></div>
 
 </td>
+</html>

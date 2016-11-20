@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-=======
-
->>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
 /**
   * This page includes the javascript and HTML code for generating the charts for each course of current student.
   *
@@ -16,11 +12,7 @@
   *
   * The section after the description contains the tags; which provide
   * structured meta-data concerning the given element.
-<<<<<<< HEAD
-  * @package ui
-=======
   *
->>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
   * @author  Hong Chen <chen1@ualberta.ca> 2016
   *
   * @since 1.0
@@ -28,14 +20,7 @@
   * @param str    $name     The name for the chart which is the name of the course.
   * @param str    $row_name The name for the row of the chart which is the name of the component.
   */
-<<<<<<< HEAD
  ?>
-=======
-
- ?>
-
-
->>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
 <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
 
 <!-- include the student page Interface -->
