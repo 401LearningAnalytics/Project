@@ -1,6 +1,18 @@
 
 
 <?php
+/**
+  * This method uses the student ID to fetch related Data from each module in each course this student in 
+  *
+  * student ID for fetching individual student data
+  * course ID for fetching data from each course the currents student is in
+  * row names is for the name of each module in a courses
+  *
+  * @param int $student_id passed in from other page to find related quiz marks
+  * 	   array $row_names for storing the name of the module in each courses
+  *
+  * @return void
+  */
 
 $student_id = $_GET["student_id"];
 

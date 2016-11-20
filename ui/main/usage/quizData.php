@@ -10,6 +10,8 @@
     $per_count5=array();
     $per_count6=array();
 
+
+
     $link = mysqli_connect("localhost", "Wei", "123456", "learner");
 
     /* check connection */
@@ -338,4 +340,13 @@
         }
       	mysqli_free_result($result);
 
+
+
+
+
+
+
+
+
+	
   ?>

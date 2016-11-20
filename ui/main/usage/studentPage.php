@@ -140,6 +140,10 @@ var chartData = [ {
   "component": $row_name6,
   "mark": $mark6,
   "color": "#04D215"
+}, {
+  "component":"",
+  "mark": 0,
+  "color": "#04D215"
 }];
 
 
@@ -205,6 +209,10 @@ var chartData2 = [ {
 }, {
   "component": $row_name26,
   "mark": $mark26,
+  "color": "#04D215"
+}, {
+  "component":"",
+  "mark": 0,
   "color": "#04D215"
 }]
 
@@ -273,6 +281,10 @@ var chartData3 = [ {
   "component": $row_name36,
   "mark": $mark36,
   "color": "#04D215"
+}, {
+  "component":"",
+  "mark": 0,
+  "color": "#04D215"
 }]
 
 
@@ -340,6 +352,10 @@ var chartData4 = [ {
   "component": $row_name46,
   "mark": $mark46,
   "color": "#04D215"
+}, {
+  "component":"",
+  "mark": 0,
+  "color": "#04D215"
 }]
 
 
@@ -406,6 +422,10 @@ var chartData5 = [ {
   "component": $row_name56,
   "mark": $mark56,
   "color": "#04D215"
+}, {
+  "component":"",
+  "mark": 0,
+  "color": "#04D215"
 }]
 
 
@@ -471,6 +491,10 @@ var chartData6 = [ {
 }, {
   "component": $row_name66,
   "mark": $mark66,
+  "color": "#04D215"
+}, {
+  "component":"",
+  "mark": 0,
   "color": "#04D215"
 }]
 
