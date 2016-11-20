@@ -1,4 +1,19 @@
 <?php
+/**
+  * This page is to select needed data from database
+  * and form into a new csv file for scatter plot using.
+  * The download place which is the place the browser's  
+  * default settings.
+  *
+  * @package ui
+  *
+  * @author  Wei Song <wsong1@ualberta.ca> 2016
+  *
+  * @since 1.0
+  *
+  */
+?>
+<?php
 // output headers so that the file is downloaded rather than displayed
 header('Content-Type: text/csv; charset=utf-8');
 header('Content-Disposition: attachment; filename=soft_mana.csv');

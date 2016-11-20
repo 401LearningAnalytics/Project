@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+<?php
+=======
   <?php
+>>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
   /**
     * This page is for fetching the data from database for quizes in the current course.
     *
@@ -13,7 +17,11 @@
     *
     * The section after the description contains the tags; which provide
     * structured meta-data concerning the given element.
+<<<<<<< HEAD
+    * @package ui
+=======
     *
+>>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
     * @author  Hong Chen <wsong1@ualberta.ca> 2016
     *
     * @since 1.0
@@ -23,8 +31,13 @@
     * @param array    $quiz_count             The array of number of all finished quizes of each componenet, with indices corresponding to the $quiz_course_item_id array.
     * @param array    $per_count              The array of number of students who fall into each range, the indices corresponds to the indices of components.
     */
+<<<<<<< HEAD
+?>
+<?php
+=======
 
 
+>>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
     $quiz_course_item_id = array();
     $quiz_course_item = array();
     $quiz_count=array();

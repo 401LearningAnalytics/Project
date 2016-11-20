@@ -1,3 +1,18 @@
+<?php
+/**
+  * This page is scatter for Client Needs and Software Requirements course.
+  * The scatter plot shows the current time versus performance for each student.
+  * Each dot in the plot means each student.
+  * The color means each student process.
+  *
+  * @package ui
+  *
+  * @author  Wei Song <wsong1@ualberta.ca> 2016
+  *
+  * @since 1.0
+  *
+  */
+?>
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style> /* set the CSS */

@@ -1,23 +1,19 @@
 <?php
 /**
   * This page is course page.
-  *
   * Everytime the instructor inserts a course into
   * the database, the course will be shown on the course
   * page.
-  * 
-  * * Markdown style lists function too
-  * * Just try this out once
-  *
-  * The section after the description contains the tags; which provide
-  * structured meta-data concerning the given element.
+  * @package ui
   *
   * @author  Wei Song <wsong1@ualberta.ca> 2016
   *
   * @since 1.0
   *
-  * @param int    $i  The index to control the table.
-  * @param int $trEnd To change the int i to make it be a 3*n table.
+  * @param integer $i
+  *	The index to control the table.
+  * @param int $trEnd
+  *     To change the int i to make it be a 3*n table.
   */
 ?>
 <html>

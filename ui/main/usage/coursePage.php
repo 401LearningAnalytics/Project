@@ -15,7 +15,11 @@
     *
     * The section after the description contains the tags; which provide
     * structured meta-data concerning the given element.
+<<<<<<< HEAD
+    * @package ui
+=======
     *
+>>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
     * @author  Wei Song <wsong1@ualberta.ca> 2016
     *
     * @since 1.0
@@ -29,7 +33,10 @@
     *
     */
   ?>
+<<<<<<< HEAD
+=======
 
+>>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
 <html>
   <head>
   <style>

@@ -1,3 +1,16 @@
+<?php
+/** 
+  * 
+  * 
+  * 
+  *
+  * @package server
+  * @author  
+  *
+  * @since 1.0
+  *
+  */
+?>
 <html><body><h1>CSV Uploading Page</h1></body></html>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 

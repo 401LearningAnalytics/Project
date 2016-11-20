@@ -1,4 +1,15 @@
 <?php
+/**
+  * 
+  *
+  * @package server
+  * @author  
+  *
+  * @since 1.0
+  *
+  */
+?>
+<?php
    $filename = $argv[1];
                  //Print file details
              $file = fopen($filename, 'r');

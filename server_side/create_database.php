@@ -1,4 +1,19 @@
 <?php
+/** This page is creating database automatically
+  * 
+  *
+  * This file will create tables into database automatically.
+  * If successfully created, it will return "Connected successfully".
+  * If not, it will retuen the error message.
+  *
+  * @package server
+  * @author  Hong Chen <chen1@ualberta.ca> 2016
+  *
+  * @since 1.0
+  *
+  */
+?>
+<?php
 $servername = "localhost";
 $username = "Wei";
 $password = "123456";

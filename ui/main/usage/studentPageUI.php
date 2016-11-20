@@ -1,3 +1,22 @@
+<?php
+/**
+  * This page includes the javascript code, HTML code of generating student info on the page.
+  *
+  * This page shows the default student picture and the ualerta_user_id
+  * 
+  *
+  * * Markdown style lists function too
+  * * Just try this out once
+  *
+  * The section after the description contains the tags; which provide
+  * structured meta-data concerning the given element.
+  * @package ui
+  * @author  Wei Song <chen1@ualberta.ca> 2016
+  *
+  * @since 1.0
+  *
+  */
+?>
 <html>
 
   <head>

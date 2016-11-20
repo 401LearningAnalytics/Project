@@ -1,3 +1,17 @@
+<?php
+/** This page is testing if it is successfullly
+  * connecting to mysql database or not
+  *
+  * The default servername is localhost
+  * If connection failed, it will return error message
+  * 
+  * @package server
+  * @author  Hong Chen <chen1@ualberta.ca> 2016
+  *
+  * @since 1.0
+  *
+  */
+?>
 <html><body><h1>My site works</h1></body></html>
 
 <?php

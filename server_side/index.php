@@ -1,3 +1,16 @@
+<?php
+/** This page is uploading csv files page
+  * 
+  * This page allows you to choose needed csv files to upload 
+  * 
+  *
+  * @package server
+  * @author  Hong Chen <chen1@ualberta.ca> 2016
+  *
+  * @since 1.0
+  *
+  */
+?>
 <html>
 <head>
 <style>

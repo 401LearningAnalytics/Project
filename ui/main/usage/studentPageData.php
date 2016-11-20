@@ -1,5 +1,34 @@
-
-
+<?php
+/**
+  * This page is for showing students performance in each component
+  * in all courses
+  *
+  * It transfers from the course page to individual student page
+  * upon clicking on the dots which represent different students
+  *
+  * For all data related to such student in the database identified by ID
+  * the page will fetch data from course item table, course item grade table
+  * and show six charts which correspond to six different courses, and within
+  * each course, there will be multiple columns which are different componenets
+  * in a course. The high of the columns are the corresponding score in them.
+  *
+  * * Markdown style lists function too
+  * * Just try this out once
+  *
+  * The section after the description contains the tags; which provide
+  * structured meta-data concerning the given element.
+  * @package ui
+  * @author  Hong Chen <chen1@ualberta.ca> 2016
+  *
+  * @since 1.0
+  *
+  * @param int    $student_id  The id for current student.
+  * @param array  $courses   The array of all courses the current student is in.
+  * @param int    $allmarks  The marks of each component that belong to the student of all courses.
+  * @param int    $marks     The marks of each component of individual courses.
+  * @param int    $row_names The names of the columns, which are the names of the components.
+  */
+?>
 <?php
 /**
   * This page is for showing students performance in each component
