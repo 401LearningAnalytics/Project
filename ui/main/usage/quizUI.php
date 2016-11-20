@@ -10,11 +10,8 @@
   *
   * The section after the description contains the tags; which provide
   * structured meta-data concerning the given element.
-<<<<<<< HEAD
   * @package ui
-=======
   *
->>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
   * @author  Hong Chen <chen1@ualberta.ca> 2016
   *
   * @since 1.0
@@ -24,10 +21,7 @@
   * @param float  $average  The average of quiz grade for each component for current course.
   * @param float  $standdev The standard deviation of quiz grade for each component for current course
   */
-<<<<<<< HEAD
-=======
 
->>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
 ?>
 
       <!-- Styles -->

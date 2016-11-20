@@ -1,3 +1,32 @@
+<?php
+/**
+  * This page includes the javascript code, HTML code of generating quiz charts on the apge.
+  *
+  * With given data, the page generates charts accordingly with
+  * the grades of quizes in each component
+  *
+  * * Markdown style lists function too
+  * * Just try this out once
+  *
+  * The section after the description contains the tags; which provide
+  * structured meta-data concerning the given element.
+<<<<<<< HEAD
+  * @package ui
+=======
+  *
+>>>>>>> f830b5df0d1f064d339f35a54a373cec893545a8
+  * @author  Hong Chen <chen1@ualberta.ca> 2016
+  *
+  * @since 1.0
+  *
+  * @param str    $name     The names of components in this course for the chart columns.
+  * @param float  $per      The marks of each quiz grade that belong to different rages(eg. 0% - 25%), in each component.
+  * @param float  $average  The average of quiz grade for each component for current course.
+  * @param float  $standdev The standard deviation of quiz grade for each component for current course
+  */
+
+?>
+
       <!-- Styles -->
   <style>
   #chartdiv {
@@ -182,7 +211,7 @@
 #chartdiv2 {
 	width	: 90%;
 	height	: 500px;
-}					
+}
 </style>
 
 <!-- Resources -->
@@ -289,4 +318,4 @@ var chart = AmCharts.makeChart( "chartdiv2", {
 </script>
 
 <!-- HTML -->
-<div id="chartdiv2"></div>							
+<div id="chartdiv2"></div>
