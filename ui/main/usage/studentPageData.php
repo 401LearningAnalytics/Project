@@ -2,16 +2,35 @@
 
 <?php
 /**
-  * This method uses the student ID to fetch related Data from each module in each course this student in 
+  * This page is for showing students performance in each component
+  * in all courses
   *
-  * student ID for fetching individual student data
-  * course ID for fetching data from each course the currents student is in
-  * row names is for the name of each module in a courses
+  * It transfers from the course page to individual student page
+  * upon clicking on the dots which represent different students
   *
-  * @param int $student_id passed in from other page to find related quiz marks
-  * 	   array $row_names for storing the name of the module in each courses
+  * For all data related to such student in the database identified by ID
+  * the page will fetch data from course item table, course item grade table
+  * and show six charts which correspond to six different courses, and within
+  * each course, there will be multiple columns which are different componenets
+  * in a course. The high of the columns are the corresponding score in them.
   *
-  * @return void
+  * * Markdown style lists function too
+  * * Just try this out once
+  *
+  * The section after the description contains the tags; which provide
+  * structured meta-data concerning the given element.
+  *
+  * @author  Hong Chen <chen1@ualberta.ca> 2016
+  *
+  * @since 1.0
+  *
+  * @param int    $student_id  The id for current student.
+  * @param array  $courses   The array of all courses the current student is in.
+  * @param int    $allmarks  The marks of each component that belong to the student of all courses.
+  * @param int    $marks     The marks of each component of individual courses.
+  * @param int    $row_names The names of the columns, which are the names of the components.
+
+
   */
 
 $student_id = $_GET["student_id"];
@@ -33,7 +52,7 @@ if ($result = mysqli_query($link, $sql)) {
 
     $i = 0;
     $commands;
-    $allallmarks;
+    $allmarks;
     $courses;
     /* fetch associative array */
     while ($row = mysqli_fetch_row($result)) {

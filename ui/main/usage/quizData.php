@@ -1,4 +1,29 @@
   <?php
+  /**
+    * This page is for fetching the data from database for quizes in the current course.
+    *
+    * Given the course ID, this function fetches the quiz grade of different range,
+    * eg. 0% - 25%, 26%- 50%, 51% - 75%, 76% - 100%, for each componenet in the course
+    * and the number of students who fall into those ranges
+    *
+    *
+    *
+    * * Markdown style lists function too
+    * * Just try this out once
+    *
+    * The section after the description contains the tags; which provide
+    * structured meta-data concerning the given element.
+    *
+    * @author  Hong Chen <wsong1@ualberta.ca> 2016
+    *
+    * @since 1.0
+    *
+    * @param array    $quiz_course_item_id    The array of componenet ID in the current course.
+    * @param array    $quiz_course_item       The array of names of componenet in the current course, with indices corresponding to the $quiz_course_item_id array.
+    * @param array    $quiz_count             The array of number of all finished quizes of each componenet, with indices corresponding to the $quiz_course_item_id array.
+    * @param array    $per_count              The array of number of students who fall into each range, the indices corresponds to the indices of components.
+    */
+
 
     $quiz_course_item_id = array();
     $quiz_course_item = array();
@@ -66,7 +91,7 @@
       $j += 1;
     }
 
-    
+
 	//componenet 1
         $sql = "SELECT COUNT(course_quiz_grade) from course_formative_quiz_grades where course_item_id = \"".$quiz_course_item_id[0]."\" and course_quiz_grade <= 1/4*course_quiz_max_grade;";
 
@@ -295,7 +320,7 @@
 
 
 
-	
+
 	//component 6
         $sql = "SELECT COUNT(course_quiz_grade) from course_formative_quiz_grades where course_item_id = \"".$quiz_course_item_id[5]."\" and course_quiz_grade <= 1/4*course_quiz_max_grade;";
 
@@ -348,5 +373,5 @@
 
 
 
-	
+
   ?>

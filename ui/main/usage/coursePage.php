@@ -1,3 +1,35 @@
+<?php
+  /**
+    * This page is for fetching the data from database for quizes in the current course.
+    *
+    * Within the course, the chart data are fetched from database that
+    * contains each student performace in the course over the process of
+    * the course, which is measured in time
+    * upon clicking on the students, who are represented by dots on the
+    * chart, this course page links to individual student page connected by
+    * the student id
+    *
+    *
+    * * Markdown style lists function too
+    * * Just try this out once
+    *
+    * The section after the description contains the tags; which provide
+    * structured meta-data concerning the given element.
+    *
+    * @author  Wei Song <wsong1@ualberta.ca> 2016
+    *
+    * @since 1.0
+    *
+    * @param int    $quiz_course_id   The id of the coures for fetchig data from course table.
+    * @param int    $average          The average of the grades of all students in the coures.
+    * @param int    $total            The number of students participating in the coures.
+    * @param int    $module           The name of the modules in the coures.
+    * @param int    $top              The number of students who achieved more than 90% in the course overall.
+    * @param int    $fail             The number of students who failed that achieved less than 50% in all course work.
+    *
+    */
+  ?>
+
 <html>
   <head>
   <style>
@@ -117,6 +149,6 @@
 
 
 
-	
+
   </body>
 </html>

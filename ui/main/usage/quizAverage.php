@@ -1,5 +1,25 @@
 <?php
 
+/**
+  * This contains the data of average and the standard deviation of quizes
+  *
+  * This function fetches data of the average and the
+	* standard devations of the quizes in one specific course
+  *
+  * * Markdown style lists function too
+  * * Just try this out once
+  *
+  * The section after the description contains the tags; which provide
+  * structured meta-data concerning the given element.
+  *
+  * @author  Hong Chen <chen1@ualberta.ca> 2016
+  *
+  * @since 1.0
+  *
+  * @param float    $ave1		The average quiz grade for a component.
+  * @param float 		$std	  The standard deviation of quiz grade for a component.
+  */
+
 	$ave1 = 0;
 	$ave2 = 0;
 	$ave3 = 0;

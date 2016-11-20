@@ -1,3 +1,30 @@
+<?php
+
+/**
+  * This page includes the javascript and HTML code for generating the charts for each course of current student.
+  *
+  * with data passed from StudentDatapage, this page will
+  * use javascript to generate all six charts for each course
+  * in which there will be multiple columns cotaining the
+  * corresponding grade
+  *
+  * * Markdown style lists function too
+  * * Just try this out once
+  *
+  * The section after the description contains the tags; which provide
+  * structured meta-data concerning the given element.
+  *
+  * @author  Hong Chen <chen1@ualberta.ca> 2016
+  *
+  * @since 1.0
+  *
+  * @param str    $name     The name for the chart which is the name of the course.
+  * @param str    $row_name The name for the row of the chart which is the name of the component.
+  */
+
+ ?>
+
+
 <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
 
 <!-- include the student page Interface -->
