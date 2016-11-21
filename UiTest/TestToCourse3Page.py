@@ -12,7 +12,7 @@ class TestToCourse3Page(unittest.TestCase):
     def test_to_course3_page(self):
         driver = self.driver
         driver.get("http://162.246.157.230")
-        element = driver.find_element_by_xpath("//input[@value=' Instructor']")
+        element = driver.find_element_by_xpath("//input[@value='Instructor']")
         element.click()
         element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.ID, "course3")))

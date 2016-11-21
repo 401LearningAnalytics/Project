@@ -10,7 +10,7 @@ class TestToAdminPage(unittest.TestCase):
     def test_to_admin_page(self):
         driver = self.driver
         driver.get("http://162.246.157.230")
-        element = driver.find_element_by_xpath("//input[@value='   Admin   ']")
+        element = driver.find_element_by_xpath("//input[@value='Admin']")
         element.click()
         self.assertTrue
     
