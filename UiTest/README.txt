@@ -1,3 +1,6 @@
 Way to test Test*.py
 
-Run in test file in python 2.6 or higher shell
+Install seleniup API:
+	http://selenium-python.readthedocs.io/installation.html
+
+Run in test file in python shell with firefox installed on the machine.
