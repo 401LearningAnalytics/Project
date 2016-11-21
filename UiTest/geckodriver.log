@@ -568,3 +568,459 @@ this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://g
 this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
 Spinner.prototype.observe@resource://gre/modules/AsyncShutdown.jsm:551:9
 
+1479712104208	geckodriver	INFO	Listening on 127.0.0.1:38430
+1479712105210	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.djye4wuTx3Ow
+1479712105212	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479712105219	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51661
+
+(firefox:2948): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:2948): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:2948): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:2948): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479712105960	Marionette	INFO	Listening on port 51661
+1479712107234	Marionette	INFO	startBrowser df972ddf-6be2-4b98-8edf-4ce6d5caad86
+
+(/usr/lib/firefox/plugin-container:2998): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:2998): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:2998): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:2998): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:2948): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2948): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2948): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2948): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+1479712308419	geckodriver	INFO	Listening on 127.0.0.1:60572
+1479712309421	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.CAXZwbmoxpiX
+1479712309423	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479712309435	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53175
+
+(firefox:3044): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3044): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3044): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3044): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479712310418	Marionette	INFO	Listening on port 53175
+1479712312169	Marionette	INFO	startBrowser b42ec6d6-1896-4124-85df-1cf046f17809
+
+(/usr/lib/firefox/plugin-container:3092): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3092): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3092): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3092): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3044): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3044): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3044): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3044): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+1479712827135	geckodriver	INFO	Listening on 127.0.0.1:53022
+1479712828136	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.0zHTGKbaIWb2
+1479712828138	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479712828145	geckodriver::marionette	INFO	Connecting to Marionette on localhost:60926
+
+(firefox:3158): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3158): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3158): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3158): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479712828951	Marionette	INFO	Listening on port 60926
+1479712830205	Marionette	INFO	startBrowser 659ac818-d898-4eeb-8f77-e4fa5ead37b3
+
+(/usr/lib/firefox/plugin-container:3210): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3210): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3210): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3210): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3158): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3158): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3158): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3158): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+1479712884204	geckodriver	INFO	Listening on 127.0.0.1:49426
+1479712885198	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.uuz0tUwH4mf1
+1479712885199	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479712885202	geckodriver::marionette	INFO	Connecting to Marionette on localhost:39277
+
+(firefox:3244): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3244): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3244): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3244): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479712886057	Marionette	INFO	Listening on port 39277
+1479712887673	Marionette	INFO	startBrowser b983b558-cd30-484b-b210-d8efa1908931
+
+(/usr/lib/firefox/plugin-container:3292): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3292): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3292): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3292): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3244): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3244): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3244): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3244): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3244): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3244): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+1479712909808	geckodriver	INFO	Listening on 127.0.0.1:33875
+1479712910808	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.x5jM9vyEW7Kq
+1479712910810	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479712910815	geckodriver::marionette	INFO	Connecting to Marionette on localhost:46482
+
+(firefox:3339): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3339): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3339): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3339): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479712911579	Marionette	INFO	Listening on port 46482
+1479712912898	Marionette	INFO	startBrowser 3f07d01b-83c4-435e-a0a8-a3a563184567
+
+(/usr/lib/firefox/plugin-container:3387): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3387): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3387): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3387): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3339): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3339): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3339): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3339): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3339): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3339): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+1479713282462	geckodriver	INFO	Listening on 127.0.0.1:60058
+1479713283463	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.Ptt4Q1JVUAM2
+1479713283465	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479713283475	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54737
+
+(firefox:3455): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3455): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3455): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3455): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479713284230	Marionette	INFO	Listening on port 54737
+1479713285555	Marionette	INFO	startBrowser c54fa393-e0a2-480a-b220-bf577d5a6ff2
+
+(/usr/lib/firefox/plugin-container:3503): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3503): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3503): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3503): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3455): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3455): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3455): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3455): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+1479713318533	geckodriver	INFO	Listening on 127.0.0.1:33663
+1479713319534	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.CyWHHMGymvWA
+1479713319535	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479713319542	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53894
+
+(firefox:3548): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3548): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3548): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3548): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479713320326	Marionette	INFO	Listening on port 53894
+1479713321723	Marionette	INFO	startBrowser 95cc9ab8-fac1-4a1f-a20e-ff4b6d30e8e3
+
+(/usr/lib/firefox/plugin-container:3600): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3600): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3600): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3600): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3548): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3548): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3548): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3548): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3548): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3548): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460003,name=PContent::Msg_PBlobConstructor) Channel closing: too late to send/recv, messages will be lost
+
+IPDL protocol error: constructor for actor failed
+[Child 3600] ###!!! ABORT: IPDL error [PContentChild]: "constructor for actor failed". abort()ing as a result.: file /build/firefox-SwmyN_/firefox-49.0+build4/ipc/glue/ProtocolUtils.cpp, line 396
+[Child 3600] ###!!! ABORT: IPDL error [PContentChild]: "constructor for actor failed". abort()ing as a result.: file /build/firefox-SwmyN_/firefox-49.0+build4/ipc/glue/ProtocolUtils.cpp, line 396
+1479713344156	geckodriver	INFO	Listening on 127.0.0.1:46297
+1479713345156	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.uNAZdYOjaxLA
+1479713345158	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479713345162	geckodriver::marionette	INFO	Connecting to Marionette on localhost:34143
+
+(firefox:3641): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3641): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3641): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3641): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479713345919	Marionette	INFO	Listening on port 34143
+1479713347126	Marionette	INFO	startBrowser 72e22e74-ddfd-41c6-ba57-4f78464cb456
+
+(/usr/lib/firefox/plugin-container:3690): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3690): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3690): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3690): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3641): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3641): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3641): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3641): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3641): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3641): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2C0043,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: resource://gre/modules/PerformanceWatcher-content.js, line 49: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+1479713373077	geckodriver	INFO	Listening on 127.0.0.1:60938
+1479713374077	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.AcpcmA2kLNwF
+1479713374079	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479713374083	geckodriver::marionette	INFO	Connecting to Marionette on localhost:36368
+
+(firefox:3730): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3730): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3730): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3730): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479713374877	Marionette	INFO	Listening on port 36368
+1479713376171	Marionette	INFO	startBrowser ff66d747-7efe-4ce2-b930-574a3ce73fdc
+
+(/usr/lib/firefox/plugin-container:3778): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3778): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3778): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3778): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3730): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3730): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3730): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3730): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3730): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3730): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+1479713389384	geckodriver	INFO	Listening on 127.0.0.1:50397
+1479713390386	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.1x6tBZl0Q2OV
+1479713390388	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479713390395	geckodriver::marionette	INFO	Connecting to Marionette on localhost:43911
+
+(firefox:3818): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3818): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3818): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3818): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479713391211	Marionette	INFO	Listening on port 43911
+1479713392485	Marionette	INFO	startBrowser 4a00f838-b4bd-47c5-9dbb-b3fb656be480
+
+(/usr/lib/firefox/plugin-container:3866): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3866): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3866): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3866): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3818): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3818): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3818): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3818): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3818): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3818): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+1479713411669	geckodriver	INFO	Listening on 127.0.0.1:59094
+1479713412676	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.MaR21dxLBKfy
+1479713412679	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479713412689	geckodriver::marionette	INFO	Connecting to Marionette on localhost:36700
+
+(firefox:3907): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3907): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3907): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3907): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479713413442	Marionette	INFO	Listening on port 36700
+1479713414809	Marionette	INFO	startBrowser f7f64715-7448-47c6-ac53-fccdd2056fd0
+
+(/usr/lib/firefox/plugin-container:3955): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3955): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3955): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:3955): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3907): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3907): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3907): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3907): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3907): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:3907): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+1479713461566	geckodriver	INFO	Listening on 127.0.0.1:56915
+1479713462567	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.zr9ihgWtRcae
+1479713462569	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479713462575	geckodriver::marionette	INFO	Connecting to Marionette on localhost:47023
+
+(firefox:3999): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3999): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3999): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3999): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479713463337	Marionette	INFO	Listening on port 47023
+JavaScript error: resource://gre/modules/FileUtils.jsm, line 70: NS_ERROR_FILE_DISK_FULL: Component returned failure code: 0x8052000a (NS_ERROR_FILE_DISK_FULL) [nsIFile.create]
+1479713463655	DeferredSave.extensions.json	WARN	Write failed: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463658	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463658	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463658	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463659	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463659	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463660	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463660	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463660	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463661	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463661	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463661	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463662	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713463662	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.zr9ihgWtRcae/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+JavaScript error: resource://gre/components/nsContentPrefService.js, line 1142: NS_ERROR_FILE_NO_DEVICE_SPACE: Component returned failure code: 0x80520010 (NS_ERROR_FILE_NO_DEVICE_SPACE) [mozIStorageConnection.createTable]
+JavaScript error: chrome://browser/content/browser-fullZoom.js, line 47: NS_ERROR_XPC_GS_RETURNED_FAILURE: Component returned failure code: 0x80570016 (NS_ERROR_XPC_GS_RETURNED_FAILURE) [nsIJSCID.getService]
+JavaScript error: chrome://browser/content/browser.js, line 2547: TypeError: PanelUI.panel is undefined
+JavaScript error: resource://app/modules/SelfSupportBackend.jsm, line 112: TypeError: this._log is null
+1479713527043	geckodriver	INFO	Listening on 127.0.0.1:60661
+1479713528043	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.8lXMZvcqrOt9
+1479713528046	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479713528050	geckodriver::marionette	INFO	Connecting to Marionette on localhost:37404
+
+(firefox:4050): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:4050): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:4050): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:4050): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479713528827	Marionette	INFO	Listening on port 37404
+JavaScript error: resource://gre/modules/FileUtils.jsm, line 70: NS_ERROR_FILE_DISK_FULL: Component returned failure code: 0x8052000a (NS_ERROR_FILE_DISK_FULL) [nsIFile.create]
+1479713529116	DeferredSave.extensions.json	WARN	Write failed: Unix error 28 during operation write on file /tmp/rust_mozprofile.8lXMZvcqrOt9/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713529118	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.8lXMZvcqrOt9/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713529119	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.8lXMZvcqrOt9/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713529119	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.8lXMZvcqrOt9/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713529119	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.8lXMZvcqrOt9/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713529120	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.8lXMZvcqrOt9/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713529121	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.8lXMZvcqrOt9/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713529121	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.8lXMZvcqrOt9/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713529121	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.8lXMZvcqrOt9/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713529121	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.8lXMZvcqrOt9/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713529122	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.8lXMZvcqrOt9/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713529122	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.8lXMZvcqrOt9/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479713529122	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file

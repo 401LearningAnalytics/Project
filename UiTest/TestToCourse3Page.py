@@ -1,20 +1,24 @@
 # -*- coding: utf-8 -*-
 import unittest
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class TestToCourse3Page(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.FireFox()
+        self.driver = webdriver.Firefox()
     
     def test_to_course3_page(self):
         driver = self.driver
         driver.get("http://162.246.157.230")
-        element = driver.find_elementbyxpath("//input[@value='Instructor']")
+        element = driver.find_element_by_xpath("//input[@value=' Instructor']")
         element.click()
-        element = driver.find_elementbyxpath("//div[@id='users']/ul/table/tbody/tr/td[3]/button")
-        self.assertIn("Client Needs and Software Requirements", driver.title)
-    
+        element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, "course3")))
+        element.click()
+        self.assertTrue
+        
     def tearDown(self):
         self.driver.close()
 
