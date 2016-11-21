@@ -12,7 +12,7 @@ class TestToCourse1Page(unittest.TestCase):
         driver.get("http://162.246.157.230")
         element = driver.find_element_by_xpath("//input[@value=' Instructor']")
         element.click()
-        element = driver.find_element_by_xpath("//button[contains(.,Introduction to Software Product Management)]")
+        element = driver.find_element_by_xpath("//a[@href='coursePage.php?id=Introduction to Software Product Management']")
         element.click()
         self.assertTrue()
     

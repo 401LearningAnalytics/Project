@@ -408,3 +408,163 @@ console.error:
   Could not write session state file 
   Message: Unix error 28 during operation write on file /tmp/rust_mozprofile.YrmQTuFqjWV3/sessionstore.js.tmp (No space left on device)
   
+1479708954472	geckodriver	INFO	Listening on 127.0.0.1:39867
+1479708955473	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.0I8N1guGSE1D
+1479708955476	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479708955481	geckodriver::marionette	INFO	Connecting to Marionette on localhost:58612
+
+(firefox:6337): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:6337): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:6337): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:6337): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479708956028	addons.xpi-utils	ERROR	Failed to write add-ons list to profile directory: [Exception... "Component returned failure code: 0x80520010 (NS_ERROR_FILE_NO_DEVICE_SPACE) [nsIFileOutputStream.write]"  nsresult: "0x80520010 (NS_ERROR_FILE_NO_DEVICE_SPACE)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm -> resource://gre/modules/addons/XPIProviderUtils.js :: this.XPIDatabase.writeAddonsList :: line 1526"  data: no] Stack trace: this.XPIDatabase.writeAddonsList()@resource://gre/modules/addons/XPIProvider.jsm -> resource://gre/modules/addons/XPIProviderUtils.js:1526 < this.XPIProvider.checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3753 < this.XPIProvider.startup()@resource://gre/modules/addons/XPIProvider.jsm:2706 < callProvider()@resource://gre/modules/AddonManager.jsm:236 < _startProvider()@resource://gre/modules/AddonManager.jsm:787 < AddonManagerInternal.startup()@resource://gre/modules/AddonManager.jsm:971 < this.AddonManagerPrivate.startup()@resource://gre/modules/AddonManager.jsm:2965 < amManager.prototype.observe()@resource://gre/components/addonManager.js:71
+1479708956203	Marionette	INFO	Listening on port 58612
+JavaScript error: resource://gre/modules/FileUtils.jsm, line 70: NS_ERROR_FILE_DISK_FULL: Component returned failure code: 0x8052000a (NS_ERROR_FILE_DISK_FULL) [nsIFile.create]
+1479708956516	DeferredSave.extensions.json	WARN	Write failed: Unix error 28 during operation write on file /tmp/rust_mozprofile.0I8N1guGSE1D/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479708956518	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.0I8N1guGSE1D/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479708956519	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 28 during operation write on file /tmp/rust_mozprofile.0I8N1guGSE1D/extensions.json.tmp (No space left on device) ((unknown module)) No traceback available
+1479708956519	addons.xpi-utils	WARN	Failed to save XPI database: Unix error 281479709124297	geckodriver	INFO	Listening on 127.0.0.1:49755
+1479709125291	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.SOued8ErFYKa
+1479709125293	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479709125312	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54321
+
+(firefox:2154): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:2154): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:2154): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:2154): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479709126354	Marionette	INFO	Listening on port 54321
+1479709127834	Marionette	INFO	startBrowser 0eb0390a-7d59-4afc-b9c5-9ab2dc5e4575
+
+(/usr/lib/firefox/plugin-container:2205): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:2205): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:2205): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:2205): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:2154): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2154): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2154): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2154): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+1479709166499	geckodriver	INFO	Listening on 127.0.0.1:41367
+1479709167504	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.sZUQDjei5OWK
+1479709167506	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479709167512	geckodriver::marionette	INFO	Connecting to Marionette on localhost:43665
+
+(firefox:2256): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:2256): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:2256): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:2256): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479709168256	Marionette	INFO	Listening on port 43665
+1479709169545	Marionette	INFO	startBrowser 6d41c1cc-95dd-440f-b230-c9197e3c8821
+
+(/usr/lib/firefox/plugin-container:2307): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:2307): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:2307): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:2307): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:2256): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2256): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2256): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2256): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+console.error: 
+  Message: Error: Unknown sheet source
+  Stack:
+    exports.sheetToUrl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/csscoverage.js:733:9
+StyleEditorUI.prototype._sourceLoaded/<.onShow</<@resource://devtools/client/styleeditor/StyleEditorUI.jsm:614:22
+TaskImpl.prototype._run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:310:39
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+
+console.error: 
+  Message: Error: Unknown sheet source
+  Stack:
+    exports.sheetToUrl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/csscoverage.js:733:9
+StyleEditorUI.prototype._sourceLoaded/<.onShow</<@resource://devtools/client/styleeditor/StyleEditorUI.jsm:614:22
+TaskImpl.prototype._run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:310:39
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+
+1479709693945	geckodriver	INFO	Listening on 127.0.0.1:60432
+1479709694946	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.b4GrUlfKWXiz
+1479709694949	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1479709694954	geckodriver::marionette	INFO	Connecting to Marionette on localhost:58665
+
+(firefox:2379): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:2379): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:2379): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:2379): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1479709695898	Marionette	INFO	Listening on port 58665
+1479709697457	Marionette	INFO	startBrowser 25474a34-4a22-4b04-a05c-732d781971d9
+
+(/usr/lib/firefox/plugin-container:2431): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:2431): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:2431): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(/usr/lib/firefox/plugin-container:2431): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:2379): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2379): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2379): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2379): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2379): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:2379): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+console.error: 
+  Message: Error: Connection closed, pending request to server1.conn0.child1/highlighter30, type hideBoxModel failed
+
+Request stack:
+Front<.request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1223:7
+generateRequestMethods/</frontProto[name]@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1382:14
+exports.getHighlighterUtils/exported.unhighlight<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox-highlighter-utils.js:267:13
+TaskImpl.prototype._run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:310:39
+TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:272:3
+createAsyncFunction/asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:246:14
+.unhighlightDomNode/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/webconsole/console-output.js:3320:14
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+Spinner.prototype.observe@resource://gre/modules/AsyncShutdown.jsm:551:9
+
+  Stack:
+    Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1170:23
+Pool<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:820:9
+Front<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js:1172:5
+InspectorFront<.destroy@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/fronts/inspector.js:953:5
+Toolbox.prototype.destroyInspector/this._destroyingInspector<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox.js:1973:13
+TaskImpl.prototype._run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js:310:39
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:937:23
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+Spinner.prototype.observe@resource://gre/modules/AsyncShutdown.jsm:551:9
+
