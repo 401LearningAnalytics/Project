@@ -13,6 +13,7 @@
   *
   */
 ?>
+
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style> /* set the CSS */
@@ -50,7 +51,7 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
 
 // parse the date / time
 var parseTime = d3.timeParse("%d-%b-%Y");
-var formatTime = d3.timeFormat("%e %B");
+var formatTime = d3.timeFormat("%Y %B %e");
 
 // set the ranges
 var x = d3.scaleTime().range([0, width]);
@@ -90,7 +91,7 @@ d3.csv("csv_file/soft_process.csv", function(error, data) {
   x.domain(d3.extent(data, function(d) { return d.date; }));
   y.domain([0, d3.max(data, function(d) { return d.grade; })]);
 
- 
+  colors = d3.scale.category10();
 
   // add the dots with tooltips
   svg.selectAll("dot")
@@ -99,6 +100,7 @@ d3.csv("csv_file/soft_process.csv", function(error, data) {
      .attr("r", 5)
      .attr("cx", function(d) { return x(d.date); })
      .attr("cy", function(d) { return y(d.grade); })
+     .attr("fill",function(d,i){return colors(i)})
      .on("mouseover", function(d) {
        div.transition()
          .duration(200)

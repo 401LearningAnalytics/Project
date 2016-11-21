@@ -1,5 +1,5 @@
 input[type=submit] {
-    width: 6em;
+    width: 7em;
     border: 1px solid #f44c0e;
     color: yellow;
     background: tomato;
