@@ -60,21 +60,21 @@ body  {
 		    <tbody>
 		    <?php
 			// print out course names and set courses into a 3 columns* n rows format
-			$i = 0; $trEnd = 0;
+			$i = 0; $trEnd = 0; $j = 1
 			while ($row = mysql_fetch_array($result)){
 			    if($i == 0){
 				echo '<tr>';
 			    }
 
 			    // heading which is course name
-			    echo ('<td><a href="coursePage.php?id=' . $row['course_name'] . '"class="button" "id=' . $row['course_name'] . '">' . $row['course_name'] . '</a></button>');
+			    echo ('<td><a href="coursePage.php?id=' . $row['course_name'] . '"class="button" "id=class' . $j . '">' . $row['course_name'] . '</a></button>');
 
 			    echo '</td>';
 
 			    if($i == 2){
-				$i = 0; $trEnd = 1;
+				$i = 0; $trEnd = 1; $j++;
 			    }else{
-				$trEnd = 0; $i++;
+				$trEnd = 0; $i++; $j++;
 			    }
 			    if($trEnd == 1) {
 				echo '</tr>';
