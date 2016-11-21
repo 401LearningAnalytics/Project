@@ -67,7 +67,7 @@ body  {
 			    }
 
 			    // heading which is course name
-			    echo ('<td><a href="coursePage.php?id=' . $row['course_name'] . '"class="button" "id=class' . $j . '">' . $row['course_name'] . '</a></button>');
+			    echo ('<td><a href="coursePage.php?id=' . $row['course_name'] . '"class="button" "id=course' . $j . '">' . $row['course_name'] . '</a></button>');
 
 			    echo '</td>';
 
