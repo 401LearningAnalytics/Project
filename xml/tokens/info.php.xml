@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/will/Desktop/Project/server_side" file="info.php" realpath="/home/will/Desktop/Project/server_side/info.php" size="25" time="2016-11-21T21:24:06+00:00" unixtime="1479763446" sha1="5527f59af6d29d9865fc6c7a0e667364c597e967" relative="info.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">phpinfo</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="2"/>
+</source>

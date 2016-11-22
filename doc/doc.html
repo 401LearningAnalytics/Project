@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* define a fixed width for the entire menu */
+.navigation {
+  width: 300px;
+}
+
+/* reset our lists to remove bullet points and padding */
+.mainmenu, .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* make ALL links (main and submenu) have padding and background color */
+.mainmenu a {
+  display: block;
+  background-color: #CCC;
+  text-decoration: none;
+  padding: 10px;
+  color: #000;
+}
+
+/* add hover behaviour */
+.mainmenu a:hover {
+    background-color: #C5C5C5;
+}
+
+
+/* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  we're changing the submenu's max-height from 0 to 200px;
+*/
+
+.mainmenu li:hover .submenu {
+  display: block;
+  max-height: 1000px;
+}
+
+/*
+  we now overwrite the background-color for .submenu links only.
+  CSS reads down the page, so code at the bottom will overwrite the code at the top.
+*/
+
+.submenu a {
+  background-color: #999;
+}
+
+/* hover behaviour for links inside .submenu */
+.submenu a:hover {
+  background-color: #666;
+}
+
+/* this is the initial state of all submenus.
+  we set it to max-height: 0, and hide the overflowed content.
+*/
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
+}
+</style>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+   <h1>Learner Analytics Documentation</h1>
+</header>
+  
+<nav class="navigation" >
+  <ul class="mainmenu">
+    <li><a href="">Home</a></li>
+    <li><a href="">UI</a>
+      <ul class="submenu">
+        <li><A href="docs/agile_plan.html">agile_plan.php</A></li>
+        <li><a href="docs/client_needs.html">client_needs.php</a></li>
+        <li><a href="docs/concsv.html">concsv.php</a></li>
+	<li><a href="docs/coursePage.html">coursePage.php</a></li>
+	<li><a href="docs/intro.html">intro.php</a></li>
+	<li><a href="docs/IS2.html">IS2.php</a></li>
+	<li><a href="docs/quizAverage.html">quizAverage.php</a></li>
+	<li><a href="docs/quizData.html">quizData.php</a></li>
+	<li><a href="docs/quizUI.html">quizUI.php</a></li>
+	<li><a href="docs/review.html">review.php</a></li>
+	<li><a href="docs/soft_mana.html">soft_mana.php</a></li>
+	<li><a href="docs/soft_process.html">soft_process.php</a></li>
+	<li><a href="docs/studentPage.html">studentPage.php</a></li>
+	<li><a href="docs/studentPageData.html">studentPageData.php</a></li>
+	<li><a href="docs/studentPageUI.html">studentPageUI.php</a></li>
+      </ul>
+    </li>
+
+    <li><a href="">Server</a>
+      <ul class="submenu">
+        <li><a href="docs/connection.html">connection.php</a></li>
+        <li><a href="docs/create_database.html">create_database.php</a></li>
+	<li><a href="docs/index.html">index.php</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<article>
+  <p>This is a webapp that analyzes and visualizes learner data from Massive Open Online Course (MOOC) Coursera, including their demographics, assessments, marks, course progress, and discussions.</p>
+
+<p>It is implemented in HTML and javascript for the front end and use PHP mySQL for the back end.</p>
+
+<p>The server is provided by Cybera.</p>
+</article>
+
+<footer>Copyright © Learner Analytics Team</footer>
+
+</div>
+
+</body>
+</html>
