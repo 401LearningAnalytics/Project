@@ -10,7 +10,7 @@ class TestToInstructorPage(unittest.TestCase):
     def test_to_instructor_page(self):
         driver = self.driver
         driver.get("http://162.246.157.230")
-        element = driver.find_element_by_xpath("//input[@value=' Instructor']")
+        element = driver.find_element_by_xpath("//input[@value='Instructor']")
         element.click()
         self.assertTrue        
     
