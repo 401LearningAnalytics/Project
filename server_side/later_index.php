@@ -72,7 +72,7 @@ if ( isset($_POST["submit"]) ) {
              } else {
                  if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
                      echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded. <br/>";
-                     $output=shell_exec("python3 upload.py ". escapeshellarg($target_file));
+                     $output=shell_exec("./upload.py ". escapeshellarg($target_file));
 		     echo "python returned: " . $output. "<br/>";
                  } else {
                      echo "Sorry, there was an error uploading your file. <br/>";
