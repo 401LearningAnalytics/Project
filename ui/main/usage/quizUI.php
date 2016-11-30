@@ -45,12 +45,13 @@
 
 
 
-  var $name1 = " <?php echo substr($quiz_course_item[0], 0, 26) ?>"
-  var $name2 = " <?php echo substr($quiz_course_item[1], 0, 26) ?>"
-  var $name3 = " <?php echo substr($quiz_course_item[2], 0, 26) ?>"
-  var $name4 = " <?php echo substr($quiz_course_item[3], 0, 26) ?>"
-  var $name5 = " <?php echo substr($quiz_course_item[4], 0, 26) ?>"
-  var $name6 = " <?php echo substr($quiz_course_item[5], 0, 26) ?>"
+  var $name1 = " <?php echo substr($quiz_course_item[0], 0, 20) ?>"
+  var $name2 = " <?php echo substr($quiz_course_item[1], 0, 20) ?>"
+  var $name3 = " <?php echo substr($quiz_course_item[2], 0, 20) ?>"
+  var $name4 = " <?php echo substr($quiz_course_item[3], 0, 20) ?>"
+  var $name5 = " <?php echo substr($quiz_course_item[4], 0, 20) ?>"
+  var $name6 = " <?php echo substr($quiz_course_item[5], 0, 20) ?>"
+  var $name7 = ""
 
   var $per11 = " <?php echo round($per_count1[0]/$quiz_count[0],2) ?>";
   var $per12 = " <?php echo round($per_count1[1]/$quiz_count[0],2) ?>";
@@ -81,6 +82,12 @@
   var $per62 = " <?php echo round($per_count6[1]/$quiz_count[5],2) ?>";
   var $per63 = " <?php echo round($per_count6[2]/$quiz_count[5],2) ?>";
   var $per64 = " <?php echo round($per_count6[3]/$quiz_count[5],2) ?>";
+
+  var $per71 = 0;
+  var $per72 = 0;
+  var $per73 = 0;
+  var $per74 = 0;
+
 
 
 
@@ -130,6 +137,12 @@
           "26%-50%": $per62,
           "51%-75%": $per63,
           "76%-100%": $per64
+      }, {
+          "year": $name7,
+          "0%-25%": $per71,
+          "26%-50%": $per72,
+          "51%-75%": $per73,
+          "76%-100%": $per74
       }],
       "valueAxes": [{
           "stackType": "100%",
@@ -206,7 +219,7 @@
 <!-- Styles -->
 <style>
 #chartdiv2 {
-	width	: 90%;
+	width	: 88%;
 	height	: 500px;
 }
 </style>

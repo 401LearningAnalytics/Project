@@ -245,32 +245,4 @@
 
 
 
-
-if ($quiz_course_item[0] != ""){
-echo "the average of ".$quiz_course_item[0]." is ".$ave1."<br>";
-}
-
-if ($quiz_course_item[1] != ""){
-echo "the average of ".$quiz_course_item[1]." is ".$ave2."<br>";
-}
-
-if ($quiz_course_item[2] != ""){
-echo "the average of ".$quiz_course_item[2]." is ".$ave3."<br>";
-}
-
-if ($quiz_course_item[3] != ""){
-echo "the average of ".$quiz_course_item[3]." is ".$ave4."<br>";
-}
-
-if ($quiz_course_item[4] != ""){
-echo "the average of ".$quiz_course_item[4]." is ".$ave5."<br>";
-}
-
-if ($quiz_course_item[5] != ""){
-echo "the average of ".$quiz_course_item[5]." is ".$ave6."<br>";
-}
-
-
-
-
 ?>

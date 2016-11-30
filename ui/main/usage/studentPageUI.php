@@ -3,7 +3,7 @@
   * This page includes the javascript code, HTML code of generating student info on the page.
   *
   * This page shows the default student picture and the ualerta_user_id
-  * 
+  *
   *
   * * Markdown style lists function too
   * * Just try this out once
@@ -37,7 +37,7 @@
 
   </head>
   <body>
-	<h1>Indivisual student Page</h1>
+	<h1 align="center">Indivisual Student Page</h1>
 	<table style="height: 455px;" width="795" align="center">
 	<tbody style ="right: 800px;">
 	<!-- create a table which has two columns -->
@@ -46,10 +46,8 @@
 
 
 	<!-- this should be changed since it is a mock one -->
-	<img src="https://qph.ec.quoracdn.net/main-qimg-3b0b70b336bbae35853994ce0aa25013-c?convert_to_webp=true" alt="" width="200" height="200" td rowspan="2" right: -400px/>
   <tr >
-	<p><strong>Ualberta_user_id: </strong></p>
-	<p><?php echo substr($_GET["student_id"], 0, 80); ?></p>
+	<p><strong>Ualberta User Isd:</strong> <?php echo "<input type=\"text\" value=".substr($_GET["student_id"], 0, 10)." readonly>"; ?></p>
 
 	</tr>
 
