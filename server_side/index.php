@@ -14,12 +14,26 @@
 <html>
 <head>
 <style>
+.button {
+    width: 6em;
+    border: 1px solid #f44c0e;
+    color: yellow;
+    background: tomato;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.button:hover{
+	 background: #f44c0e;
+}
+</style>
+<style>
     body  {
     background-image: url("../ui/img/background2.jpg");
     background-color: #ffffff;
 }
   </style>
   <link rel="stylesheet" type="text/css" href="../ui/css/button.css" />
+
 </head>
 <body><center><h1>CSV Uploading Page</h1></body></html>
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -31,8 +45,13 @@
 <table width="600">
 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
 
-<tr>
 
+<tr>
+<td width="20%"><b><h2>Create Database </h2></td>
+<td width="80%"><a href="create_database.php" class="button">Create</a></td>
+</tr>
+
+<tr> 
 <td width="20%"><b><h2>Select file</h2></b></td>
 <td width="80%"><input type="file" name="file" id="file" multiple="multiple"/></td>
 </tr>

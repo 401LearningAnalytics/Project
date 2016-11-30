@@ -20,7 +20,7 @@
 <head>
 <style>
 .button {
-    background-color: orange;
+    background-color: #129AE9;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -34,7 +34,7 @@
     width:80%;
 }
 body  {
-    background-image: url("../../img/background.jpg");
+    background-image: url("../../img/background2.jpg");
     background-color: #cccccc;
 }
 </style>
@@ -42,7 +42,7 @@ body  {
 <body>
 <title>courses</title>
 <!-- Set fonts and appearence of the header -->
-<p align=center><font style="font-size: 40pt; filter: shadow(color=black); width: 71.27%; color: #e4dc9b; line-height: 150%; font-family: 华文隶书; height: 60px"><b>Courses</b></font></p>
+<p align=center><font style="font-size: 24pt; filter: shadow(color=black); width: 71.27%; color: black; line-height: 150%; font-family: Times New Roman; height: 60px"><b>Courses</b></font></p>
 <div id="users" align="center">
 
     <ul class="list">
@@ -68,7 +68,9 @@ body  {
 
 			    // heading which is course name
 			    echo ('<td><a href="coursePage.php?id=' . $row['course_name'] . '"class="button"id="course' . $j . '">' . $row['course_name'] . '</a></button>');
-
+			    //if($row['course_name']=="Introduction to Software Product Management") include("intro.php");
+			    //else if($row['course_name']=="Software Processes and Agile Practices") include("soft_process.php");
+			    //else if($row['course_name']=="Client Needs and Software Requirements") include("client_needs.php");
 			    echo '</td>';
 
 			    if($i == 2){

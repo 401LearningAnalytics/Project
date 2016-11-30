@@ -1,11 +1,11 @@
 input[type=submit] {
     width: 6em;
     border: 1px solid #f44c0e;
-    color: yellow;
-    background: tomato;
+    color: blue;
+    background: blue;
     padding: 10px 20px;
     border-radius: 3px;
 }
 input[type=submit]:hover {
-    background: #f44c0e;
+    background: #005D93;
 }

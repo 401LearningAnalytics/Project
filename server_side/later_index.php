@@ -15,6 +15,10 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
 
+<tr>
+<td>Initialize Database</td>
+<td><input type="submit" name="initialize" /></td>
+</tr>
 
 
 <br></br>
@@ -37,6 +41,10 @@
 
 
 <?php
+
+
+
+
 
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["file"]["name"]);
