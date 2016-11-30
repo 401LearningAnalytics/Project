@@ -57,13 +57,21 @@
 	}
 	</style>
   </head>
+
+
   <body>
+
+
+
 	<div align=center>
 	<p><h1><?php
 		if ($_GET["id"]== "Reviews ")	echo "Reviews & Metrics for Software Improvements";
 		else echo $_GET["id"];
 		?></h1></p>
 	</div>
+
+
+
 	<?php
 		$quiz_course_id = "0";
 		if($_GET["id"]=="Introduction to Software Product Management") {
@@ -138,6 +146,15 @@
 		$tops = mysql_query($top);
 		$fails = mysql_query($fail);
 	?>
+
+<style>
+fieldset {
+    margin-top: -330px;
+    width: 600px;
+    float: right;
+}
+</style>
+
 	<fieldset>
 	<p><b> Student Enrollments: </lable></b><?php while($row = mysql_fetch_array($to)) {echo $row['COUNT(ualberta_user_id)'];} ?>
 	<p><b> Top students(Above 90%):</b> <?php while($row = mysql_fetch_array($tops)) {echo $row['COUNT(ualberta_user_id)'];} ?></p>
