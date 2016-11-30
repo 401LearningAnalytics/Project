@@ -47,7 +47,7 @@
 
 	<!-- this should be changed since it is a mock one -->
   <tr >
-	<p><strong>Ualberta User Isd:</strong> <?php echo "<input type=\"text\" value=".substr($_GET["student_id"], 0, 10)." readonly>"; ?></p>
+	<p><strong>Ualberta User Id:</strong> <?php echo "<input type=\"text\" value=".substr($_GET["student_id"], 0, 10)." readonly>"; ?></p>
 
 	</tr>
 
