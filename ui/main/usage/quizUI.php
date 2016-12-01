@@ -25,12 +25,7 @@
 ?>
 
       <!-- Styles -->
-  <style>
-  #chartdiv {
-  	width: 100%;
-  	height: 500px;
-  }
-  </style>
+
 
   <!-- Resources -->
   <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -51,7 +46,6 @@
   var $name4 = " <?php echo substr($quiz_course_item[3], 0, 20) ?>"
   var $name5 = " <?php echo substr($quiz_course_item[4], 0, 20) ?>"
   var $name6 = " <?php echo substr($quiz_course_item[5], 0, 20) ?>"
-  var $name7 = ""
 
   var $per11 = " <?php echo round($per_count1[0]/$quiz_count[0],2) ?>";
   var $per12 = " <?php echo round($per_count1[1]/$quiz_count[0],2) ?>";
@@ -83,11 +77,7 @@
   var $per63 = " <?php echo round($per_count6[2]/$quiz_count[5],2) ?>";
   var $per64 = " <?php echo round($per_count6[3]/$quiz_count[5],2) ?>";
 
-  var $per71 = 0;
-  var $per72 = 0;
-  var $per73 = 0;
-  var $per74 = 0;
-
+var $how_many = 1
 
 
 $summary_provider = [{
@@ -106,6 +96,8 @@ if ($name2 != 0){
           "51%-75%": $per23,
           "76%-100%": $per24
       })
+
+$how_many = $how_many + 1
 }
 
 if ($name3 != 0){
@@ -116,6 +108,8 @@ if ($name3 != 0){
           "51%-75%": $per33,
           "76%-100%": $per34
       })
+
+$how_many = $how_many + 1
 }
 
 if ($name4 != 0){
@@ -126,6 +120,8 @@ if ($name4 != 0){
           "51%-75%": $per43,
           "76%-100%": $per44
       })
+
+$how_many = $how_many + 1
 }
 
 if ($name5 != 0){
@@ -136,6 +132,8 @@ if ($name5 != 0){
           "51%-75%": $per53,
           "76%-100%": $per54
       })
+
+$how_many = $how_many + 1
 }
 
 if ($name6 != 0){
@@ -146,6 +144,31 @@ if ($name6 != 0){
           "51%-75%": $per63,
           "76%-100%": $per64
       })
+
+$how_many = $how_many + 1
+}
+
+$width = ""
+$width2 = ""
+
+if ($how_many == 1){
+$width = "30%"
+$width2 = "20%"
+}
+
+if ($how_many == 2){
+$width = "50%"
+$width2 = "45%"
+}
+
+if ($how_many == 3){
+$width = "60%"
+$width2 = "50%"
+}
+
+if ($how_many > 3){
+$width = "90%"
+$width2 = "80%"
 }
 
   var chart = AmCharts.makeChart("chartdiv", {
@@ -214,7 +237,34 @@ if ($name6 != 0){
        }
 
   });
+
+
+
+function createClass(name,rules){
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    document.getElementsByTagName('head')[0].appendChild(style);
+    if(!(style.sheet||{}).insertRule)
+        (style.styleSheet || style.sheet).addRule(name, rules);
+    else
+        style.sheet.insertRule(name+"{"+rules+"}",0);
+}
+createClass('#chartdiv',"width	:" + $width + "; height	: 500px;");
+
+function applyClass(name,element,doRemove){
+    if(typeof element.valueOf() == "string"){
+        element = document.getElementById(element);
+    }
+    if(!element) return;
+    if(doRemove){
+        element.className = element.className.replace(new RegExp("\\b" + name + "\\b","g"));
+    }else{
+        element.className = element.className + " " + name;
+    }
+}
+
   </script>
+
 
   <!-- HTML -->
 <div id="chartdiv"></div>
@@ -231,13 +281,12 @@ if ($name6 != 0){
 <h2>Quiz Averages</h2>
 
 
+
+
+
+
 <!-- Styles -->
-<style>
-#chartdiv2 {
-	width	: 100%;
-	height	: 500px;
-}
-</style>
+
 
 <!-- Resources -->
 <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -246,8 +295,37 @@ if ($name6 != 0){
 <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 
+
+
+
+
 <!-- Chart code -->
 <script>
+
+function createClass(name,rules){
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    document.getElementsByTagName('head')[0].appendChild(style);
+    if(!(style.sheet||{}).insertRule)
+        (style.styleSheet || style.sheet).addRule(name, rules);
+    else
+        style.sheet.insertRule(name+"{"+rules+"}",0);
+}
+createClass('#chartdiv2',"width	:" + $width2 + "; height	: 500px;");
+
+function applyClass(name,element,doRemove){
+    if(typeof element.valueOf() == "string"){
+        element = document.getElementById(element);
+    }
+    if(!element) return;
+    if(doRemove){
+        element.className = element.className.replace(new RegExp("\\b" + name + "\\b","g"));
+    }else{
+        element.className = element.className + " " + name;
+    }
+}
+
+
 
 
 $average1 = " <?php echo $ave1 ?>"
@@ -335,16 +413,15 @@ var chart = AmCharts.makeChart( "chartdiv2", {
     "bullet": "yError",
     "bulletSize": 10,
     "errorField": "error",
-    "lineThickness": 2,
+    "lineThickness": 10,
     "valueField": "value",
     "bulletAxis": "v1",
     "fillAlphas": 0
   }, {
     "bullet": "round",
-    "bulletBorderAlpha": 1,
+    "bulletBorderAlpha": 5,
     "bulletBorderColor": "#FFFFFF",
-    "lineAlpha": 0,
-    "lineThickness": 2,
+    "lineAlpha": 5,
     "showBalloon": false,
     "valueField": "value"
 
@@ -365,6 +442,10 @@ var chart = AmCharts.makeChart( "chartdiv2", {
   }
 } );
 </script>
+
+
+
+
 
 <!-- HTML -->
 <div id="chartdiv2"></div>
