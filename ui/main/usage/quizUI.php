@@ -234,7 +234,7 @@ if ($name6 != 0){
 <!-- Styles -->
 <style>
 #chartdiv2 {
-	width	: 88%;
+	width	: 100%;
 	height	: 500px;
 }
 </style>
