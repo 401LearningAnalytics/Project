@@ -90,6 +90,63 @@
 
 
 
+$summary_provider = [{
+          "year": $name1,
+          "0%-25%": $per11,
+          "26%-50%": $per12,
+          "51%-75%": $per13,
+          "76%-100%": $per14
+      }]
+
+if ($name2 != 0){
+	$summary_provider.push({
+          "year": $name2,
+          "0%-25%": $per21,
+          "26%-50%": $per22,
+          "51%-75%": $per23,
+          "76%-100%": $per24
+      })
+}
+
+if ($name3 != 0){
+	$summary_provider.push({
+          "year": $name3,
+          "0%-25%": $per31,
+          "26%-50%": $per32,
+          "51%-75%": $per33,
+          "76%-100%": $per34
+      })
+}
+
+if ($name4 != 0){
+	$summary_provider.push({
+          "year": $name4,
+          "0%-25%": $per41,
+          "26%-50%": $per42,
+          "51%-75%": $per43,
+          "76%-100%": $per44
+      })
+}
+
+if ($name5 != 0){
+	$summary_provider.push({
+          "year": $name5,
+          "0%-25%": $per51,
+          "26%-50%": $per52,
+          "51%-75%": $per53,
+          "76%-100%": $per54
+      })
+}
+
+if ($name6 != 0){
+	$summary_provider.push({
+          "year": $name6,
+          "0%-25%": $per61,
+          "26%-50%": $per62,
+          "51%-75%": $per63,
+          "76%-100%": $per64
+      })
+}
 
   var chart = AmCharts.makeChart("chartdiv", {
       "type": "serial",
@@ -101,49 +158,7 @@
   		"useGraphSettings": true,
   		"markerSize": 10
       },
-      "dataProvider": [{
-          "year": $name1,
-          "0%-25%": $per11,
-          "26%-50%": $per12,
-          "51%-75%": $per13,
-          "76%-100%": $per14
-      }, {
-          "year": $name2,
-          "0%-25%": $per21,
-          "26%-50%": $per22,
-          "51%-75%": $per23,
-          "76%-100%": $per24
-      }, {
-          "year": $name3,
-          "0%-25%": $per31,
-          "26%-50%": $per32,
-          "51%-75%": $per33,
-          "76%-100%": $per34
-      }, {
-          "year": $name4,
-          "0%-25%": $per41,
-          "26%-50%": $per42,
-          "51%-75%": $per43,
-          "76%-100%": $per44
-      }, {
-          "year": $name5,
-          "0%-25%": $per51,
-          "26%-50%": $per52,
-          "51%-75%": $per53,
-          "76%-100%": $per54
-      }, {
-          "year": $name6,
-          "0%-25%": $per61,
-          "26%-50%": $per62,
-          "51%-75%": $per63,
-          "76%-100%": $per64
-      }, {
-          "year": $name7,
-          "0%-25%": $per71,
-          "26%-50%": $per72,
-          "51%-75%": $per73,
-          "76%-100%": $per74
-      }],
+      "dataProvider": $summary_provider,
       "valueAxes": [{
           "stackType": "100%",
           "axisAlpha": 0.0,
@@ -249,46 +264,70 @@ $standdev4 = " <?php echo $std4 ?>"
 $standdev5 = " <?php echo $std5 ?>"
 $standdev6 = " <?php echo $std6 ?>"
 
+var $provider = [ {
+    "year": $name1,
+    "value": $average1,
+    "error": $standdev1
+  }]
 
+if ($average2 != 0){
+
+$provider.push({
+    "year": $name2,
+    "value": $average2,
+    "error": $standdev2
+  })
+}
+
+if ($average3 != 0){
+
+$provider.push({
+    "year": $name3,
+    "value": $average3,
+    "error": $standdev3
+  })
+}
+
+if ($average4 != 0){
+
+$provider.push({
+    "year": $name4,
+    "value": $average4,
+    "error": $standdev4
+  })
+}
+
+if ($average5 != 0){
+
+$provider.push({
+    "year": $name5,
+    "value": $average5,
+    "error": $standdev5
+  })
+}
+
+
+if ($average6 != 0){
+
+$provider.push({
+    "year": $name6,
+    "value": $average6,
+    "error": $standdev6
+  })
+}
 
 var chart = AmCharts.makeChart( "chartdiv2", {
   "type": "serial",
   "theme": "light",
-  "dataProvider": [ {
-    "year": $name1,
-    "value": $average1,
-    "error": $standdev1
-  }, {
-    "year": $name2,
-    "value": $average2,
-    "error": $standdev2
-  }, {
-    "year": $name3,
-    "value": $average3,
-    "error": $standdev3
-  }, {
-    "year": $name4,
-    "value": $average4,
-    "error": $standdev4
-  }, {
-    "year": $name5,
-    "value": $average5,
-    "error": $standdev5
-  }, {
-    "year": $name6,
-    "value": $average6,
-    "error": $standdev6
-  }, {
-    "year": "",
-    "value": 0,
-    "error": 0
-  }  ],
+  "dataProvider": $provider,
   "balloon": {
     "textAlign": "left"
   },
   "valueAxes": [ {
     "id": "v1",
-    "axisAlpha": 0
+    "axisAlpha": 0,
+    "minimum": 0,
+    "maximum": 1
   } ],
   "startDuration": 1,
   "graphs": [ {
