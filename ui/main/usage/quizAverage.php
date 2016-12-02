@@ -65,7 +65,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $ave1 = round($row[0],3);
+      	    $ave1 = $row[0];
         }
         mysqli_free_result($result);
       }
@@ -81,7 +81,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $ave2 = round($row[0],3);
+      	    $ave2 = $row[0];
         }
         mysqli_free_result($result);
       }
@@ -95,7 +95,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $ave3 = round($row[0],3);
+      	    $ave3 = $row[0];
         }
         mysqli_free_result($result);
       }
@@ -110,7 +110,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $ave4 = round($row[0],3);
+      	    $ave4 = $row[0];
         }
         mysqli_free_result($result);
       }
@@ -125,7 +125,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $ave5 = round($row[0],3);
+      	    $ave5 = $row[0];
         }
         mysqli_free_result($result);
       }
@@ -140,7 +140,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $ave6 = round($row[0],3);
+      	    $ave6 = $row[0];
         }
         mysqli_free_result($result);
       }
@@ -162,7 +162,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $std1 = round($row[0],3);
+      	    $std1 = $row[0];
         }
         mysqli_free_result($result);
       }
@@ -178,7 +178,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $std2 = round($row[0],3);
+      	    $std2 = $row[0];
         }
         mysqli_free_result($result);
       }
@@ -192,7 +192,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $std3 = round($row[0],3);
+      	    $std3 = $row[0];
         }
         mysqli_free_result($result);
       }
@@ -207,7 +207,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $std4 = round($row[0],3);
+      	    $std4 = $row[0];
         }
         mysqli_free_result($result);
       }
@@ -222,7 +222,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $std5 = round($row[0],3);
+      	    $std5 = $row[0];
         }
         mysqli_free_result($result);
       }
@@ -237,11 +237,10 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $std6 = round($row[0],3);
+      	    $std6 = $row[0];
         }
         mysqli_free_result($result);
       }
-
 
 
 

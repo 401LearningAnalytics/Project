@@ -244,7 +244,7 @@ function createClass(name,rules){
     var style = document.createElement('style');
     style.type = 'text/css';
     document.getElementsByTagName('head')[0].appendChild(style);
-    if(!(style.sheet||{}).insertRule) 
+    if(!(style.sheet||{}).insertRule)
         (style.styleSheet || style.sheet).addRule(name, rules);
     else
         style.sheet.insertRule(name+"{"+rules+"}",0);
@@ -258,7 +258,7 @@ function applyClass(name,element,doRemove){
     if(!element) return;
     if(doRemove){
         element.className = element.className.replace(new RegExp("\\b" + name + "\\b","g"));
-    }else{      
+    }else{
         element.className = element.className + " " + name;
     }
 }
@@ -306,7 +306,7 @@ function createClass(name,rules){
     var style = document.createElement('style');
     style.type = 'text/css';
     document.getElementsByTagName('head')[0].appendChild(style);
-    if(!(style.sheet||{}).insertRule) 
+    if(!(style.sheet||{}).insertRule)
         (style.styleSheet || style.sheet).addRule(name, rules);
     else
         style.sheet.insertRule(name+"{"+rules+"}",0);
@@ -320,7 +320,7 @@ function applyClass(name,element,doRemove){
     if(!element) return;
     if(doRemove){
         element.className = element.className.replace(new RegExp("\\b" + name + "\\b","g"));
-    }else{      
+    }else{
         element.className = element.className + " " + name;
     }
 }
