@@ -109,34 +109,22 @@ article {
 <div class="container">
 
 <header>
-   <h1>coursePage.php</h1>
+   <h1>conscv.php</h1>
 </header>
 
 <article>
 <b>Description:</b> 
-<p>This page is for fetching the data from database for quizes in the current course.
-<p>    
-     Within the course, the chart data are fetched from database that
-     contains each student performace in the course over the process of
-     the course, which is measured in time
-     upon clicking on the students, who are represented by dots on the
-     chart, this course page links to individual student page connected by
-     the student id
+<p>This page is to select needed data from database
+   and form into a new csv file for scatter plot using.
+   The download place which is the place the browser's  
+   default settings.
 <p>
 <b>Method:</b> 
-<p>Get id from IS2.php and show this course's scatter plot, course info, module info and quiz info by jquery
-<p>setupInfo()
-<br><br> &nbsp; &nbsp; &nbsp; &nbsp;Set up course infomation for each course
-<p>connectMysql()
-<br><br> &nbsp; &nbsp; &nbsp; &nbsp;Connect to Mysql based on the username and password given
+<p>Store id into rows and output into a csv file
 <p>
 <b>Parameters:</b>
-<p>int    $quiz_course_id:   The id of the coures for fetchig data from course table.
-<p>int    $average       :   The average of the grades of all students in the coures.
-<p>int    $total         :  The number of students participating in the coures.
-<p>int    $module        :   The name of the modules in the coures.
-<p>int    $top           :   The number of students who achieved more than 90% in the course overall.
-<p>int    $fail          :   The number of students who failed that achieved less than 50% in all course work.
+<p>output: store the output csv file
+<p>rows: store the ualberta_user_id from database
 <p>
 <b>Author:</b> Wei Song 2016
 </article>

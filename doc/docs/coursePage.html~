@@ -127,8 +127,6 @@ article {
 <p>Get id from IS2.php and show this course's scatter plot, course info, module info and quiz info by jquery
 <p>setupInfo()
 <br><br> &nbsp; &nbsp; &nbsp; &nbsp;Set up course infomation for each course
-<p>connectMysql()
-<br><br> &nbsp; &nbsp; &nbsp; &nbsp;Connect to Mysql based on the username and password given
 <p>
 <b>Parameters:</b>
 <p>int    $quiz_course_id:   The id of the coures for fetchig data from course table.
