@@ -91,7 +91,7 @@ nav ul {
     list-style-type: none;
     padding: 0;
 }
-   
+
 nav ul a {
     text-decoration: none;
 }
@@ -113,24 +113,34 @@ article {
 </header>
 
 <article>
-<b>Description:</b> 
+<b>Description:</b>
 <p>This page is for showing students performance in each component in all courses
 <p>
 It transfers from the course page to individual student page upon clicking on the dots which represent different students
 <p>
-<b>Method:</b> 
-<p>For all data related to such student in the database identified by ID
-   the page will fetch data from course item table, course item grade table
-   and show six charts which correspond to six different courses, and within
-   each course, there will be multiple columns which are different componenets
-   in a course. The high of the columns are the corresponding score in them.
+  <br>
+<b>Method:</b>
+<p>fetchCourse()
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp;get course ID for course item grade table and show six charts which correspond to six different courses
+<p>fetchModule()
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp; get the module ID and names for each course, in which the chart will be created with multiple columns which are different componenets
+  in a course
+<p>fetchScore()
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp; for each module in each course, fetch the corresponding score
+
 <p>
+  <br>
 <b>Parameters:</b>
-<p> int    $student_id  The id for current student.
-<p>array  $courses   The array of all courses the current student is in.
-<p>int    $allmarks  The marks of each component that belong to the student of all courses.
-<p>int    $marks     The marks of each component of individual courses.
-<p>int    $row_names The names of the columns, which are the names of the components.
+<p> int    $student_id
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp; The id for current student.
+<p>array  $courses
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp;   The array of all courses the current student is in.
+<p>int    $allmarks
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp; The marks of each component that belong to the student of all courses.
+<p>int    $marks
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp;   The marks of each component of individual courses.
+<p>int    $row_names
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp; The names of the columns, which are the names of the components.
 <p>
 <b>Author:</b> Hong Chen 2016
 </article>

@@ -91,7 +91,7 @@ nav ul {
     list-style-type: none;
     padding: 0;
 }
-   
+
 nav ul a {
     text-decoration: none;
 }
@@ -113,20 +113,30 @@ article {
 </header>
 
 <article>
-<b>Description:</b> 
+<b>Description:</b>
 <p>This page includes the javascript code, HTML code of generating quiz charts on the apge.
 <p>
 With given data, the page generates charts accordingly with
    the grades of quizes in each component
 <p>
-<b>Method:</b> 
-<p>Showing quiz info by chart which provides by amCharts
+  <br>
+<b>Method:</b>
+<p>CreateQuizAverageChart()
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp;Insert paramater from PHP into JavaScipt to creat quiz info chart about the quiz average and standard deviation
+  <p>CreateQuizSummaryChart()
+    <br><br> &nbsp; &nbsp; &nbsp; &nbsp; creat chart of quiz score percentage in each range for each module
+
 <p>
+  <br>
 <b>Parameters:</b>
-<p> str    $name   :  The names of components in this course for the chart columns.
-<p>float  $per     : The marks of each quiz grade that belong to different rages(eg. 0% - 25%), in each component.
-<p>float  $average : The average of quiz grade for each component for current course.
-<p>float  $standdev: The standard deviation of quiz grade for each component for current course
+<p> str    $name
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp;  The names of components in this course for the chart columns.
+<p>float  $per
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp; The marks of each quiz grade that belong to different rages(eg. 0% - 25%), in each component.
+<p>float  $average
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp; The average of quiz grade for each component for current course.
+<p>float  $standdev
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp; The standard deviation of quiz grade for each component for current course
 <p>
 <b>Author:</b> Hong Chen 2016
 </article>

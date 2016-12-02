@@ -91,7 +91,7 @@ nav ul {
     list-style-type: none;
     padding: 0;
 }
-   
+
 nav ul a {
     text-decoration: none;
 }
@@ -113,21 +113,32 @@ article {
 </header>
 
 <article>
-<b>Description:</b> 
+<b>Description:</b>
 <p>This page is for fetching the data from database for quizes in the current course.
 <p>
 Given the course ID, this function fetches the quiz grade of different range,
      eg. 0% - 25%, 26%- 50%, 51% - 75%, 76% - 100%, for each componenet in the course
      and the number of students who fall into those ranges
 <p>
-<b>Method:</b> 
-<p>Select COUNT(course_quiz_grade) from database and show on screen by quizUI.php
+  <br>
+<b>Method:</b>
+<p>getQuizScore()
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp;get the quiz score of each module in a course
+<p>getNumberofStudent()
+  <br><br>&nbsp; &nbsp; &nbsp; &nbsp;fetch the number of students in each range of quiz score
+<p>getPercentage()
+  <br><br> &nbsp; &nbsp; &nbsp; &nbsp;calcuate the percentage of studnets in each range of score in all modules
 <p>
+  <br>
 <b>Parameters:</b>
-<p>array    $quiz_course_item_id :   The array of componenet ID in the current course.
-<p>array    $quiz_course_item    :   The array of names of componenet in the current course, with indices corresponding to the $quiz_course_item_id array.
-<p>array    $quiz_count     :        The array of number of all finished quizes of each componenet, with indices corresponding to the $quiz_course_item_id array.
-<p>array    $per_count   :           The array of number of students who fall into each range, the indices corresponds to the indices of components.
+<p>array    $quiz_course_item_id
+<br><br>&nbsp; &nbsp; &nbsp; &nbsp;The array of componenet ID in the current course.
+<p>array    $quiz_course_item
+<br><br>&nbsp; &nbsp; &nbsp; &nbsp;The array of names of componenet in the current course, with indices corresponding to the $quiz_course_item_id array.
+<p>array    $quiz_count
+<br><br>&nbsp; &nbsp; &nbsp; &nbsp;The array of number of all finished quizes of each componenet, with indices corresponding to the $quiz_course_item_id array.
+<p>array    $per_count
+<br><br>&nbsp; &nbsp; &nbsp; &nbsp;The array of number of students who fall into each range, the indices corresponds to the indices of components.
 <p>
 <b>Author:</b> Hong Chen 2016
 </article>
