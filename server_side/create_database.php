@@ -33,7 +33,7 @@ echo "Connected successfully\n";
 
 
 echo"<br></br>";
-$sql1 = "create database learner;";
+$sql1 = "create database test;";
 if ($conn->query($sql1) === TRUE) {
     echo "Database created successfully\n";
 } else {
@@ -44,7 +44,7 @@ if ($conn->query($sql1) === TRUE) {
 
 
 echo"<br></br>";
-$sql1 = "use learner;";
+$sql1 = "use test;";
 if ($conn->query($sql1) === TRUE) {
     echo "Database switched successfully\n";
 } else {
@@ -888,7 +888,6 @@ $sql = "CREATE TABLE course_memberships (
     ,course_membership_ts TIMESTAMP
     ,PRIMARY KEY (ualberta_user_id, course_id, course_membership_ts)
     ,FOREIGN KEY (ualberta_user_id) REFERENCES users(ualberta_user_id)
-    ,FOREIGN_KEY (course_id) REFERENCES course_memberships(course_id)
 );";
 if ($conn->query($sql) === TRUE) {
     echo "Table created successfully";

@@ -151,22 +151,6 @@ var chartData = [ {
   "component":$row_name3,
   "mark": $mark3,
   "color": "#FF9E01"
-}, {
-  "component": $row_name4,
-  "mark": $mark4,
-  "color": "#FCD202"
-}, {
-  "component": $row_name5,
-  "mark": $mark5,
-  "color": "#B0DE09"
-}, {
-  "component": $row_name6,
-  "mark": $mark6,
-  "color": "#04D215"
-}, {
-  "component":"",
-  "mark": 0,
-  "color": "#04D215"
 }];
 
 
@@ -184,7 +168,10 @@ var chart = AmCharts.makeChart( "chartdiv", {
   },
 
   "valueAxes": [ {
-    "title": $name1
+    "title": $name1,
+    "minimum": 0,
+    "maximum": 1
+
   } ],
 
   "graphs": [ {
@@ -229,14 +216,6 @@ var chartData2 = [ {
   "component": $row_name25,
   "mark": $mark25,
   "color": "#B0DE09"
-}, {
-  "component": $row_name26,
-  "mark": $mark26,
-  "color": "#04D215"
-}, {
-  "component":"",
-  "mark": 0,
-  "color": "#04D215"
 }]
 
 
@@ -255,7 +234,9 @@ var chart = AmCharts.makeChart( "chartdiv2", {
   },
 
   "valueAxes": [ {
-    "title": $name2
+    "title": $name2,
+    "minimum": 0,
+    "maximum": 1
   } ],
 
   "graphs": [ {
@@ -304,10 +285,6 @@ var chartData3 = [ {
   "component": $row_name36,
   "mark": $mark36,
   "color": "#04D215"
-}, {
-  "component":"",
-  "mark": 0,
-  "color": "#04D215"
 }]
 
 
@@ -326,7 +303,9 @@ var chart3 = AmCharts.makeChart( "chartdiv3", {
   },
 
   "valueAxes": [ {
-    "title": $name3
+    "title": $name3,
+    "minimum": 0,
+    "maximum": 1
   } ],
 
   "graphs": [ {
@@ -375,10 +354,6 @@ var chartData4 = [ {
   "component": $row_name46,
   "mark": $mark46,
   "color": "#04D215"
-}, {
-  "component":"",
-  "mark": 0,
-  "color": "#04D215"
 }]
 
 
@@ -396,7 +371,9 @@ var chart = AmCharts.makeChart( "chartdiv4", {
   },
 
   "valueAxes": [ {
-    "title": $name4
+    "title": $name4,
+    "minimum": 0,
+    "maximum": 1
 
   } ],
 
@@ -441,14 +418,6 @@ var chartData5 = [ {
   "component": $row_name55,
   "mark": $mark55,
   "color": "#B0DE09"
-}, {
-  "component": $row_name56,
-  "mark": $mark56,
-  "color": "#04D215"
-}, {
-  "component":"",
-  "mark": 0,
-  "color": "#04D215"
 }]
 
 
@@ -466,7 +435,9 @@ var chart = AmCharts.makeChart( "chartdiv5", {
   },
 
   "valueAxes": [ {
-    "title": $name5
+    "title": $name5,
+    "minimum": 0,
+    "maximum": 1
 
   } ],
 
@@ -515,10 +486,6 @@ var chartData6 = [ {
   "component": $row_name66,
   "mark": $mark66,
   "color": "#04D215"
-}, {
-  "component":"",
-  "mark": 0,
-  "color": "#04D215"
 }]
 
 
@@ -536,7 +503,9 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   },
 
   "valueAxes": [ {
-    "title": $name6
+    "title": $name6,
+    "minimum": 0,
+    "maximum": 1
 
   } ],
 
@@ -579,7 +548,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   width: 30%;
   height: 400px;
   position: relative;
-  right: -600px;
+  right: -550px;
   margin-top: -400px;
 }
 
@@ -587,7 +556,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   width: 30%;
   height: 400px;
   position: relative;
-  right: -1200px;
+  right: -1100px;
   margin-top: -400px;
 }
 
@@ -603,7 +572,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   width: 30%;
   height: 400px;
   position: relative;
-  right: -600px;
+  right: -550px;
   margin-top: -400px;
 }
 
@@ -611,7 +580,7 @@ var chart = AmCharts.makeChart( "chartdiv6", {
   width: 30%;
   height: 400px;
   position: relative;
-  right: -1200px;
+  right: -1100px;
   margin-top: -400px;
 }
 </style>

@@ -25,12 +25,7 @@
 ?>
 
       <!-- Styles -->
-  <style>
-  #chartdiv {
-  	width: 100%;
-  	height: 500px;
-  }
-  </style>
+
 
   <!-- Resources -->
   <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -45,12 +40,12 @@
 
 
 
-  var $name1 = " <?php echo substr($quiz_course_item[0], 0, 26) ?>"
-  var $name2 = " <?php echo substr($quiz_course_item[1], 0, 26) ?>"
-  var $name3 = " <?php echo substr($quiz_course_item[2], 0, 26) ?>"
-  var $name4 = " <?php echo substr($quiz_course_item[3], 0, 26) ?>"
-  var $name5 = " <?php echo substr($quiz_course_item[4], 0, 26) ?>"
-  var $name6 = " <?php echo substr($quiz_course_item[5], 0, 26) ?>"
+  var $name1 = " <?php echo substr($quiz_course_item[0], 0, 20) ?>"
+  var $name2 = " <?php echo substr($quiz_course_item[1], 0, 20) ?>"
+  var $name3 = " <?php echo substr($quiz_course_item[2], 0, 20) ?>"
+  var $name4 = " <?php echo substr($quiz_course_item[3], 0, 20) ?>"
+  var $name5 = " <?php echo substr($quiz_course_item[4], 0, 20) ?>"
+  var $name6 = " <?php echo substr($quiz_course_item[5], 0, 20) ?>"
 
   var $per11 = " <?php echo round($per_count1[0]/$quiz_count[0],2) ?>";
   var $per12 = " <?php echo round($per_count1[1]/$quiz_count[0],2) ?>";
@@ -82,7 +77,99 @@
   var $per63 = " <?php echo round($per_count6[2]/$quiz_count[5],2) ?>";
   var $per64 = " <?php echo round($per_count6[3]/$quiz_count[5],2) ?>";
 
+var $how_many = 1
 
+
+$summary_provider = [{
+          "year": $name1,
+          "0%-25%": $per11,
+          "26%-50%": $per12,
+          "51%-75%": $per13,
+          "76%-100%": $per14
+      }]
+
+if ($name2 != 0){
+	$summary_provider.push({
+          "year": $name2,
+          "0%-25%": $per21,
+          "26%-50%": $per22,
+          "51%-75%": $per23,
+          "76%-100%": $per24
+      })
+
+$how_many = $how_many + 1
+}
+
+if ($name3 != 0){
+	$summary_provider.push({
+          "year": $name3,
+          "0%-25%": $per31,
+          "26%-50%": $per32,
+          "51%-75%": $per33,
+          "76%-100%": $per34
+      })
+
+$how_many = $how_many + 1
+}
+
+if ($name4 != 0){
+	$summary_provider.push({
+          "year": $name4,
+          "0%-25%": $per41,
+          "26%-50%": $per42,
+          "51%-75%": $per43,
+          "76%-100%": $per44
+      })
+
+$how_many = $how_many + 1
+}
+
+if ($name5 != 0){
+	$summary_provider.push({
+          "year": $name5,
+          "0%-25%": $per51,
+          "26%-50%": $per52,
+          "51%-75%": $per53,
+          "76%-100%": $per54
+      })
+
+$how_many = $how_many + 1
+}
+
+if ($name6 != 0){
+	$summary_provider.push({
+          "year": $name6,
+          "0%-25%": $per61,
+          "26%-50%": $per62,
+          "51%-75%": $per63,
+          "76%-100%": $per64
+      })
+
+$how_many = $how_many + 1
+}
+
+$width = ""
+$width2 = ""
+
+if ($how_many == 1){
+$width = "30%"
+$width2 = "20%"
+}
+
+if ($how_many == 2){
+$width = "50%"
+$width2 = "45%"
+}
+
+if ($how_many == 3){
+$width = "60%"
+$width2 = "50%"
+}
+
+if ($how_many > 3){
+$width = "90%"
+$width2 = "80%"
+}
 
   var chart = AmCharts.makeChart("chartdiv", {
       "type": "serial",
@@ -94,43 +181,7 @@
   		"useGraphSettings": true,
   		"markerSize": 10
       },
-      "dataProvider": [{
-          "year": $name1,
-          "0%-25%": $per11,
-          "26%-50%": $per12,
-          "51%-75%": $per13,
-          "76%-100%": $per14
-      }, {
-          "year": $name2,
-          "0%-25%": $per21,
-          "26%-50%": $per22,
-          "51%-75%": $per23,
-          "76%-100%": $per24
-      }, {
-          "year": $name3,
-          "0%-25%": $per31,
-          "26%-50%": $per32,
-          "51%-75%": $per33,
-          "76%-100%": $per34
-      }, {
-          "year": $name4,
-          "0%-25%": $per41,
-          "26%-50%": $per42,
-          "51%-75%": $per43,
-          "76%-100%": $per44
-      }, {
-          "year": $name5,
-          "0%-25%": $per51,
-          "26%-50%": $per52,
-          "51%-75%": $per53,
-          "76%-100%": $per54
-      }, {
-          "year": $name6,
-          "0%-25%": $per61,
-          "26%-50%": $per62,
-          "51%-75%": $per63,
-          "76%-100%": $per64
-      }],
+      "dataProvider": $summary_provider,
       "valueAxes": [{
           "stackType": "100%",
           "axisAlpha": 0.0,
@@ -186,7 +237,34 @@
        }
 
   });
+
+
+
+function createClass(name,rules){
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    document.getElementsByTagName('head')[0].appendChild(style);
+    if(!(style.sheet||{}).insertRule) 
+        (style.styleSheet || style.sheet).addRule(name, rules);
+    else
+        style.sheet.insertRule(name+"{"+rules+"}",0);
+}
+createClass('#chartdiv',"width	:" + $width + "; height	: 500px;");
+
+function applyClass(name,element,doRemove){
+    if(typeof element.valueOf() == "string"){
+        element = document.getElementById(element);
+    }
+    if(!element) return;
+    if(doRemove){
+        element.className = element.className.replace(new RegExp("\\b" + name + "\\b","g"));
+    }else{      
+        element.className = element.className + " " + name;
+    }
+}
+
   </script>
+
 
   <!-- HTML -->
 <div id="chartdiv"></div>
@@ -203,13 +281,12 @@
 <h2>Quiz Averages</h2>
 
 
+
+
+
+
 <!-- Styles -->
-<style>
-#chartdiv2 {
-	width	: 90%;
-	height	: 500px;
-}
-</style>
+
 
 <!-- Resources -->
 <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -218,8 +295,37 @@
 <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 
+
+
+
+
 <!-- Chart code -->
 <script>
+
+function createClass(name,rules){
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    document.getElementsByTagName('head')[0].appendChild(style);
+    if(!(style.sheet||{}).insertRule) 
+        (style.styleSheet || style.sheet).addRule(name, rules);
+    else
+        style.sheet.insertRule(name+"{"+rules+"}",0);
+}
+createClass('#chartdiv2',"width	:" + $width2 + "; height	: 500px;");
+
+function applyClass(name,element,doRemove){
+    if(typeof element.valueOf() == "string"){
+        element = document.getElementById(element);
+    }
+    if(!element) return;
+    if(doRemove){
+        element.className = element.className.replace(new RegExp("\\b" + name + "\\b","g"));
+    }else{      
+        element.className = element.className + " " + name;
+    }
+}
+
+
 
 
 $average1 = " <?php echo $ave1 ?>"
@@ -236,46 +342,70 @@ $standdev4 = " <?php echo $std4 ?>"
 $standdev5 = " <?php echo $std5 ?>"
 $standdev6 = " <?php echo $std6 ?>"
 
+var $provider = [ {
+    "year": $name1,
+    "value": $average1,
+    "error": $standdev1
+  }]
 
+if ($average2 != 0){
+
+$provider.push({
+    "year": $name2,
+    "value": $average2,
+    "error": $standdev2
+  })
+}
+
+if ($average3 != 0){
+
+$provider.push({
+    "year": $name3,
+    "value": $average3,
+    "error": $standdev3
+  })
+}
+
+if ($average4 != 0){
+
+$provider.push({
+    "year": $name4,
+    "value": $average4,
+    "error": $standdev4
+  })
+}
+
+if ($average5 != 0){
+
+$provider.push({
+    "year": $name5,
+    "value": $average5,
+    "error": $standdev5
+  })
+}
+
+
+if ($average6 != 0){
+
+$provider.push({
+    "year": $name6,
+    "value": $average6,
+    "error": $standdev6
+  })
+}
 
 var chart = AmCharts.makeChart( "chartdiv2", {
   "type": "serial",
   "theme": "light",
-  "dataProvider": [ {
-    "year": $name1,
-    "value": $average1,
-    "error": $standdev1
-  }, {
-    "year": $name2,
-    "value": $average2,
-    "error": $standdev2
-  }, {
-    "year": $name3,
-    "value": $average3,
-    "error": $standdev3
-  }, {
-    "year": $name4,
-    "value": $average4,
-    "error": $standdev4
-  }, {
-    "year": $name5,
-    "value": $average5,
-    "error": $standdev5
-  }, {
-    "year": $name6,
-    "value": $average6,
-    "error": $standdev6
-  }, {
-    "year": "",
-    "value": 0,
-    "error": 0
-  }  ],
+  "dataProvider": $provider,
   "balloon": {
     "textAlign": "left"
   },
   "valueAxes": [ {
     "id": "v1",
-    "axisAlpha": 0
+    "axisAlpha": 0,
+    "minimum": 0,
+    "maximum": 1
   } ],
   "startDuration": 1,
   "graphs": [ {
@@ -283,16 +413,15 @@ var chart = AmCharts.makeChart( "chartdiv2", {
     "bullet": "yError",
     "bulletSize": 10,
     "errorField": "error",
-    "lineThickness": 2,
+    "lineThickness": 10,
     "valueField": "value",
     "bulletAxis": "v1",
     "fillAlphas": 0
   }, {
     "bullet": "round",
-    "bulletBorderAlpha": 1,
+    "bulletBorderAlpha": 5,
     "bulletBorderColor": "#FFFFFF",
-    "lineAlpha": 0,
-    "lineThickness": 2,
+    "lineAlpha": 5,
     "showBalloon": false,
     "valueField": "value"
 
@@ -313,6 +442,10 @@ var chart = AmCharts.makeChart( "chartdiv2", {
   }
 } );
 </script>
+
+
+
+
 
 <!-- HTML -->
 <div id="chartdiv2"></div>

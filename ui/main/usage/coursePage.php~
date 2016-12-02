@@ -42,7 +42,7 @@
 	label{
 	display:inline-block;
 	width:200px;
-	margin-right:30px;
+	margin-right:10px;
 	text-align:right;
 	}
 
@@ -53,17 +53,28 @@
 	fieldset{
 	border:none;
 	width:500px;
-	margin:0px auto;
+	margin:30px auto;
 	}
+	p {
+    font-family: "Times New Roman", Times, serif;
+}
 	</style>
   </head>
+
+
   <body>
+
+
+
 	<div align=center>
 	<p><h1><?php
 		if ($_GET["id"]== "Reviews ")	echo "Reviews & Metrics for Software Improvements";
 		else echo $_GET["id"];
 		?></h1></p>
 	</div>
+
+
+
 	<?php
 		$quiz_course_id = "0";
 		if($_GET["id"]=="Introduction to Software Product Management") {
@@ -74,6 +85,7 @@
 			$module = "SELECT course_module_name FROM course_modules WHERE course_id='DYv7azSfEeWgIQ7IEhB31Q' ORDER BY course_module_order";
 			$top = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='DYv7azSfEeWgIQ7IEhB31Q' AND course_grade_verified > 0.9";
 			$fail = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='DYv7azSfEeWgIQ7IEhB31Q' AND course_grade_verified < 0.5";
+			$std = "SELECT CAST(STDDEV(course_grade_verified)as decimal(6,3)) FROM course_grades WHERE course_id='DYv7azSfEeWgIQ7IEhB31Q'";
 		}
 		else if($_GET["id"]=="Software Processes and Agile Practices") {
 			include("soft_process.php");
@@ -83,6 +95,7 @@
 			$module = "SELECT course_module_name FROM course_modules WHERE course_id='6lQZLjVvEeWfzhKP8GtZlQ' ORDER BY course_module_order";
 			$top = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='6lQZLjVvEeWfzhKP8GtZlQ' AND course_grade_verified > 0.9";
 			$fail = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='6lQZLjVvEeWfzhKP8GtZlQ' AND course_grade_verified < 0.5";
+			$std = "SELECT CAST(STDDEV(course_grade_verified)as decimal(6,3)) FROM course_grades WHERE course_id='6lQZLjVvEeWfzhKP8GtZlQ'";
 		}
 		else if($_GET["id"]=="Client Needs and Software Requirements") {
 			include("client_needs.php");
@@ -92,6 +105,7 @@
 			$module = "SELECT course_module_name FROM course_modules WHERE course_id='EdKScTVwEeWW9BKhJ4xW0Q' ORDER BY course_module_order";
 			$top = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='EdKScTVwEeWW9BKhJ4xW0Q' AND course_grade_verified > 0.9";
 			$fail = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='EdKScTVwEeWW9BKhJ4xW0Q' AND course_grade_verified < 0.5";
+			$std = "SELECT CAST(STDDEV(course_grade_verified)as decimal(6,3)) FROM course_grades WHERE course_id='EdKScTVwEeWW9BKhJ4xW0Q'";
 		}
 		else if($_GET["id"]=="Agile Planning for Software Products") {
 			include("agile_plan.php");
@@ -101,6 +115,7 @@
 			$module = "SELECT course_module_name FROM course_modules WHERE course_id='NpTR4zVwEeWfzhKP8GtZlQ' ORDER BY course_module_order";
 			$top = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='NpTR4zVwEeWfzhKP8GtZlQ' AND course_grade_verified > 0.9";
 			$fail = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='NpTR4zVwEeWfzhKP8GtZlQ' AND course_grade_verified < 0.5";
+			$std = "SELECT CAST(STDDEV(course_grade_verified)as decimal(6,3)) FROM course_grades WHERE course_id='NpTR4zVwEeWfzhKP8GtZlQ'";
 		}
 		else if ($_GET["id"]=="Reviews ") {
 			include("review.php");
@@ -110,6 +125,7 @@
 			$module = "SELECT course_module_name FROM course_modules WHERE course_id='ywoUFzVxEeWWBQrVFXqd1w' ORDER BY course_module_order";
 			$top = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='ywoUFzVxEeWWBQrVFXqd1w' AND course_grade_verified > 0.9";
 			$fail = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='ywoUFzVxEeWWBQrVFXqd1w' AND course_grade_verified < 0.5";
+			$std = "SELECT CAST(STDDEV(course_grade_verified)as decimal(6,3)) FROM course_grades WHERE course_id='ywoUFzVxEeWWBQrVFXqd1w'";
 		}
 		else if($_GET["id"]=="Software Product Management Capstone") {
 			include("soft_mana.php");
@@ -119,6 +135,7 @@
 			$module = "SELECT course_module_name FROM course_modules WHERE course_id='99SZyjVxEeW6RApRXdjJPw' ORDER BY course_module_order";
 			$top = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='99SZyjVxEeW6RApRXdjJPw' AND course_grade_verified > 0.9";
 			$fail = "SELECT COUNT(ualberta_user_id) FROM course_grades WHERE course_id='99SZyjVxEeW6RApRXdjJPw' AND course_grade_verified < 0.5";
+			$std = "SELECT CAST(STDDEV(course_grade_verified)as decimal(6,3)) FROM course_grades WHERE course_id='99SZyjVxEeW6RApRXdjJPw'";
 		}
 
 	?>
@@ -137,12 +154,25 @@
 		$mod = mysql_query($module);
 		$tops = mysql_query($top);
 		$fails = mysql_query($fail);
+		$stdd = mysql_query($std);
 	?>
+
+<style>
+fieldset {
+    margin-top: -430px;
+    margin-right:1%;
+    width: 600px;
+    float: right;
+}
+
+</style>
+
 	<fieldset>
-	<p><b> Student Enrollments: </lable></b><?php while($row = mysql_fetch_array($to)) {echo $row['COUNT(ualberta_user_id)'];} ?>
-	<p><b> Top students(Above 90%):</b> <?php while($row = mysql_fetch_array($tops)) {echo $row['COUNT(ualberta_user_id)'];} ?></p>
-	<p><b> Failed students(Below 50%):</b> <?php while($row = mysql_fetch_array($fails)) {echo $row['COUNT(ualberta_user_id)'];} ?></p>
-	<p><b> Course Average:</b> <?php while($row = mysql_fetch_array($ave)) {echo $row['CAST(AVG(course_grade_verified) as decimal(6,3))'];} ?></p>
+	<p><b> Student Enrollments:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</lable></b><?php while($row = mysql_fetch_array($to)) {echo $row['COUNT(ualberta_user_id)'];} ?>
+	<p><b> Top students(Above 90%):&emsp;&emsp;</b> <?php while($row = mysql_fetch_array($tops)) {echo $row['COUNT(ualberta_user_id)'];} ?></p>
+	<p><b> Failed students(Below 50%):&emsp;&nbsp;</b> <?php while($row = mysql_fetch_array($fails)) {echo $row['COUNT(ualberta_user_id)'];} ?></p>
+	<p><b> Course Average:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&nbsp;</b> <?php while($row = mysql_fetch_array($ave)) {echo $row['CAST(AVG(course_grade_verified) as decimal(6,3))'];} ?></p>
+	<p><b> Standard Deviation:&emsp;&emsp;&emsp;&emsp;&emsp;</b> <?php while($row = mysql_fetch_array($stdd)) {echo $row['CAST(STDDEV(course_grade_verified)as decimal(6,3))'];} ?></p>
 	<p><b> Course Modules:</b> <?php while($row = mysql_fetch_array($mod)) {echo '<br>'.$row['course_module_name'];} ?></p>
 	</fieldset>
 	</div>

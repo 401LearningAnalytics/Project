@@ -1,0 +1,78 @@
+<head>
+<style>
+
+    div {
+        font-family: monospace;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #FFFFFF;
+    }
+    tr:nth-child(even) {
+        background-color: #EBF2F2;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 5px 10px 5px 5px;
+    }
+
+</style>
+</head>
+
+
+<div>
+    <h1>users_courses__certificate_payments</h1>
+
+    <h2>Description</h2>
+    <p>
+        [No table description available]
+    </p>
+
+    <h2> Columns </h2>
+    <table>
+        <tr><th>Name</th><th>Description</th></tr>
+        
+        <tr>
+          <td>ualberta_user_id</td><td>Encrypted Coursera user id for ualberta data.</td>
+        </tr>
+        
+        <tr>
+          <td>course_id</td><td>22 character unique string identifying an individual course</td>
+        </tr>
+        
+        <tr>
+          <td>met_payment_condition</td><td>No column description available</td>
+        </tr>
+        
+        <tr>
+          <td>was_payment</td><td>No column description available</td>
+        </tr>
+        
+        <tr>
+          <td>was_finaid_grant</td><td>No column description available</td>
+        </tr>
+        
+        <tr>
+          <td>was_group_sponsored</td><td>No column description available</td>
+        </tr>
+        
+    </table>
+
+    <h2>SQL create statement</h2>
+    <pre>
+CREATE TABLE users_courses__certificate_payments (
+    ualberta_user_id VARCHAR(50) NOT NULL
+    ,course_id VARCHAR(50) 
+    ,met_payment_condition BOOL 
+    ,was_payment BOOL 
+    ,was_finaid_grant BOOL 
+    ,was_group_sponsored BOOL 
+);
+    </pre>
+</div>

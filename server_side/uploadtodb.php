@@ -11,6 +11,7 @@
 ?>
 <?php
    $filename = $argv[1];
+   $basename = $argv[2];
                  //Print file details
              $file = fopen($filename, 'r');
              $i = 0;
@@ -43,7 +44,7 @@
                 if ($conn->connect_error) {
                    die("Connection failed: " . $conn->connect_error."<br>");
                 }
-                $sql = "use learner;";
+                $sql = "use test;";
                 if (!($conn->query($sql) === TRUE)) {
                    echo "Error switching database: " . $conn->error."<br>";
                 }
@@ -54,8 +55,8 @@
                 }
                 $conn->close();
            }
-             echo "<br>";
-             i++ ;
+	     echo "<br>";
+             $i++ ;
 }
 fclose($file);
 ?>

@@ -1,0 +1,65 @@
+<head>
+<style>
+
+    div {
+        font-family: monospace;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #FFFFFF;
+    }
+    tr:nth-child(even) {
+        background-color: #EBF2F2;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 5px 10px 5px 5px;
+    }
+
+</style>
+</head>
+
+
+<div>
+    <h1>course_branches</h1>
+
+    <h2>Description</h2>
+    <p>
+        A course has many branches. Each branch contains separate course materials. Course authors create branches to make large changes to course materials that would break the learner experience if they happened in-place.
+    </p>
+
+    <h2> Columns </h2>
+    <table>
+        <tr><th>Name</th><th>Description</th></tr>
+        
+        <tr>
+          <td>course_branch_id</td><td>The id of this branch.</td>
+        </tr>
+        
+        <tr>
+          <td>course_id</td><td>The course that this branch is in.</td>
+        </tr>
+        
+        <tr>
+          <td>course_branch_changes_description</td><td>A user-facing summary of the changes between this branch and the previous branch.</td>
+        </tr>
+        
+    </table>
+
+    <h2>SQL create statement</h2>
+    <pre>
+CREATE TABLE course_branches (
+    course_branch_id VARCHAR(50) 
+    ,course_id VARCHAR(50) 
+    ,course_branch_changes_description VARCHAR(65535) 
+    ,PRIMARY KEY (course_branch_id)
+    ,FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+    </pre>
+</div>

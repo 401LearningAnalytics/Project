@@ -34,7 +34,10 @@ div.tooltip {
   border: 0px;
   border-radius: 8px;
 }
-
+.axis text {
+				font-family: sans-serif;
+				font-size: 11px;
+			}
 </style>
 <body>
 
@@ -50,7 +53,7 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
 
 // parse the date / time
 var parseTime = d3.timeParse("%d-%b-%Y");
-var formatTime = d3.timeFormat("%Y %B %e");
+var formatTime = d3.timeFormat("%Y %m %e");
 
 // set the ranges
 var x = d3.scaleTime().range([0, width]);
@@ -116,11 +119,26 @@ d3.csv("csv_file/intro.csv", function(error, data) {
   // add the X Axis
   svg.append("g")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+      .call(d3.axisBottom(x))
+      ;
 
   // add the Y Axis
   svg.append("g")
-      .call(d3.axisLeft(y));
+      .call(d3.axisLeft(y))
+      ;
+  svg.append("text")      // text label for the x axis
+        .attr("x", width / 2  )
+        .attr("y", height + margin.bottom )
+        .style("text-anchor", "middle")
+        .text("Last Attempt Time");
+
+  svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Performance");
 
 });
 

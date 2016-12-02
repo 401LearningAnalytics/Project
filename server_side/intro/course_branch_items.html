@@ -1,0 +1,88 @@
+<head>
+<style>
+
+    div {
+        font-family: monospace;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #FFFFFF;
+    }
+    tr:nth-child(even) {
+        background-color: #EBF2F2;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 5px 10px 5px 5px;
+    }
+
+</style>
+</head>
+
+
+<div>
+    <h1>course_branch_items</h1>
+
+    <h2>Description</h2>
+    <p>
+        A single content item in a class such as lecture, quiz or peer review assignment.
+    </p>
+
+    <h2> Columns </h2>
+    <table>
+        <tr><th>Name</th><th>Description</th></tr>
+        
+        <tr>
+          <td>course_branch_id</td><td>Each session is associated with a single branch. Learners enrolled in a session see the course contents associated with this branch.</td>
+        </tr>
+        
+        <tr>
+          <td>course_item_id</td><td>5 character alphanumeric string identifying an individual item within a course. 
+Items that have the same id that are in different branches of the same course are considered to be the same for the purposes of progress and grade computations. For example, if you complete item xxxxx in branch A, then you have completed it in branch B even if item xxxxx in branch B is very different from item xxxxx in branch A.</td>
+        </tr>
+        
+        <tr>
+          <td>course_lesson_id</td><td>5 character alphanumeric string identifying an individual lesson within a course. course_lesson_id need not be unique, but a course_lesson_id/course_id pair is unique.</td>
+        </tr>
+        
+        <tr>
+          <td>course_branch_item_order</td><td>The order of an item within a particular lesson, with &quot;0&quot; indicating the first item in the lesson.</td>
+        </tr>
+        
+        <tr>
+          <td>course_item_type_id</td><td>There are many different types of of items that make up a course. Each item is given an item_type_id for ease of identification. </td>
+        </tr>
+        
+        <tr>
+          <td>course_branch_item_name</td><td>The name of an item, as seen in the learner view of the course. </td>
+        </tr>
+        
+        <tr>
+          <td>course_branch_item_optional</td><td>A course item can either be optional (&quot;true&quot;, which means a learner does not need to pass it to complete the course) or not (&quot;false&quot;, which means the learner must pass it to complete the course. </td>
+        </tr>
+        
+    </table>
+
+    <h2>SQL create statement</h2>
+    <pre>
+CREATE TABLE course_branch_items (
+    course_branch_id VARCHAR(50) 
+    ,course_item_id VARCHAR(50) 
+    ,course_lesson_id VARCHAR(50) 
+    ,course_branch_item_order INT4 
+    ,course_item_type_id INT4 
+    ,course_branch_item_name VARCHAR(10000) 
+    ,course_branch_item_optional BOOL 
+    ,PRIMARY KEY (course_branch_id, course_item_id)
+    ,FOREIGN KEY (course_branch_id, course_lesson_id) REFERENCES course_branch_lessons(course_branch_id, course_lesson_id)
+    ,FOREIGN KEY (course_branch_id) REFERENCES course_branches(course_branch_id)
+    ,FOREIGN KEY (course_item_type_id) REFERENCES course_item_types(course_item_type_id)
+);
+    </pre>
+</div>

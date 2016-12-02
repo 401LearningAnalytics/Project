@@ -1,0 +1,64 @@
+<head>
+<style>
+
+    div {
+        font-family: monospace;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #FFFFFF;
+    }
+    tr:nth-child(even) {
+        background-color: #EBF2F2;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 5px 10px 5px 5px;
+    }
+
+</style>
+</head>
+
+
+<div>
+    <h1>course_branch_item_peer_assignments</h1>
+
+    <h2>Description</h2>
+    <p>
+        For each course, provide the mapping between course branches and versioned peer assignments.
+    </p>
+
+    <h2> Columns </h2>
+    <table>
+        <tr><th>Name</th><th>Description</th></tr>
+        
+        <tr>
+          <td>course_branch_id</td><td>Each session is associated with a single branch. Learners enrolled in a session see the course contents associated with this branch.</td>
+        </tr>
+        
+        <tr>
+          <td>course_item_id</td><td>5 character alphanumeric string identifying an individual item within a course. 
+Items that have the same id that are in different branches of the same course are considered to be the same for the purposes of progress and grade computations. For example, if you complete item xxxxx in branch A, then you have completed it in branch B even if item xxxxx in branch B is very different from item xxxxx in branch A.</td>
+        </tr>
+        
+        <tr>
+          <td>peer_assignment_id</td><td>This is a &#x27;course_content_id&#x27;, and is versioned. (e.g ABC@1 is version 1)</td>
+        </tr>
+        
+    </table>
+
+    <h2>SQL create statement</h2>
+    <pre>
+CREATE TABLE course_branch_item_peer_assignments (
+    course_branch_id varchar 
+    ,course_item_id varchar 
+    ,peer_assignment_id varchar 
+);
+    </pre>
+</div>

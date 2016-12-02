@@ -1,11 +1,11 @@
 <?php
-/** This page is uploading csv files page
+/** This page is uploading zip files page
   * 
-  * This page allows you to choose needed csv files to upload 
+  * This page allows you to choose needed zip files to upload 
   * 
   *
   * @package server
-  * @author  Hong Chen <chen1@ualberta.ca> 2016
+  * @author  Omar ALmokdad <almokdad@ualberta.ca> 2016
   *
   * @since 1.0
   *
@@ -23,7 +23,7 @@
     border-radius: 3px;
 }
 .button:hover{
-	 background: #f44c0e;
+         background: #f44c0e;
 }
 </style>
 <style>
@@ -35,10 +35,8 @@
   <link rel="stylesheet" type="text/css" href="../ui/css/button.css" />
 
 </head>
-<body><center><h1>CSV Uploading Page</h1></body></html>
+<body><center><h1>Data Uploading Page</h1></body></html>
 <script src="https://d3js.org/d3.v4.min.js"></script>
-
-
 
 
 <br></br>
@@ -46,19 +44,14 @@
 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
 
 
-<tr>
-<td width="20%"><b><h2>Create Database </h2></td>
-<td width="80%"><a href="create_database.php" class="button">Create</td>
-</tr>
-
 <tr> 
 <td width="20%"><b><h2>Select file</h2></b></td>
 <td width="80%"><input type="file" name="file" id="file" multiple="multiple"/></td>
 </tr>
 
 <tr>
-<td><b><h2>Submit</h2></b></td>
-<td><input type="submit" name="submit" /></td>
+<td width="20%"><b><h2>Submit</h2></b></td>
+<td width="80%"><input type="submit" name="submit" /></td>
 </tr>
 
 </form>
@@ -66,14 +59,21 @@
 
 
 <?php
+
+
+
+
+
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["file"]["name"]);
+$uploadOk = 1;
+
+
 if ( isset($_POST["submit"]) ) {
-
    if ( isset($_FILES["file"])) {
-
             //if there was an error uploading the file
         if ($_FILES["file"]["error"] > 0) {
             echo "ERROR Return Code: " . $_FILES["file"]["error"] . "<br />";
-
         }
         else {
                  //Print file details
@@ -81,132 +81,31 @@ if ( isset($_POST["submit"]) ) {
              echo "Type: " . $_FILES["file"]["type"] . "<br />";
              echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
              echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
-
-             $basename = basename($_FILES["file"]['name'],".csv");
+             $basename = basename($_FILES["file"]['name']);
              echo "Basename: ". $basename;
              echo "<br>";
-
-
-             $file = fopen(realpath($_FILES["file"]["tmp_name"]), 'r');
-
-
-
-             $i = 0;
-             while (($line = fgetcsv($file)) !== FALSE) {
-                              //$line is an array of the csv elements
-
-             $n = count($line);
-             $j = 0;
-             $string = "INSERT into ".$basename." VALUES(";
-
-            if ($i > 0){
-                  while($j < $n){
-                    if (strcmp($line[$j], "") != 0 & strcmp($line[$j], "t") != 0 && strcmp($line[$j], "f") != 0){
-                      $string = $string."\"".$line[$j]."\"";
-                    }else if(strcmp($line[$j], "f") == 0){
-                      $string = $string."false";
-                    }else if(strcmp($line[$j], "t") == 0){
-                      $string = $string."true";
-                    }
-
-                    if (strcmp($line[$j], "") == 0){$string = $string."NULL";}
-
-                    if ($j + 1 < $n){$string = $string.",";}
-
-                    $j++;
-                  }
-
-                $string = $string.");";
-                echo $string."<br>";
-
-                $servername = "localhost";
-                $username = "Wei";
-                $password = "123456";
-
-
-                // Create connection
-                $conn = new mysqli($servername, $username, $password);
-
-                // Check connection
-                if ($conn->connect_error) {
-                   die("Connection failed: " . $conn->connect_error."<br>");
-                }
-
-                $sql = "use learner;";
-                if (!($conn->query($sql) === TRUE)) {
-
-                   echo "Error switching database: " . $conn->error."<br>";
-                }
-
-
-
-                if ($conn->query($string) === TRUE) {
-                   echo "Data inserted successfully"."<br>";
-                } else {
-                   echo "Error inserting data: " . $conn->error."<br>";
-                }
-                $conn->close();
-
-
-
-           }
-
-             echo "<br>";
-             $i ++ ;
-            }
-            fclose($file);
-
-
-
-
-             /*
-             $servername = "localhost";
-             $username = "root";
-             $password = "117130";
-
-
-             // Create connection
-             $conn = new mysqli($servername, $username, $password);
-
-             // Check connection
-             if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error."<br>");
+	     // Check if file already exists
+             if (file_exists($target_file)) {
+                 echo "Sorry, file already exists. <br/>";
+                 $uploadOk = 0;
              }
-             echo "Connected successfully"."<br>";
 
-             $sql = "use learner;";
-             if ($conn->query($sql) === TRUE) {
-                echo "Database switched successfully"."<br>";
+
+             // Check if $uploadOk is set to 0 by an error
+             if ($uploadOk == 0) {
+                 echo "Sorry, your file was not uploaded. <br/>";
+                 // if everything is ok, try to upload file
              } else {
-                echo "Error switching database: " . $conn->error."<br>";
-             }
-
-
-
-             if ($conn->query($q) === TRUE) {
-                echo "Data inserted successfully"."<br>";
-             } else {
-                echo "Error inserting data: " . $conn->error."<br>";
-             }
-             $conn->close();
-
-
-             */
-
-
-
-
-
-        }
-     } else {
-             echo "No file selected <br />";
-     }
+                 if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+                     echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded. <br/>";
+                     $output=shell_exec("./upload.py ". escapeshellarg($target_file));
+		     echo "python returned: " . $output. "<br/>";
+                 } else {
+                     echo "Sorry, there was an error uploading your file. <br/>";
+                 }
+	     }
+	}
+    }
 }
-
-
-
 ?>
-
-
-
-<br></br>
+<br><br/>

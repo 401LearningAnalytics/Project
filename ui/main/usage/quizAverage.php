@@ -65,7 +65,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $ave1 = $row[0];
+      	    $ave1 = round($row[0],3);
         }
         mysqli_free_result($result);
       }
@@ -81,7 +81,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $ave2 = $row[0];
+      	    $ave2 = round($row[0],3);
         }
         mysqli_free_result($result);
       }
@@ -95,7 +95,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $ave3 = $row[0];
+      	    $ave3 = round($row[0],3);
         }
         mysqli_free_result($result);
       }
@@ -110,7 +110,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $ave4 = $row[0];
+      	    $ave4 = round($row[0],3);
         }
         mysqli_free_result($result);
       }
@@ -125,7 +125,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $ave5 = $row[0];
+      	    $ave5 = round($row[0],3);
         }
         mysqli_free_result($result);
       }
@@ -140,7 +140,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $ave6 = $row[0];
+      	    $ave6 = round($row[0],3);
         }
         mysqli_free_result($result);
       }
@@ -162,7 +162,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $std1 = $row[0];
+      	    $std1 = round($row[0],3);
         }
         mysqli_free_result($result);
       }
@@ -178,7 +178,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $std2 = $row[0];
+      	    $std2 = round($row[0],3);
         }
         mysqli_free_result($result);
       }
@@ -192,7 +192,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $std3 = $row[0];
+      	    $std3 = round($row[0],3);
         }
         mysqli_free_result($result);
       }
@@ -207,7 +207,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $std4 = $row[0];
+      	    $std4 = round($row[0],3);
         }
         mysqli_free_result($result);
       }
@@ -222,7 +222,7 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $std5 = $row[0];
+      	    $std5 = round($row[0],3);
         }
         mysqli_free_result($result);
       }
@@ -237,38 +237,11 @@
         //echo "Fetching data success<br>";
         /* fetch associative array */
         while ($row = mysqli_fetch_row($result)) {
-      	    $std6 = $row[0];
+      	    $std6 = round($row[0],3);
         }
         mysqli_free_result($result);
       }
 
-
-
-
-
-if ($quiz_course_item[0] != ""){
-echo "the average of ".$quiz_course_item[0]." is ".$ave1."<br>";
-}
-
-if ($quiz_course_item[1] != ""){
-echo "the average of ".$quiz_course_item[1]." is ".$ave2."<br>";
-}
-
-if ($quiz_course_item[2] != ""){
-echo "the average of ".$quiz_course_item[2]." is ".$ave3."<br>";
-}
-
-if ($quiz_course_item[3] != ""){
-echo "the average of ".$quiz_course_item[3]." is ".$ave4."<br>";
-}
-
-if ($quiz_course_item[4] != ""){
-echo "the average of ".$quiz_course_item[4]." is ".$ave5."<br>";
-}
-
-if ($quiz_course_item[5] != ""){
-echo "the average of ".$quiz_course_item[5]." is ".$ave6."<br>";
-}
 
 
 
